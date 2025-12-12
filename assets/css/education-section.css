@@ -1,0 +1,185 @@
+/* ================================
+   EDUCATION SECTION
+================================= */
+.education-section {
+  padding: 16px 4%;
+  background: #f7f9fc;
+  color: #0f172a;
+}
+
+.dark-mode .education-section {
+  background: #0b1120;
+  color: #e2e8f0;
+}
+
+
+.dark-mode .section-title {
+  color: #3ea6ff;
+}
+
+/* ================================
+   CONTAINER CARD
+================================= */
+.content-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 18px;
+  padding: 38px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: blur(14px);
+  transition: 0.25s ease;
+}
+
+body.dark-mode .content-container {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.content-container:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: #1a81e2;
+}
+
+body.dark-mode .content-container:hover {
+  border-color: #3ea6ff;
+}
+
+/* ================================
+   LEFT ICON
+================================= */
+.left-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-college {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  font-size: 34px;
+
+  background: linear-gradient(135deg, #1a81e2, #005bbb);
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 18px rgba(0, 123, 255, 0.35);
+}
+
+/* ================================
+   RIGHT CONTENT
+================================= */
+.right-content {
+  flex: 1;
+}
+
+.edu-college {
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.edu-degree,
+.edu-status {
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .edu-degree,
+body.dark-mode .edu-status {
+  color: #94a3b8;
+}
+
+.edu-details {
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 14px;
+}
+
+body.dark-mode .edu-details {
+  color: #94a3b8;
+}
+
+/* ================================
+   SUBJECT LIST
+================================= */
+.edu-subjects {
+  list-style: none;
+  padding: 0;
+}
+
+.edu-subjects li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+body.dark-mode .edu-subjects li {
+  color: #e2e8f0;
+}
+
+.edu-subjects li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #1a81e2;
+}
+
+body.dark-mode .edu-subjects li::before {
+  color: #3ea6ff;
+}
+
+/* ================================
+   RESPONSIVE
+================================= */
+@media (max-width: 900px) {
+  .content-container {
+    flex-direction: column;
+    padding: 28px;
+    gap: 18px;
+  }
+
+  .icon-college {
+    width: 65px;
+    height: 65px;
+    font-size: 28px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-container {
+    padding: 22px;
+    gap: 14px;
+  }
+
+  .icon-college {
+    width: 58px;
+    height: 58px;
+    font-size: 25px;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .edu-college {
+    font-size: 1.15rem;
+  }
+}

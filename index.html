@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/main_section.css" />
+    <link rel="stylesheet" href="assets/css/skills_section.css" />
+    <link rel="stylesheet" href="assets/css/projects-section.css" />
+    <link rel="stylesheet" href="assets/css/education-section.css" />
+    <link rel="stylesheet" href="assets/css/contact-section.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward"
+    />
+    <title>Nojaid Ad</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="nav-right">
+        <button onclick="openMenu()" id="menuToggle" class="hamburger">
+          <i id="menuIcon" class="fa-solid fa-bars"></i>
+        </button>
+        <a href="#" class="logo" id="logo"
+          >N<span class="custom-name">0</span>jaid</a
+        >
+      </div>
+
+      <div class="nav-container">
+        <nav class="navigation" id="navMenu">
+          <a onclick="navClick()" href="#skills">Skills</a>
+          <a onclick="navClick()" href="#projects">Projects</a>
+          <a onclick="navClick()" href="#education">Education</a>
+          <a onclick="navClick()" href="#contact">Contact</a>
+        </nav>
+
+        <button onclick="toggleTheme()" id="themeToggle" class="toggleTheme">
+          <i class="fa-solid fa-sun" id="iconTheme"></i>
+        </button>
+      </div>
+    </header>
+    <section class="main-section">
+      <div class="content-row-holder">
+        <div class="text-content">
+          <h2>Nojaid Abdullah Issa<br /><span>Software Engineer</span></h2>
+          <h3>
+            22-year-old Software Engineering student at IT Aljmail, building
+            modern Flutter apps.
+          </h3>
+          <a href="#projects" class="main-btn">View My Work</a>
+          <div class="social-icons">
+            <a href="https://wa.me/218934252735" target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="https://t.me/Nojaid" target="_blank"
+              ><i class="fa-brands fa-telegram"></i
+            ></a>
+            <a href="https://github.com/Nojaid-Ad" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="mailto:nojaidnojaid@gmail.com" target="_blank"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="image-content">
+          <img src="assets/images/NojaidAd.png" alt="Nojaid" />
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section" id="skills">
+      <h2 class="section-title">My&nbsp;<span>Skills</span></h2>
+
+      <div class="skills-content-grid">
+        <div class="skill-card s0">
+          <div class="icon">
+            <i class="fa-brands fa-flutter" style="color: #3596ce"></i>
+          </div>
+          <div class="info">
+            <h3 style="color: #3596ce">Flutter Developer</h3>
+            <p>
+              I build mobile apps with Flutter, GetX, Laravel, and Firebase.
+            </p>
+          </div>
+        </div>
+
+        <div class="skill-card s1">
+          <div class="icon">
+            <i class="fa-solid fa-layer-group" style="color: #3924f8"></i>
+          </div>
+          <div class="info">
+            <h3 style="color: #3924f8">Full Stack Developer</h3>
+            <p>I work with Laravel, MySQL, and responsive front-end design.</p>
+          </div>
+        </div>
+
+        <div class="skill-card s2">
+          <div class="icon">
+            <i class="fa-solid fa-pen-ruler" style="color: #00c853"></i>
+          </div>
+          <div class="info">
+            <h3 style="color: #00c853">UI / UX Designer</h3>
+            <p>
+              I create modern and smooth user interfaces with attention to
+              detail.
+            </p>
+          </div>
+        </div>
+
+        <div class="skill-card s3">
+          <div class="icon">
+            <i class="fa-brands fa-java" style="color: #e76f00"></i>
+          </div>
+          <div class="info">
+            <h3 style="color: #e76f00">Java Swing</h3>
+            <p>
+              I build native desktop applications with database integration.
+            </p>
+          </div>
+        </div>
+
+        <div class="skill-card s4">
+          <div class="icon">
+            <i class="fa-brands fa-unity" style="color: #000000"></i>
+          </div>
+          <div class="info">
+            <h3 style="color: #000000">C# & Unity</h3>
+            <p>
+              I design and develop 2D and 3D games with solid gameplay logic.
+            </p>
+          </div>
+        </div>
+
+        <div class="skill-card s5">
+          <div class="icon">
+            <i class="fa-solid fa-code" style="color: #b8c263"></i>
+          </div>
+          <div class="info">
+            <h3 style="color: #b8c263">HTML & CSS</h3>
+            <p>
+              I craft responsive layouts and smooth UI animations for the web.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <div class="projects-container swiper">
+        <h2 class="section-title">Projects</h2>
+    
+        <div class="card-wrapper">
+          <ul class="card-list swiper-wrapper">
+    
+            <!-- 1 - Library System -->
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="assets/images/projects/library.jpg" class="card-img" />
+                <p class="badge">Library System</p>
+                <h2 class="card-title">Java Swing + MySql</h2>
+                <button class="card-button material-symbols-outlined">arrow_forward</button>
+              </a>
+            </li>
+    
+            <!-- 2 - Geo Locator -->
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="assets/images/projects/2.png" class="card-img" />
+                <p class="badge">Geo Locator</p>
+                <h2 class="card-title">Java Swing</h2>
+                <button class="card-button material-symbols-outlined">arrow_forward</button>
+              </a>
+            </li>
+    
+            <!-- 3 - Caloriator -->
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="assets/images/projects/caloriator.jpg" class="card-img" />
+                <p class="badge">Caloriator</p>
+                <h2 class="card-title">Flutter + SqFlite + GetX</h2>
+                <button class="card-button material-symbols-outlined">arrow_forward</button>
+              </a>
+            </li>
+    
+            <!-- 4 - TaskLy -->
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="assets/images/projects/taskly.jpg" class="card-img" />
+                <p class="badge">TaskLy</p>
+                <h2 class="card-title">Flutter + SqFlite + GetX</h2>
+                <button class="card-button material-symbols-outlined">arrow_forward</button>
+              </a>
+            </li>
+    
+            <!-- 5 - Robo Rampage -->
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="assets/images/projects/roboram.jpg" class="card-img" />
+                <p class="badge">Robo Rampage</p>
+                <h2 class="card-title">Unity using C#</h2>
+                <button class="card-button material-symbols-outlined">arrow_forward</button>
+              </a>
+            </li>
+    
+            <!-- 6 - Day Management -->
+            <li class="card-item swiper-slide">
+              <a href="#" class="card-link">
+                <img src="assets/images/projects/login.jpg" class="card-img" />
+                <p class="badge">Day Management</p>
+                <h2 class="card-title">Flutter + GetX + Php + MySql</h2>
+                <button class="card-button material-symbols-outlined">arrow_forward</button>
+              </a>
+            </li>
+    
+          </ul>
+    
+          <div class="swiper-pagination"></div>
+          <div class="swiper-slider-btn swiper-button-prev"></div>
+          <div class="swiper-slider-btn swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="education-section" id="education">
+      <h2 class="section-title">Education</h2>
+
+      <div class="content-container">
+        <div class="left-content">
+          <div class="icon-college">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+        </div>
+
+        <div class="right-content">
+          <h3 class="edu-college">
+            College of Information Technology — Aljmail, University of Sabratha
+          </h3>
+
+          <p class="edu-degree">Department: Software Engineering</p>
+
+          <p class="edu-status">
+            <strong>Status:</strong> 7th semester student —
+            <strong>GPA:</strong> 81%
+          </p>
+
+          <p class="edu-details">
+            currently studying Software Engineering at the College of
+            Information Technology, University of Sabratha (College on Aljmail
+            City). My academic focus is on designing, developing, and optimizing
+            software systems and mobile applications using modern technologies
+            such as <strong>Flutter</strong>, <strong>PHP</strong>,
+            <strong>MySQL</strong>, and <strong>GetX</strong>. <br />
+            <a
+              href="https://www.facebook.com/p/%D9%83%D9%84%D9%8A%D8%A9-%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%85%D9%8A%D9%84-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%B5%D8%A8%D8%B1%D8%A7%D8%AA%D8%A9-61566172146606/"
+              target="_blank"
+              >Information Technology Aljmail</a
+            >
+          </p>
+
+          <p class="edu-details">
+            <strong>Key Courses:</strong>
+          </p>
+
+          <ul class="edu-subjects">
+            <li>Object-Oriented Programming (OOP)</li>
+            <li>Data Structures</li>
+            <li>Design Patterns</li>
+            <li>Advanced Java</li>
+            <li>Database Systems</li>
+            <li>Software Design and Architecture</li>
+            <li>Internet Programming (HTML, CSS, JavaScript, PHP)</li>
+            <li>Encryption Protocols and Algorithms</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h2 class="section-title">Contact&nbsp;<span>Me</span></h2>
+      <div class="contact-container">
+        <!--In the future when someone submit he will send a message to my email using php....-->
+        <form class="contact-form">
+          <div class="form-row">
+            <input
+              type="text"
+              name="fullname"
+              placeholder="Full Name"
+              required
+            />
+            <input type="email" name="fullname" placeholder="Email" required />
+          </div>
+          <div class="form-row">
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone Number"
+              required
+            />
+            <input type="text" name="subject" placeholder="Subject" required />
+          </div>
+          <textarea
+            name="message"
+            rows="7"
+            placeholder="Your Message..."
+            required
+          ></textarea>
+          <button class="send-btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-content">
+        <p class="developer">
+          <span>Developed by <strong>Nojaid Abdullah Issa</strong></span
+          ><br />
+          <span>© 2025 All Rights Reserved</span>
+        </p>
+        <div class="social-icons">
+          <a href="https://wa.me/218934252735" target="_blank"
+            ><i class="fa-brands fa-whatsapp"></i
+          ></a>
+          <a href="https://t.me/Nojaid" target="_blank"
+            ><i class="fa-brands fa-telegram"></i
+          ></a>
+          <a href="https://github.com/Nojaid-Ad" target="_blank"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a href="mailto:nojaidnojaid@gmail.com" target="_blank"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/code.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="assets/js/swiper.js"></script>
+  </body>
+</html>
