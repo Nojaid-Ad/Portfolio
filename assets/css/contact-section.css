@@ -1,6 +1,10 @@
 /* ================================
    LIGHT MODE DEFAULT
 ================================= */
+.contact-section{
+  background: white;
+  transition: 0.25s ease;
+}
 .dark-mode .contact-section{
   background: #0b1120;
 }
@@ -13,6 +17,7 @@
   text-align: center;
   margin: 0 auto;
   transition: 0.25s ease;
+  
   
 }
 

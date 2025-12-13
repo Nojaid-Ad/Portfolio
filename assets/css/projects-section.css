@@ -1,5 +1,7 @@
 .projects-section {
   padding: 16px 3%;
+  transition: 0.25s ease;
+  background: white;
   
 }
 .dark-mode .projects-section {
