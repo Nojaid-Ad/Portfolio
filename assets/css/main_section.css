@@ -15,10 +15,22 @@ html {
 }
 
 body {
+  animation: fadeIn 0.6s ease-in-out;
   background-color: #ffffff;
   color: #222;
 
   transition: background 0.25s ease, color 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .dark-mode body{
   background: #0b1120;
