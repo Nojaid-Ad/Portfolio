@@ -18,7 +18,7 @@ body {
   background-color: #ffffff;
   color: #222;
 
-  transition: background 0.35s ease, color 0.35s ease;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 .dark-mode body{
   background: #0b1120;
@@ -37,7 +37,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 4%;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -387,7 +387,7 @@ body {
 
 .dark-mode .main-header button {
   color: white;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .dark-mode .main-header .toggleTheme:hover {

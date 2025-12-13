@@ -12,6 +12,7 @@
   max-width: 100%;
   text-align: center;
   margin: 0 auto;
+  transition: 0.25s ease;
   
 }
 
@@ -88,6 +89,7 @@ footer {
   background: linear-gradient(180deg, #003366, #011a31);
   padding: 32px 0;
   color: white;
+  transition: 0.25s ease;
 }
 
 .developer {
@@ -128,16 +130,16 @@ footer {
 }
 
 .dark-mode footer {
-  background: linear-gradient(135deg, #162d52, #011429);
+  background: linear-gradient(180deg, #162d52, #011429);
+  box-shadow: 0 0 10px rgba(69, 86, 102, 0.25);
+  
 }
 .dark-mode.developer strong {
   color: #3ea6ff;
 }
 
-
-
 /* ================================
-   RESPONSIVE DESIGN 📱
+   RESPONSIVE DESIGN 
 ================================= */
 @media (max-width: 768px) {
   .contact-container {

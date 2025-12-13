@@ -5,6 +5,7 @@
   padding: 16px 4%;
   background: #f7f9fc;
   color: #0f172a;
+  transition: 0.25s ease;
 }
 
 .dark-mode .education-section {
