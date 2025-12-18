@@ -83,19 +83,32 @@ Git & GitHub
 هيكلة المشروع
 
 MyPortfolio/
+
 │
 ├── index.html
+
 ├── assets/
+
 │   ├── css/
+
 │   │   ├── main_section.css
+
 │   │   ├── skills_section.css
+
 │   │   ├── projects-section.css
+
 │   │   ├── education-section.css
+
 │   │   └── contact-section.css
+
 │   │
+
 │   └── js/
+
 │       └── code.js
+
 │
+
 └── README.md
 
 الهدف المستقبلي
