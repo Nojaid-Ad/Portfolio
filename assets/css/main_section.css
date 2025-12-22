@@ -9,6 +9,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #003366;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #004a99;
+}
 
 html {
   scroll-behavior: smooth;
@@ -43,7 +59,7 @@ body {
   display: flex;
   position: fixed;
   z-index: 20;
-  height: 7vh;
+  height: 8vh;
   opacity: 0.98;
   background: linear-gradient(90deg, #e8e8e8, #cfcfcf);
   justify-content: space-between;
@@ -302,7 +318,7 @@ body {
 
   .navigation {
     position: absolute;
-    top: 7vh;
+    top: 8vh;
     left: 0;
     width: 100vw;
     background: linear-gradient(90deg, #e8e8e8, #cfcfcf);

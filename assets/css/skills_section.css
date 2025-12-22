@@ -1,172 +1,230 @@
-/* ===========================
-   Skills Section
-=========================== */
+/* ======================================================
+   SKILLS SECTION — SENIOR UI/UX REFINEMENT
+   Principles applied:
+   - Visual hierarchy
+   - Calm contrast
+   - Predictable spacing
+   - Reduced noise
+   - Recruiter-friendly scanning
+====================================================== */
+
 .skills-section {
   background-color: #ffffff;
-  padding: 32px 4%;
-  transition: background 0.25s ease;
+  padding: 64px 6%;
 }
 
-/* Title */
+/* ======================
+   SECTION TITLE
+====================== */
+
 .section-title {
-  display: flex;
-  justify-content: center;
-  color: #003366;
-  letter-spacing: 1px;
-  font-size: 2.4em;
-  font-weight: 800;
-  margin: 32px 16px;
   text-align: center;
-  background-color: transparent;
+  font-size: 2.6em;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 56px;
+  letter-spacing: 0.6px;
 }
 
 .section-title span {
-  color: #339cff;
+  color: #2563eb;
 }
 
-/* Grid Layout */
+/* ======================
+   GRID SYSTEM
+====================== */
+
 .skills-content-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(275px, 350px));
-  justify-content: center;
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Skill Card */
+/* ======================
+   SKILL CARD
+====================== */
+
 .skill-card {
-  background: rgba(255, 255, 255, 0.88);
-  border-radius: 12px;
-  padding: 28px 24px;
-  border: 2px solid rgba(0, 0, 0, 0.25);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.025);
-  backdrop-filter: blur(8px);
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px 26px;
+  border: 1.8px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  text-align: center;
 
   transition: transform 0.25s ease, border-color 0.25s ease,
     box-shadow 0.25s ease;
 }
 
 .skill-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.035);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
 }
 
-/* Hover Colors (Light & Dark) */
+/* ======================
+   ICON
+====================== */
+
+.icon {
+  margin-bottom: 18px;
+}
+
+.icon i {
+  font-size: 3.4em;
+}
+
+/* ======================
+   TEXT
+====================== */
+
+.info h3 {
+  font-size: 1.25em;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.info p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: #475569;
+}
+
+/* ======================
+   ACCENT COLORS (PER SKILL)
+====================== */
+
+.s0 .icon i,
+.s0 .info h3 {
+  color: #3596ce;
+}
 .s0:hover {
   border-color: #3596ce;
+}
+
+.s1 .icon i,
+.s1 .info h3 {
+  color: #3924f8;
 }
 .s1:hover {
   border-color: #3924f8;
 }
+
+.s2 .icon i,
+.s2 .info h3 {
+  color: #00c853;
+}
 .s2:hover {
   border-color: #00c853;
+}
+
+.s3 .icon i,
+.s3 .info h3 {
+  color: #ff6f00;
 }
 .s3:hover {
   border-color: #ff6f00;
 }
+
+.s4 .icon i,
+.s4 .info h3 {
+  color: #0f172a;
+}
 .s4:hover {
-  border-color: #000000;
+  border-color: #0f172a;
+}
+
+.s5 .icon i,
+.s5 .info h3 {
+  color: #b8c263;
 }
 .s5:hover {
   border-color: #b8c263;
 }
 
-/* Icon */
-.icon {
-  color: #0099ff;
-  font-size: 5.2em;
-  text-align: center;
-  margin-bottom: 12px;
-}
+/* ======================
+   DARK MODE
+====================== */
 
-/* Text */
-.info {
-  text-align: center;
-}
-
-.info h3 {
-  font-size: 1.25em;
-  font-weight: 700;
-  color: #339cff;
-  margin-top: 10px;
-  margin-bottom: 4px;
-}
-
-/* ===========================
-   Responsive
-=========================== */
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 2em;
-  }
-  .icon {
-    font-size: 4.2em;
-  }
-  .info h3 {
-    font-size: 1.1em;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.65em;
-  }
-  .icon {
-    font-size: 3.5em;
-  }
-  .info h3 {
-    font-size: 1em;
-  }
-}
-
-/* ===========================
-   Dark Mode
-=========================== */
 .dark-mode .skills-section {
   background: #0b1120;
 }
-
 .dark-mode .section-title {
-  color: #e4e4e4;
+  color: #e5e7eb;
 }
 
 .dark-mode .section-title span {
-  color: #66cfff;
+  color: #60a5fa;
 }
 
 .dark-mode .skill-card {
-  background: rgba(15, 20, 35, 0.75);
-  border: 2px solid rgba(255, 255, 255, 0.18); /* stronger border so hover works */
-  box-shadow: 0 6px 16px rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(6px);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1.8px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
 }
 
-/* DO NOT override hover border, keep same hover colors */
 .dark-mode .skill-card:hover {
-  box-shadow: 0 10px 26px rgba(255, 255, 255, 0.02);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.6);
 }
 
-.dark-mode .icon {
-  color: #66cfff;
+.dark-mode .info p {
+  color: #cbd5f5;
 }
 
-.dark-mode .info h3 {
-  color: #66cfff;
-}
+/* Keep same accent hover colors in dark mode */
 .dark-mode .s0:hover {
   border-color: #3596ce;
 }
 .dark-mode .s1:hover {
   border-color: #3924f8;
 }
-.dark-mode .s3:hover {
-  border-color: #ff6f00;
-}
 .dark-mode .s2:hover {
   border-color: #00c853;
 }
+.dark-mode .s3:hover {
+  border-color: #ff6f00;
+}
 .dark-mode .s4:hover {
-  border-color: #000000;
+  border-color: #0f172a;
 }
 .dark-mode .s5:hover {
   border-color: #b8c263;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.1em;
+    margin-bottom: 42px;
+  }
+
+  .icon i {
+    font-size: 3em;
+  }
+
+  .skill-card {
+    padding: 26px 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8em;
+  }
+
+  .icon i {
+    font-size: 2.6em;
+  }
+
+  .info h3 {
+    font-size: 1.1em;
+  }
+
+  .info p {
+    font-size: 0.9em;
+  }
 }
