@@ -1,13 +1,12 @@
-/* ================================
-   LIGHT MODE DEFAULT
-================================= */
-.contact-section{
-  background: white;
-  transition: 0.25s ease;
+.contact-section {
+  background: var(--skills-bg-light);
+  transition: background-color 0.25s ease;
 }
-.dark-mode .contact-section{
-  background: #0b1120;
+
+.dark-mode .contact-section {
+  background: var(--skills-bg-dark);
 }
+
 .contact-container {
   display: flex;
   justify-content: center;
@@ -16,9 +15,7 @@
   max-width: 100%;
   text-align: center;
   margin: 0 auto;
-  transition: 0.25s ease;
-  
-  
+  transition: transform 0.25s ease;
 }
 
 textarea {
@@ -37,7 +34,6 @@ textarea {
   gap: 16px;
 }
 
-/* INPUTS – LIGHT MODE */
 .contact-form input,
 .contact-form textarea {
   width: 100vw;
@@ -47,17 +43,19 @@ textarea {
   border-radius: 6px;
   background-color: #f9f9f9;
   outline: none;
-  transition: 0.25s ease;
-  box-shadow: 0 0 0 1px #003366;
-  color: #0f172a;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+  box-shadow: 0 0 0 1px var(--primary);
+  color: var(--title-light);
 }
-.contact-form textarea{
+
+.contact-form textarea {
   width: 100%;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: #1a81e2;
+  border-color: var(--primary);
   box-shadow: 0 0 8px rgba(26, 129, 226, 0.4);
 }
 
@@ -66,35 +64,34 @@ textarea {
   flex: 1;
 }
 
-/* BUTTON – LIGHT MODE */
 .send-btn {
   padding: 16px 32px;
-  background-color: #003366;
-  color: white;
-  border: 2px solid #003366;
+  background-color: var(--primary);
+  color: #ffffff;
+  border: 2px solid var(--primary);
   border-radius: 6px;
   margin-bottom: 128px;
   font-size: 1.1em;
   font-weight: 700;
-  transition: 0.25s ease;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .send-btn:hover {
   cursor: pointer;
-  background-color: white;
-  color: #003366;
+  background-color: #ffffff;
+  color: var(--primary);
 }
 
-/* FOOTER – LIGHT MODE */
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, #003366, #011a31);
+  background: linear-gradient(180deg, var(--primary), #011a31);
   padding: 32px 0;
-  color: white;
-  transition: 0.25s ease;
+  color: #ffffff;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
 }
 
 .developer {
@@ -105,47 +102,39 @@ footer {
 }
 
 .developer strong {
-  color: #1a81e2;
+  color: var(--primary);
   font-weight: 600;
 }
 
-
-/* ================================
-   DARK MODE 
-================================= */
 .dark-mode .contact-form input,
 .dark-mode .contact-form textarea {
-  background-color: #0b1120;
+  background-color: var(--skills-bg-dark);
   color: #e2e8f0;
-  box-shadow: 0 0 0 2px #1a81e257;
+  box-shadow: 0 0 0 2px rgba(26, 129, 226, 0.34);
   border-color: rgba(255, 255, 255, 0.125);
 }
 
 .dark-mode .contact-form input:focus,
 .dark-mode .contact-form textarea:focus {
-  border-color: #3ea6ff;
+  border-color: var(--primary-hover);
   box-shadow: 0 0 10px rgba(62, 166, 255, 0.25);
 }
 
-
 .dark-mode .send-btn:hover {
   background-color: transparent;
-  color: #3ea6ff;
-  border-color: #3ea6ff;
+  color: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
 .dark-mode footer {
   background: linear-gradient(180deg, #162d52, #011429);
   box-shadow: 0 0 10px rgba(69, 86, 102, 0.25);
-  
-}
-.dark-mode.developer strong {
-  color: #3ea6ff;
 }
 
-/* ================================
-   RESPONSIVE DESIGN 
-================================= */
+.dark-mode .developer strong {
+  color: var(--primary-hover);
+}
+
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;

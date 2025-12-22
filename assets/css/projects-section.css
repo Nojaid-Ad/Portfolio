@@ -1,118 +1,131 @@
 .projects-section {
   padding: 16px 3%;
-  transition: 0.25s ease;
-  background: white;
-  
-}
-.dark-mode .projects-section {
-  background: #0b1120;
+  background: var(--skills-bg-light);
+  transition: background-color 0.25s ease;
 }
 
+.dark-mode .projects-section {
+  background: var(--skills-bg-dark);
+}
 
 .card-list .card-item {
   list-style: none;
 }
-.dark-mode .card-list .card-item .card-link {
-  background: rgba(15, 20, 35, 0.9);
-}
+
 .card-list .card-item .card-link {
   user-select: none;
   display: block;
   margin-bottom: 2%;
   border-radius: 12px;
   text-decoration: none;
-  background-color: #fff;
+  background-color: var(--card-bg-light);
   padding: 16px;
-  box-shadow: 0 10px 10px rgpa(0, 0, 0, 0.05);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
   border: 2px solid #cccccc;
-  transition: 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.dark-mode .card-list .card-item .card-link {
+  background: var(--card-bg-dark);
 }
 
 .card-list .card-item .card-link:hover {
-  border-color: #339cff;
+  border-color: var(--primary-hover);
 }
+
 .card-list .card-item .card-link:active {
   cursor: grabbing;
 }
+
 .card-list .card-link .card-img {
   width: 100%;
   aspect-ratio: 16/10;
   border-radius: 8px;
   object-fit: cover;
 }
+
 .card-list .card-link .badge {
   font-weight: 500;
-  color: #ffff;
+  color: #ffffff;
   padding: 8px 16px;
   margin: 16px 0 18px;
   background: linear-gradient(135deg, #003366bd, #0e3868ad);
   width: fit-content;
   border-radius: 32px;
 }
+
 .dark-mode .card-list .card-link .badge {
   background: linear-gradient(135deg, #339cff9f, #195ca8cb);
 }
+
 .card-list .card-link .card-title {
   font-size: 1.15rem;
-  color: black;
+  color: #000000;
   font-weight: 600;
 }
+
 .dark-mode .card-list .card-link .card-title {
-  color: white;
+  color: #ffffff;
 }
+
 .card-list .card-link .card-button {
   height: 35px;
   width: 35px;
   margin: 32px 0 6px;
   border-radius: 50%;
   background: none;
-  border: 1.5px solid #003366;
-  color: #003366;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
   transform: rotate(-45deg);
   cursor: pointer;
-  transition: 0.35s ease;
+  transition: background-color 0.35s ease, color 0.35s ease,
+    transform 0.35s ease;
 }
+
 .dark-mode .card-list .card-link .card-button {
-  border: 1.5px solid #339cff;
-  color: #339cff;
+  border-color: var(--primary-hover);
+  color: var(--primary-hover);
 }
+
 .card-list .card-link:hover .card-button {
-  color: white;
-  background-color: #003366;
+  color: #ffffff;
+  background-color: var(--primary);
 }
 
 .card-wrapper {
   max-width: 100%;
-
   margin: 32px 64px;
-  padding: 32px 0px;
+  padding: 32px 0;
   overflow: hidden;
 }
+
 .card-wrapper .swiper-pagination-bullet {
   height: 10px;
   width: 10px;
-
   background-color: #89c3f8;
   opacity: 0.5;
-  transition: all 0.25s ease;
+  transition: opacity 0.25s ease, background-color 0.25s ease, width 0.25s ease;
 }
+
 .card-wrapper .swiper-pagination-bullet-active {
   opacity: 1;
   border-radius: 6px;
-  background-color: #339cff;
-  height: 10px;
+  background-color: var(--primary-hover);
   width: 20px;
 }
+
 .swiper-slider-btn {
   transform: scale(0.75);
   margin-top: -36px;
-  transition: 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
+
 .swiper-slider-btn:hover {
   transform: scale(0.85);
   opacity: 0.9;
 }
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
   .card-wrapper {
     margin: 0 8px 24px;

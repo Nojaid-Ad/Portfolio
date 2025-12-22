@@ -1,38 +1,22 @@
-/* ======================================================
-   SKILLS SECTION — SENIOR UI/UX REFINEMENT
-   Principles applied:
-   - Visual hierarchy
-   - Calm contrast
-   - Predictable spacing
-   - Reduced noise
-   - Recruiter-friendly scanning
-====================================================== */
 
 .skills-section {
-  background-color: #ffffff;
+  background-color: var(--skills-bg-light);
   padding: 64px 6%;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
-
-/* ======================
-   SECTION TITLE
-====================== */
 
 .section-title {
   text-align: center;
   font-size: 2.6em;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--title-light);
   margin-bottom: 56px;
   letter-spacing: 0.6px;
 }
 
 .section-title span {
-  color: #2563eb;
+  color: var(--title-accent-light);
 }
-
-/* ======================
-   GRID SYSTEM
-====================== */
 
 .skills-content-grid {
   display: grid;
@@ -42,30 +26,21 @@
   margin: 0 auto;
 }
 
-/* ======================
-   SKILL CARD
-====================== */
-
 .skill-card {
-  background: #ffffff;
+  background: var(--card-bg-light);
   border-radius: 18px;
   padding: 32px 26px;
-  border: 1.8px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+  border: 1.8px solid var(--card-border-light);
+  box-shadow: var(--card-shadow-light);
   text-align: center;
-
   transition: transform 0.25s ease, border-color 0.25s ease,
     box-shadow 0.25s ease;
 }
 
 .skill-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--card-shadow-light-hover);
 }
-
-/* ======================
-   ICON
-====================== */
 
 .icon {
   margin-bottom: 18px;
@@ -74,10 +49,6 @@
 .icon i {
   font-size: 3.4em;
 }
-
-/* ======================
-   TEXT
-====================== */
 
 .info h3 {
   font-size: 1.25em;
@@ -88,113 +59,101 @@
 .info p {
   font-size: 0.95em;
   line-height: 1.5;
-  color: #475569;
+  color: var(--text-muted-light);
 }
-
-/* ======================
-   ACCENT COLORS (PER SKILL)
-====================== */
 
 .s0 .icon i,
 .s0 .info h3 {
-  color: #3596ce;
+  color: var(--s0);
 }
 .s0:hover {
-  border-color: #3596ce;
+  border-color: var(--s0);
 }
 
 .s1 .icon i,
 .s1 .info h3 {
-  color: #3924f8;
+  color: var(--s1);
 }
 .s1:hover {
-  border-color: #3924f8;
+  border-color: var(--s1);
 }
 
 .s2 .icon i,
 .s2 .info h3 {
-  color: #00c853;
+  color: var(--s2);
 }
 .s2:hover {
-  border-color: #00c853;
+  border-color: var(--s2);
 }
 
 .s3 .icon i,
 .s3 .info h3 {
-  color: #ff6f00;
+  color: var(--s3);
 }
 .s3:hover {
-  border-color: #ff6f00;
+  border-color: var(--s3);
 }
 
 .s4 .icon i,
 .s4 .info h3 {
-  color: #0f172a;
+  color: var(--s4);
 }
 .s4:hover {
-  border-color: #0f172a;
+  border-color: var(--s4);
 }
 
 .s5 .icon i,
 .s5 .info h3 {
-  color: #b8c263;
+  color: var(--s5);
 }
 .s5:hover {
-  border-color: #b8c263;
+  border-color: var(--s5);
 }
-
-/* ======================
-   DARK MODE
-====================== */
 
 .dark-mode .skills-section {
-  background: #0b1120;
+  background: var(--skills-bg-dark);
 }
+
 .dark-mode .section-title {
-  color: #e5e7eb;
+  color: var(--title-dark);
 }
 
 .dark-mode .section-title span {
-  color: #60a5fa;
+  color: var(--title-accent-dark);
 }
 
 .dark-mode .skill-card {
-  background: rgba(15, 23, 42, 0.9);
-  border: 1.8px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+  background: var(--card-bg-dark);
+  border: 1.8px solid var(--card-border-dark);
+  box-shadow: var(--card-shadow-dark);
 }
 
 .dark-mode .skill-card:hover {
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--card-shadow-dark-hover);
 }
 
 .dark-mode .info p {
-  color: #cbd5f5;
+  color: var(--text-muted-dark);
 }
 
-/* Keep same accent hover colors in dark mode */
 .dark-mode .s0:hover {
-  border-color: #3596ce;
+  border-color: var(--s0);
 }
 .dark-mode .s1:hover {
-  border-color: #3924f8;
+  border-color: var(--s1);
 }
 .dark-mode .s2:hover {
-  border-color: #00c853;
+  border-color: var(--s2);
 }
 .dark-mode .s3:hover {
-  border-color: #ff6f00;
+  border-color: var(--s3);
 }
 .dark-mode .s4:hover {
-  border-color: #0f172a;
+  border-color: var(--s4);
 }
 .dark-mode .s5:hover {
-  border-color: #b8c263;
+  border-color: var(--s5);
 }
-
-/* ======================
-   RESPONSIVE
-====================== */
 
 @media (max-width: 768px) {
   .section-title {

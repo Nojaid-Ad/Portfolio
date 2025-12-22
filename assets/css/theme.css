@@ -1,0 +1,45 @@
+:root {
+  --bg-main: #ffffff;
+  --bg-dark: #0b1120;
+
+  --text-main: #222;
+  --text-light: #ffffff;
+
+  --title-light: #0f172a;
+  --title-dark: #e5e7eb;
+
+  --text-muted-light: #475569;
+  --text-muted-dark: #cbd5f5;
+
+  --primary: #003366;
+  --primary-hover: #339cff;
+  --accent: #66ccff;
+
+  --header-light: linear-gradient(90deg, #e8e8e8, #cfcfcf);
+  --header-dark: linear-gradient(90deg, #0f1624, #1e293b, #0f172a);
+
+  --section-light: linear-gradient(135deg, #003366, #021a36);
+  --section-dark: linear-gradient(135deg, #162d52, #011429);
+
+  --skills-bg-light: #ffffff;
+  --skills-bg-dark: #0b1120;
+
+  --card-bg-light: #ffffff;
+  --card-bg-dark: rgba(15, 23, 42, 0.9);
+
+  --card-border-light: rgba(0, 0, 0, 0.08);
+  --card-border-dark: rgba(255, 255, 255, 0.15);
+
+  --card-shadow-light: 0 12px 28px rgba(0, 0, 0, 0.06);
+  --card-shadow-light-hover: 0 18px 36px rgba(0, 0, 0, 0.08);
+
+  --card-shadow-dark: 0 12px 28px rgba(0, 0, 0, 0.45);
+  --card-shadow-dark-hover: 0 18px 36px rgba(0, 0, 0, 0.6);
+
+  --s0: #3596ce;
+  --s1: #3924f8;
+  --s2: #00c853;
+  --s3: #ff6f00;
+  --s4: #0f172a;
+  --s5: #b8c263;
+}
