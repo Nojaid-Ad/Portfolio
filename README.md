@@ -46,6 +46,7 @@ The website is fully responsive and works well on:
 - Git & GitHub
 
 ## Project Structure
+```
 MyPortfolio/
 │
 ├── index.html
@@ -61,7 +62,7 @@ MyPortfolio/
 │       └── code.js
 │
 └── README.md
-
+```
 ## Future Plans
 - Add more projects
 - Improve performance and user experience
