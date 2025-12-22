@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="assets/css/projects-section.css" />
     <link rel="stylesheet" href="assets/css/education-section.css" />
     <link rel="stylesheet" href="assets/css/contact-section.css" />
+    <link rel="stylesheet" href="assets/css/theme-switch.css" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
@@ -58,9 +60,13 @@
   <body onload="initTheme()">
     <header class="main-header">
       <div class="nav-right">
-        <button onclick="openMenu()" id="menuToggle" class="hamburger">
-          <i id="menuIcon" class="fa-solid fa-bars"></i>
-        </button>
+        <input type="checkbox" id="checkbox" />
+
+        <label for="checkbox" class="toggle" onclick="openMenu()">
+          <div class="bars" id="bar1"></div>
+          <div class="bars" id="bar2"></div>
+          <div class="bars" id="bar3"></div>
+        </label>
         <a href="#" class="logo" id="logo"
           >N<span class="custom-name">0</span>jaid</a
         >
@@ -74,9 +80,39 @@
           <a onclick="navClick()" href="#contact">Contact</a>
         </nav>
 
-        <button onclick="toggleTheme()" id="themeToggle" class="toggleTheme">
-          <i class="fa-solid fa-sun" id="iconTheme"></i>
-        </button>
+        <label class="theme-switch">
+          <input
+            type="checkbox"
+            class="theme-switch__checkbox"
+            id="themeSwitch"
+            onclick="toggleTheme()"
+          />
+
+          <div class="theme-switch__container">
+            <div class="theme-switch__clouds"></div>
+
+            <div class="theme-switch__stars-container">
+              <!-- SVG كما هو -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 144 55"
+                fill="none"
+              >
+                <path fill="currentColor"></path>
+              </svg>
+            </div>
+
+            <div class="theme-switch__circle-container">
+              <div class="theme-switch__sun-moon-container">
+                <div class="theme-switch__moon">
+                  <div class="theme-switch__spot"></div>
+                  <div class="theme-switch__spot"></div>
+                  <div class="theme-switch__spot"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </label>
       </div>
     </header>
     <section class="main-section">

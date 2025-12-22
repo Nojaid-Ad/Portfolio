@@ -32,7 +32,7 @@ body {
     transform: translateY(0);
   }
 }
-.dark-mode body{
+.dark-mode body {
   background: #0b1120;
 }
 /* ===========================
@@ -158,6 +158,64 @@ body {
   color: #303233;
   transform: rotate(600deg);
 }
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  display: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  gap: 6px;
+  transition: transform 0.45s ease;
+}
+
+.bars {
+  width: 100%;
+  height: 3px;
+  background-color: #339cff;
+  border-radius: 3px;
+  transition: transform 0.45s ease, width 0.45s ease,
+    background-color 0.35s ease;
+}
+
+#bar2 {
+  transition: transform 0.3s ease;
+}
+
+#bar1,
+#bar3 {
+  width: 65%;
+}
+
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  background-color: #ff3b3b;
+}
+
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+}
+
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+}
+
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+}
+
+#checkbox:checked + .toggle {
+  transform: rotate(180deg);
+}
 
 /* ===========================
    Main Section
@@ -275,8 +333,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
+  .toggle {
+    display: flex;
   }
 
   .navigation {

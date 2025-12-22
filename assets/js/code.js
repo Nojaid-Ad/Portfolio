@@ -2,35 +2,33 @@ var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 var isMenuOpen = false;
 
 function initTheme() {
-  const iconTheme = document.getElementById("iconTheme");
+  const checkbox = document.getElementById("themeSwitch");
 
   if (isDarkMode) {
     document.body.classList.add("dark-mode");
-    iconTheme.className = "fa-solid fa-moon";
+    checkbox.checked = true;
   } else {
     document.body.classList.remove("dark-mode");
-    iconTheme.className = "fa-solid fa-sun";
+    checkbox.checked = false;
   }
 }
 
 function navClick() {
-  openMenu();
+  if (window.innerWidth <= 768 && isMenuOpen) {
+    openMenu();
+  }
 }
 
 function openMenu() {
-  if (window.innerWidth <= 768) {
-    const navigation = document.querySelector(".navigation");
-    navigation.classList.toggle("active");
-  }
-
   isMenuOpen = !isMenuOpen;
+  const navigation = document.querySelector(".navigation");
+  navigation.classList.toggle("active");
+  const checkbox = document.getElementById("checkbox");
+  const logo = document.getElementById("logo");
 
-  const menuIcon = document.getElementById("menuIcon");
-  menuIcon.className = isMenuOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+  checkbox.checked = !isMenuOpen;
 
-  document.getElementById("logo").style.display = isMenuOpen
-    ? "none"
-    : "inline";
+  logo.style.display = isMenuOpen ? "none" : "inline";
 }
 function toggleTheme() {
   isDarkMode = !isDarkMode;
