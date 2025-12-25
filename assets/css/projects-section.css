@@ -1,6 +1,6 @@
 .projects-section {
   padding: 16px 10%;
-  
+
   background: var(--skills-bg-light);
   transition: background-color 0.25s ease;
 }
@@ -14,7 +14,6 @@
 }
 
 .card-list .card-item .card-link {
-  
   user-select: none;
   display: block;
   margin-bottom: 2%;
@@ -129,6 +128,9 @@
 }
 
 @media (max-width: 768px) {
+  .card-list .card-link .card-title {
+    font-size: 0.75em;
+  }
   .projects-section {
     padding: 16px 4%;
   }

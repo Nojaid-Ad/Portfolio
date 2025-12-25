@@ -132,7 +132,7 @@ body {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
-  font-size: 1.05em;
+  font-size: 1.25em;
   padding: 6px 22px;
   transition: color 0.25s ease;
 }

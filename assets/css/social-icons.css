@@ -1,0 +1,127 @@
+.example-2 {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.example-2 .icon-content {
+  position: relative;
+}
+
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.example-2 .icon-content a {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(204, 204, 204, 1);
+  color: #6b7280;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.example-2 .icon-content a:hover {
+  transform: translateY(-4px);
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.example-2 .icon-content a svg {
+  width: 22px;
+  height: 22px;
+  z-index: 2;
+}
+
+.example-2 .icon-content a .filled {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.example-2 .icon-content a:hover .filled {
+  transform: translateY(0);
+}
+
+.example-2 .icon-content a[data-social='linkedin'] .filled,
+.example-2 .icon-content a[data-social='linkedin'] ~ .tooltip {
+  background: linear-gradient(135deg, #0a66c2, #60a5fa);
+}
+
+.example-2 .icon-content a[data-social='github'] .filled,
+.example-2 .icon-content a[data-social='github'] ~ .tooltip {
+  background: linear-gradient(135deg, #111827, #6b7280);
+}
+
+.example-2 .icon-content a[data-social='telegram'] .filled,
+.example-2 .icon-content a[data-social='telegram'] ~ .tooltip {
+  background: linear-gradient(135deg, #229ed9, #7dd3fc);
+}
+
+.example-2 .icon-content a[data-social='email'] .filled,
+.example-2 .icon-content a[data-social='email'] ~ .tooltip {
+  background: linear-gradient(135deg, #16a34a, #104724);
+}
+
+@media (max-width: 600px) {
+  .example-2 {
+    gap: 12px;
+  }
+
+  .example-2 .icon-content a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .example-2 .icon-content a svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .example-2 {
+    gap: 10px;
+  }
+
+  .example-2 .icon-content a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .example-2 .icon-content a svg {
+    width: 18px;
+    height: 18px;
+  }
+}
