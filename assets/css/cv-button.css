@@ -9,7 +9,7 @@
 .animated-button {
   position: relative;
   height: 52px;
-  padding: 0 34px;
+  padding: 0 64px;
 
   display: flex;
   align-items: center;
@@ -142,14 +142,5 @@
     height: 46px;
     padding: 0 24px;
     font-size: 14px;
-  }
-
-  .animated-button .arr-1,
-  .animated-button .arr-2 {
-    display: none;
-  }
-
-  .animated-button:hover .text {
-    transform: none;
   }
 }
