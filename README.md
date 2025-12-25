@@ -1,130 +1,76 @@
-بورتفوليو نُجيد الشخصي
+## Nojaid Personal Portfolio
 
-السلام عليكم ورحمة الله وبركاته،
+## Overview
+This repository contains my personal portfolio website, created to showcase my work, projects, and technical skills in software development and web design.  
+The portfolio presents a clear overview of my experience, coding style, and the projects I have developed during my academic and practical journey.
 
-هذا المشروع عبارة عن موقع بورتفوليو شخصي تم تطويره لعرض أعمالي ومشاريعي في مجال البرمجة وتصميم واجهات الويب.
-الهدف من هذا الموقع هو تقديم نبذة واضحة عن مهاراتي، خبرتي، والمشاريع التي عملت عليها خلال مسيرتي التعليمية والتطبيقية.
+The website reflects my focus on clean code structure, organized project architecture, and user-centered interface design.
 
-فكرة الموقع
+## Project Purpose
+The main goals of this project are:
+- To present my software and web development projects
+- To highlight my technical skills
+- To provide a clear way to contact me for collaboration or job opportunities
 
-تم إنشاء هذا الموقع ليكون:
+## Website Sections
+- Main Section: A brief introduction about me and my field
+- Skills Section: Overview of my technical skills
+- Projects Section: List of completed projects with short descriptions
+- Education Section: Educational background and related courses
+- Contact Section: Email, social media links, or contact form
 
-مساحة شخصية لعرض المشاريع البرمجية
+## Skills
+- HTML / CSS
+- JavaScript
+- Frontend Development
+- Backend Fundamentals
 
-وسيلة للتعريف بالمهارات التقنية
+## Dark Mode
+The website supports:
+- Light and dark themes
+- Automatic detection of system theme
+- Manual theme switching
+- Improved usability in different lighting conditions
 
-نقطة تواصل مع المهتمين بالتعاون أو العمل
+## Responsive Design
+The website is fully responsive and works well on:
+- Mobile phones
+- Tablets
+- Desktop screens
 
-الموقع يعكس أسلوبي في تنظيم الكود، تصميم الواجهات، والاهتمام بتجربة المستخدم.
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- Font Awesome
+- Git & GitHub
 
-أقسام الموقع
-
-الموقع يحتوي على عدة أقسام رئيسية، منها:
-
-Main Section
-تعريف مختصر عني وعن مجالي.
-
-Skills Section
-عرض المهارات التقنية مثل:
-
-HTML / CSS
-
-JavaScript
-
-Frontend Development
-
-أساسيات Backend
-
-Projects Section
-عرض المشاريع التي قمت بتنفيذها مع وصف مختصر لكل مشروع.
-
-Education Section
-الخلفية التعليمية والدورات ذات الصلة.
-
-Contact Section
-وسائل التواصل (بريد إلكتروني، حسابات اجتماعية، أو نموذج تواصل).
-
-دعم الوضع الداكن (Dark Mode)
-
-الموقع يدعم:
-
-الوضع الداكن والفاتح
-
-التعرف تلقائيًا على إعدادات النظام
-
-إمكانية التبديل اليدوي بين الوضعين
-
-تحسين تجربة المستخدم في الإضاءة المختلفة
-
-التوافق مع الشاشات
-
-تصميم متجاوب (Responsive Design)
-
-يعمل بشكل جيد على:
-
-الهواتف
-
-الأجهزة اللوحية
-
-شاشات الحاسوب
-
-التقنيات المستخدمة
-
-HTML5
-
-CSS3
-
-JavaScript 
-
-Font Awesome للأيقونات
-
-Git & GitHub 
-
-هيكلة المشروع
-
+## Project Structure
+```
 MyPortfolio/
-
 │
 ├── index.html
-
 ├── assets/
-
 │   ├── css/
-
 │   │   ├── main_section.css
-
 │   │   ├── skills_section.css
-
 │   │   ├── projects-section.css
-
 │   │   ├── education-section.css
-
 │   │   └── contact-section.css
-
 │   │
-
 │   └── js/
-
 │       └── code.js
-
 │
-
 └── README.md
+```
+## Future Plans
+- Add more projects
+- Improve performance and user experience
+- Integrate backend functionality
+- Deploy the website using GitHub Pages
 
-الهدف المستقبلي
+## Contact
+All contact details and project links are available inside the website.
 
-إضافة مشاريع جديدة
-
-تحسين الأداء وتجربة المستخدم
-
-ربط الموقع بـ Backend مستقبلاً
-
-نشر الموقع بشكل دائم عبر GitHub Pages
-
-التواصل
-
-جميع وسائل التواصل وروابط الأعمال متوفرة داخل الموقع.
-
-التاريخ: 2025/12/13
-تحياتي،
-نُجيد
+Date: 2025/12/13  
+Author: Nojaid
