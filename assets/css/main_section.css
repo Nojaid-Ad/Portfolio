@@ -240,14 +240,29 @@ body {
 .main-section {
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
+
   background: var(--section-light);
-  color: #fff;
+  background-size: 400% 400%;
+  animation: gradientFlow 25s ease infinite;
+
+  color: #ffffff;
   padding: 100px 10%;
   width: 100%;
   min-height: 100vh;
-  transition: background 0.25s ease, color 0.25s ease;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .content-row-holder {
@@ -459,6 +474,8 @@ body {
 
 .dark-mode .main-section {
   background: var(--section-dark);
+  background-size: 400% 400%;
+  animation: gradientFlow 25s ease infinite;
 }
 
 .dark-mode .social-icons a {
