@@ -47,21 +47,46 @@ The website is fully responsive and works well on:
 
 ## Project Structure
 ```
-MyPortfolio/
+MYPORTFOLIO/
 │
-├── index.html
+├── .vscode/
+│   └── launch.json
+│
 ├── assets/
-│   ├── css/
-│   │   ├── main_section.css
-│   │   ├── skills_section.css
-│   │   ├── projects-section.css
-│   │   ├── education-section.css
-│   │   └── contact-section.css
 │   │
-│   └── js/
-│       └── code.js
+│   ├── css/
+│   │   ├── theme.css                
+│   │   ├── theme-switch.css         
+│   │   ├── main_section.css         
+│   │   ├── skills_section.css       
+│   │   ├── projects-section.css   
+│   │   ├── education-section.css  
+│   │   ├── contact-section.css     
+│   │   ├── social-icons.css        
+│   │   ├── cv-button.css            
+│   │   ├── mouse-scroll.css        
+│   │   └── responsive.css           
+│   │
+│   ├── js/
+│   │   ├── code.js                  
+│   │   ├── swiper.js                
+│   │   └── theme-switch.js          
+│   │
+│   ├── images/
+│   │   ├── .......                   
+│   │   └── projects/
+│   │
+│   ├── fonts/
+│   │   ├── Poppins-Regular.ttf
+│   │   ├── Poppins-Medium.ttf
+│   │   └── Poppins-Bold.ttf
+│   │
+│   └── pdf/
+│       └── cv.pdf                   
 │
-└── README.md
+├── index.html                       
+├── README.md                       
+└── favicon.ico   
 ```
 ## Future Plans
 - Add more projects
