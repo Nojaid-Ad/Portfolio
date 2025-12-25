@@ -1,5 +1,5 @@
 .education-section {
-  padding: 16px 4%;
+  padding: 16px 10%;
   background: var(--skills-bg-light);
   color: var(--title-light);
   transition: background-color 0.25s ease, color 0.25s ease;
@@ -10,9 +10,7 @@
   color: #e2e8f0;
 }
 
-.dark-mode .section-title {
-  color: var(--primary-hover);
-}
+
 
 .content-container {
   display: flex;
@@ -140,7 +138,11 @@ body.dark-mode .edu-subjects li::before {
     text-align: center;
   }
 }
-
+@media (max-width: 768px) {
+  .education-section {
+    padding: 16px 6%;
+  }
+}
 @media (max-width: 480px) {
   .content-container {
     padding: 22px;

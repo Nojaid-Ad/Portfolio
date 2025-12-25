@@ -1,0 +1,118 @@
+/* ===============================
+   DEFAULT: HIDE BOTH
+================================ */
+.scroll-indicator {
+  display: none;
+  margin: 48px auto 0;
+}
+
+/* ===============================
+     DESKTOP / LAPTOP (MOUSE)
+  ================================ */
+@media (min-width: 1024px) {
+  .scroll-indicator.mouse {
+    display: block;
+
+    width: 28px;
+    height: 46px;
+
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+
+    position: relative;
+    animation: float 2.2s ease-in-out infinite;
+  }
+
+  .scroll-indicator.mouse .wheel {
+    width: 4px;
+    height: 8px;
+
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 4px;
+
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    animation: wheel 1.6s ease-in-out infinite;
+  }
+}
+
+/* ===============================
+     MOBILE / TOUCH (HAND)
+  ================================ */
+@media (max-width: 1023px) {
+  .scroll-indicator.hand {
+    display: block;
+
+    width: 34px;
+    height: 50px;
+
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+
+    position: relative;
+    animation: float 2.2s ease-in-out infinite;
+  }
+
+  .scroll-indicator.hand .finger {
+    width: 8px;
+    height: 12px;
+
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 6px;
+
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    animation: finger-scroll 1.6s ease-in-out infinite;
+  }
+}
+
+/* ===============================
+     ANIMATIONS
+  ================================ */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wheel {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes finger-scroll {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(-50%, 14px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 0);
+  }
+}

@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="assets/css/education-section.css" />
     <link rel="stylesheet" href="assets/css/contact-section.css" />
     <link rel="stylesheet" href="assets/css/theme-switch.css" />
+    <link rel="stylesheet" href="assets/css/cv-button.css" />
+    <link rel="stylesheet" href="assets/css/mouse-scroll.css" />
 
     <link
       rel="stylesheet"
@@ -120,10 +122,69 @@
         <div class="text-content">
           <h2>Nojaid Abdullah Issa<br /><span>Software Engineer</span></h2>
           <h3>
-            22-year-old Software Engineering student at IT Aljmail, building
-            modern Flutter apps.
+            I am a 22-year-old Software Engineering<br />
+            student at IT Aljmail Focused on building modern and efficient
+            Flutter applications.<br />
+            Passionate about clean code, scalability, and continuous learning.
           </h3>
-          <a href="#projects" class="main-btn">View My Work</a>
+
+          <div class="main-buttons-container">
+            <!-- Filled → Border on hover -->
+            <a style="text-decoration: none" href="#projects">
+              <button class="animated-button btn-fill">
+                <span class="text">My Projects</span>
+                <span class="circle"></span>
+
+                <svg class="arr-1" viewBox="0 0 24 24">
+                  <path
+                    d="M5 12h14m-4-4 4 4-4 4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+
+                <svg class="arr-2" viewBox="0 0 24 24">
+                  <path
+                    d="M5 12h14m-4-4 4 4-4 4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg></button
+            ></a>
+
+            <!-- Border → Filled on hover -->
+            <a
+              style="text-decoration: none"
+              href="assets/cv.pdf"
+              download="assets/cv.pdf"
+            >
+              <button class="animated-button btn-outline">
+                <span class="text">Download CV</span>
+                <span class="circle"></span>
+
+                <svg class="arr-1" viewBox="0 0 24 24">
+                  <path
+                    d="M12 3v10m0 0l-4-4m4 4l4-4M4 17h16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+
+                <svg class="arr-2" viewBox="0 0 24 24">
+                  <path
+                    d="M12 3v10m0 0l-4-4m4 4l4-4M4 17h16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </a>
+          </div>
+          <br />
           <div class="social-icons">
             <a href="https://wa.me/218934252735" target="_blank"
               ><i class="fa-brands fa-whatsapp"></i
@@ -144,89 +205,160 @@
           <img src="assets/images/NojaidAd.png" alt="Nojaid" />
         </div>
       </div>
+      <!-- DESKTOP -->
+      <div class="scroll-indicator mouse">
+        <span class="wheel"></span>
+      </div>
+
+      <!-- MOBILE -->
+      <div class="scroll-indicator hand">
+        <span class="finger"></span>
+      </div>
     </section>
 
     <section class="skills-section" id="skills">
-      <h2 class="section-title">My&nbsp;<span>Skills</span></h2>
+      <h2 class="section-title">My <span>Skills</span></h2>
+      <div class="section-divider"></div>
 
-      <div class="skills-content-grid">
-        <div class="skill-card s0">
-          <div class="icon">
-            <i class="fa-brands fa-flutter" style="color: #3596ce"></i>
+      <div class="skills-grid">
+        <!-- Flutter -->
+        <article class="skill-card s0">
+          <div class="skill-front">
+            <div class="skill-header">
+              <i class="fa-brands fa-flutter skill-icon"></i>
+              <div>
+                <h3>Flutter</h3>
+                <span class="percent">85%</span>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-fill" style="--value: 85%"></div>
+            </div>
           </div>
-          <div class="info">
-            <h3 style="color: #3596ce">Flutter Developer</h3>
+          <div class="skill-back">
             <p>
-              I build mobile apps with Flutter, GetX, Laravel, and Firebase.
+              Building scalable mobile apps using Flutter, GetX, REST APIs,
+              Firebase, and clean architecture.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="skill-card s1">
-          <div class="icon">
-            <i class="fa-solid fa-layer-group" style="color: #3924f8"></i>
+        <!-- Full Stack -->
+        <article class="skill-card s1">
+          <div class="skill-front">
+            <div class="skill-header">
+              <i class="fa-solid fa-layer-group skill-icon"></i>
+              <div>
+                <h3>Full Stack</h3>
+                <span class="percent">80%</span>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-fill" style="--value: 80%"></div>
+            </div>
           </div>
-          <div class="info">
-            <h3 style="color: #3924f8">Full Stack Developer</h3>
-            <p>I work with Laravel, MySQL, and responsive front-end design.</p>
-          </div>
-        </div>
-
-        <div class="skill-card s2">
-          <div class="icon">
-            <i class="fa-solid fa-pen-ruler" style="color: #00c853"></i>
-          </div>
-          <div class="info">
-            <h3 style="color: #00c853">UI / UX Designer</h3>
+          <div class="skill-back">
             <p>
-              I create modern and smooth user interfaces with attention to
-              detail.
+              Developing backend systems with Laravel, MySQL, authentication,
+              APIs, and modern frontend integration.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="skill-card s3">
-          <div class="icon">
-            <i class="fa-brands fa-java" style="color: #e76f00"></i>
+        <!-- UI / UX -->
+        <article class="skill-card s2">
+          <div class="skill-front">
+            <div class="skill-header">
+              <i class="fa-solid fa-pen-ruler skill-icon"></i>
+              <div>
+                <h3>UI / UX Design</h3>
+                <span class="percent">75%</span>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-fill" style="--value: 75%"></div>
+            </div>
           </div>
-          <div class="info">
-            <h3 style="color: #e76f00">Java Swing</h3>
+          <div class="skill-back">
             <p>
-              I build native desktop applications with database integration.
+              Designing clean, usable interfaces with strong hierarchy, spacing,
+              accessibility, and motion principles.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="skill-card s4">
-          <div class="icon">
-            <i class="fa-brands fa-unity" style="color: #000000"></i>
+        <!-- Java -->
+        <article class="skill-card s3">
+          <div class="skill-front">
+            <div class="skill-header">
+              <i class="fa-brands fa-java skill-icon"></i>
+              <div>
+                <h3>Java Swing</h3>
+                <span class="percent">70%</span>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-fill" style="--value: 70%"></div>
+            </div>
           </div>
-          <div class="info">
-            <h3 style="color: #000000">C# & Unity</h3>
+          <div class="skill-back">
             <p>
-              I design and develop 2D and 3D games with solid gameplay logic.
+              Building desktop applications with Java Swing, JDBC, and
+              database-driven architectures.
             </p>
           </div>
-        </div>
+        </article>
 
-        <div class="skill-card s5">
-          <div class="icon">
-            <i class="fa-solid fa-code" style="color: #b8c263"></i>
+        <!-- Unity / C# -->
+        <article class="skill-card s4">
+          <div class="skill-front">
+            <div class="skill-header">
+              <i class="fa-brands fa-unity skill-icon"></i>
+              <div>
+                <h3>C# & Unity</h3>
+                <span class="percent">65%</span>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-fill" style="--value: 65%"></div>
+            </div>
           </div>
-          <div class="info">
-            <h3 style="color: #b8c263">HTML & CSS</h3>
+          <div class="skill-back">
             <p>
-              I craft responsive layouts and smooth UI animations for the web.
+              Creating 2D and 3D games with structured gameplay logic, physics,
+              and performance awareness.
             </p>
           </div>
-        </div>
+        </article>
+
+        <!-- HTML / CSS -->
+        <article class="skill-card s5">
+          <div class="skill-front">
+            <div class="skill-header">
+              <i class="fa-solid fa-code skill-icon"></i>
+              <div>
+                <h3>HTML & CSS</h3>
+                <span class="percent">90%</span>
+              </div>
+            </div>
+            <div class="progress">
+              <div class="progress-fill" style="--value: 90%"></div>
+            </div>
+          </div>
+          <div class="skill-back">
+            <p>
+              Crafting responsive layouts, animations, and modern UI components
+              with clean, maintainable CSS.
+            </p>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="projects" class="projects-section">
       <div class="projects-container swiper">
         <h2 class="section-title">Projects</h2>
-
+        <div class="section-divider"></div>
         <div class="card-wrapper">
           <ul class="card-list swiper-wrapper">
             <!-- 1 - Library System -->
@@ -328,7 +460,7 @@
 
     <section class="education-section" id="education">
       <h2 class="section-title">Education</h2>
-
+      <div class="section-divider"></div>
       <div class="content-container">
         <div class="left-content">
           <div class="icon-college">
@@ -382,6 +514,7 @@
 
     <section class="contact-section">
       <h2 class="section-title">Contact&nbsp;<span>Me</span></h2>
+      <div class="section-divider"></div>
       <div class="contact-container">
         <!--In the future when someone submit he will send a message to my email using php....-->
         <form class="contact-form">

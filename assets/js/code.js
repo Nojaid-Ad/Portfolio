@@ -12,9 +12,13 @@ function initTheme() {
     checkbox.checked = false;
   }
 }
-
+function toggleTheme() {
+  isDarkMode = !isDarkMode;
+  initTheme();
+}
 function navClick() {
-  if (window.innerWidth <= 768 && isMenuOpen) {
+  if (window.innerWidth <= 768) {
+    document.getElementById("checkbox").checked = false;
     openMenu();
   }
 }
@@ -23,14 +27,8 @@ function openMenu() {
   isMenuOpen = !isMenuOpen;
   const navigation = document.querySelector(".navigation");
   navigation.classList.toggle("active");
-  const checkbox = document.getElementById("checkbox");
+
   const logo = document.getElementById("logo");
 
-  checkbox.checked = !isMenuOpen;
-
   logo.style.display = isMenuOpen ? "none" : "inline";
-}
-function toggleTheme() {
-  isDarkMode = !isDarkMode;
-  initTheme();
 }

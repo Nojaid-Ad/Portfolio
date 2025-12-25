@@ -1,130 +1,46 @@
-
 .skills-section {
-  background-color: var(--skills-bg-light);
-  padding: 64px 6%;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2.6em;
-  font-weight: 800;
-  color: var(--title-light);
-  margin-bottom: 56px;
-  letter-spacing: 0.6px;
-}
-
-.section-title span {
-  color: var(--title-accent-light);
-}
-
-.skills-content-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.skill-card {
-  background: var(--card-bg-light);
-  border-radius: 18px;
-  padding: 32px 26px;
-  border: 1.8px solid var(--card-border-light);
-  box-shadow: var(--card-shadow-light);
-  text-align: center;
-  transition: transform 0.25s ease, border-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.skill-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--card-shadow-light-hover);
-}
-
-.icon {
-  margin-bottom: 18px;
-}
-
-.icon i {
-  font-size: 3.4em;
-}
-
-.info h3 {
-  font-size: 1.25em;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.info p {
-  font-size: 0.95em;
-  line-height: 1.5;
-  color: var(--text-muted-light);
-}
-
-.s0 .icon i,
-.s0 .info h3 {
-  color: var(--s0);
-}
-.s0:hover {
-  border-color: var(--s0);
-}
-
-.s1 .icon i,
-.s1 .info h3 {
-  color: var(--s1);
-}
-.s1:hover {
-  border-color: var(--s1);
-}
-
-.s2 .icon i,
-.s2 .info h3 {
-  color: var(--s2);
-}
-.s2:hover {
-  border-color: var(--s2);
-}
-
-.s3 .icon i,
-.s3 .info h3 {
-  color: var(--s3);
-}
-.s3:hover {
-  border-color: var(--s3);
-}
-
-.s4 .icon i,
-.s4 .info h3 {
-  color: var(--s4);
-}
-.s4:hover {
-  border-color: var(--s4);
-}
-
-.s5 .icon i,
-.s5 .info h3 {
-  color: var(--s5);
-}
-.s5:hover {
-  border-color: var(--s5);
+  background: var(--skills-bg-light);
+  padding: 32px 10%;
+  transition: background-color 0.25s ease;
 }
 
 .dark-mode .skills-section {
   background: var(--skills-bg-dark);
 }
 
-.dark-mode .section-title {
-  color: var(--title-dark);
+
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 32px;
+  max-width: 100vw;
+  margin: 0 auto;
 }
 
-.dark-mode .section-title span {
-  color: var(--title-accent-dark);
+.skill-card {
+  position: relative;
+  background: var(--card-bg-light);
+  border-radius: 20px;
+  padding: 32px;
+  min-height: 210px;
+
+  border: 1.6px solid var(--card-border-light);
+  box-shadow: var(--card-shadow-light);
+  overflow: hidden;
+
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.4s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--card-shadow-light-hover);
 }
 
 .dark-mode .skill-card {
   background: var(--card-bg-dark);
-  border: 1.8px solid var(--card-border-dark);
+  border-color: var(--card-border-dark);
   box-shadow: var(--card-shadow-dark);
 }
 
@@ -132,58 +48,175 @@
   box-shadow: var(--card-shadow-dark-hover);
 }
 
-.dark-mode .info p {
+.skill-front,
+.skill-back {
+  position: absolute;
+  inset: 32px;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.skill-back {
+  opacity: 0;
+  transform: translateY(14px);
+  display: flex;
+  align-items: center;
+  line-height: 1.65;
+  color: var(--text-muted-light);
+}
+
+.dark-mode .skill-back {
   color: var(--text-muted-dark);
 }
 
-.dark-mode .s0:hover {
-  border-color: var(--s0);
+.skill-card:hover .skill-front {
+  opacity: 0;
+  transform: translateY(-12px);
 }
-.dark-mode .s1:hover {
-  border-color: var(--s1);
+
+.skill-card:hover .skill-back {
+  opacity: 1;
+  transform: translateY(0);
 }
-.dark-mode .s2:hover {
-  border-color: var(--s2);
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
 }
-.dark-mode .s3:hover {
-  border-color: var(--s3);
+
+.skill-icon {
+  font-size: 2.2rem;
 }
-.dark-mode .s4:hover {
-  border-color: var(--s4);
+
+.skill-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--title-light);
 }
-.dark-mode .s5:hover {
-  border-color: var(--s5);
+
+.dark-mode .skill-header h3 {
+  color: var(--title-dark);
+}
+
+.percent {
+  font-size: 0.9rem;
+  color: var(--text-muted-light);
+}
+
+.dark-mode .percent {
+  color: var(--text-muted-dark);
+}
+
+.progress {
+  width: 100%;
+  height: 9px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dark-mode .progress {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.progress-fill {
+  height: 100%;
+  width: var(--value);
+  border-radius: 10px;
+  animation: grow 1.2s ease forwards;
+}
+
+.s0 .skill-icon {
+  color: var(--s0);
+}
+.s0 .progress-fill {
+  background: linear-gradient(90deg, var(--s0), var(--primary-hover));
+}
+
+.s1 .skill-icon {
+  color: var(--s1);
+}
+.s1 .progress-fill {
+  background: linear-gradient(90deg, var(--s1), #6b7cff);
+}
+
+.s2 .skill-icon {
+  color: var(--s2);
+}
+.s2 .progress-fill {
+  background: linear-gradient(90deg, var(--s2), #00e676);
+}
+
+.s3 .skill-icon {
+  color: var(--s3);
+}
+.s3 .progress-fill {
+  background: linear-gradient(90deg, var(--s3), #ff9100);
+}
+
+.s4 .skill-icon {
+  color: #94a3b8;
+}
+.s4 .progress-fill {
+  background: linear-gradient(90deg, #94a3b8, #64748b);
+}
+
+.s5 .skill-icon {
+  color: var(--s5);
+}
+.s5 .progress-fill {
+  background: linear-gradient(90deg, var(--s5), #d4e157);
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--value);
+  }
 }
 
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2.1em;
-    margin-bottom: 42px;
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  .icon i {
-    font-size: 3em;
+  .skills-section {
+    padding: 32px 6%;
+  }
+  .section-title {
+    font-size: 2.3rem;
+  }
+
+  .skills-grid {
+    gap: 26px;
   }
 
   .skill-card {
-    padding: 26px 22px;
+    padding: 28px;
   }
 }
 
 @media (max-width: 480px) {
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
   .section-title {
-    font-size: 1.8em;
+    font-size: 2rem;
   }
 
-  .icon i {
-    font-size: 2.6em;
-  }
-
-  .info h3 {
-    font-size: 1.1em;
-  }
-
-  .info p {
-    font-size: 0.9em;
+  .skill-card {
+    min-height: 180px;
   }
 }

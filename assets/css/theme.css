@@ -5,8 +5,8 @@
   --text-main: #222;
   --text-light: #ffffff;
 
-  --title-light: #0f172a;
-  --title-dark: #e5e7eb;
+  --title-light: #003366;
+  --title-dark: #ebe5e5;
 
   --text-muted-light: #475569;
   --text-muted-dark: #cbd5f5;
@@ -15,16 +15,28 @@
   --primary-hover: #339cff;
   --accent: #66ccff;
 
-  --header-light: linear-gradient(90deg, #e8e8e8, #cfcfcf);
-  --header-dark: linear-gradient(90deg, #0f1624, #1e293b, #0f172a);
+  --header-light: linear-gradient(
+    90deg,
+    rgba(232, 232, 232, 0.5),
+    rgba(207, 207, 207, 0.5)
+  );
+  --header-dark: linear-gradient(
+    90deg,
+    rgba(15, 22, 36, 0.5),
+    rgba(30, 41, 59, 0.5),
+    rgba(15, 23, 42, 0.5)
+  );
 
   --section-light: linear-gradient(135deg, #003366, #021a36);
   --section-dark: linear-gradient(135deg, #162d52, #011429);
 
+  --section-divider-light: linear-gradient(135deg, #368ee5, #1f334a);
+  --section-divider-dark: linear-gradient(135deg, #183a70, #6997cd);
+
   --skills-bg-light: #ffffff;
   --skills-bg-dark: #0b1120;
 
-  --card-bg-light: #ffffff;
+  --card-bg-light: #f4f7fb;
   --card-bg-dark: rgba(15, 23, 42, 0.9);
 
   --card-border-light: rgba(0, 0, 0, 0.08);
