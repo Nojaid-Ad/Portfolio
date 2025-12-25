@@ -87,12 +87,14 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(180deg, var(--primary), #011a31);
+
+  background: var(--section-light);
+  background-size: 400% 400%;
+  animation: gradientFlow 25s ease infinite;
+
   padding: 32px 0;
   color: #ffffff;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
 }
-
 .developer {
   font-size: 1.1em;
   line-height: 1.6;
@@ -126,8 +128,10 @@ footer {
 }
 
 .dark-mode footer {
-  background: linear-gradient(180deg, #162d52, #011429);
-  box-shadow: 0 0 10px rgba(69, 86, 102, 0.25);
+  background: var(--section-dark);
+  background-size: 400% 400%;
+  animation: gradientFlow 25s ease infinite;
+ 
 }
 
 .dark-mode .developer strong {

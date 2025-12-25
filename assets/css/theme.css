@@ -27,8 +27,8 @@
     rgba(15, 23, 42, 0.5)
   );
 
-  --section-light: linear-gradient(120deg, #182945, #1b3a7a, #003366, #1a4f8a);
-  --section-dark: linear-gradient(135deg, #0b1d33, #13294b, #011429, #0e2342);
+  --section-light: linear-gradient(120deg, #0f2e52, #143a63, #003366, #1a4b7a);
+  --section-dark: linear-gradient(135deg, #081629, #0b1d33, #011429, #0d203a);
 
   --section-divider-light: linear-gradient(135deg, #368ee5, #1f334a);
   --section-divider-dark: linear-gradient(135deg, #183a70, #6997cd);

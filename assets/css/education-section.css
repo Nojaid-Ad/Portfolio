@@ -2,7 +2,8 @@
    EDUCATION SECTION
 ================================ */
 .education-section {
-  padding: 96px 10%;
+  padding: 32px 10%;
+  padding-bottom: 64px;
   background: var(--skills-bg-light);
   color: var(--title-light);
   transition: background 0.25s ease, color 0.25s ease;
