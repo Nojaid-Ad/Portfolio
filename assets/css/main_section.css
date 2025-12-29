@@ -327,6 +327,7 @@ body {
 
 .social-icons {
   display: inline-flex;
+
   gap: 22px;
 }
 
@@ -438,6 +439,7 @@ body {
 
 @media (max-width: 480px) {
   .social-icons {
+    display: flex;
     justify-content: center;
     gap: 16px;
   }
