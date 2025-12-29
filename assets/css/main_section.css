@@ -119,8 +119,8 @@ body {
   text-decoration: none;
   color: var(--primary);
   font-weight: 500;
-  font-size: 1.25em;
-  padding: 6px 22px;
+  font-size: 1.15em;
+  padding: 6px 24px;
   transition: color 0.25s ease;
 }
 
@@ -444,6 +444,11 @@ body {
 }
 
 @media (max-width: 480px) {
+  .social-icons {
+    justify-content: center;
+    gap: 16px;
+  }
+
   .spacer {
     margin-bottom: 0px;
   }
