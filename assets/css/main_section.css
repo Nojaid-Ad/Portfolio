@@ -270,7 +270,7 @@ body {
   font-weight: 500;
 }
 
-.main-section h2 span {
+.main-section h2 .software-engineer {
   display: inline-block;
   margin-top: 12px;
   font-size: 2.5em;
@@ -278,6 +278,42 @@ body {
   background: linear-gradient(90deg, var(--primary-hover), #4da3ce);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.my-name {
+  display: inline-block;
+  font-family: monospace;
+  font-size: 2em;
+  font-weight: 600;
+
+  width: 22ch;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+
+  animation: typing 5s steps(22) infinite, blink 0.8s step-end infinite;
+}
+
+.title {
+  font-size: 20px;
+  color: #ccc;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 22ch;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .main-section h3 {
@@ -298,16 +334,32 @@ body {
   transform: scale(1.05) rotate(2deg);
 }
 
-.social-icons a {
-  color: #c7c7c7;
-  font-size: 2em;
-  padding-right: 22px;
-  transition: color 0.25s ease, text-shadow 0.25s ease;
+.social-icons {
+  display: flex;
+  gap: 22px;
 }
 
-.social-icons a:hover {
-  color: var(--accent);
-  text-shadow: 0 0 6px #66ccff9c;
+.social-icons a {
+  text-decoration: none;
+  color: #c7c7c7;
+  font-size: 2em;
+}
+
+.social-icons a i {
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.social-icons:hover a i {
+  filter: blur(2px);
+  opacity: 0.35;
+}
+
+.social-icons a:hover i {
+  filter: none;
+  opacity: 1;
+  color: var(--primary-hover);
+  transform: scale(1.125);
 }
 
 @media (max-width: 1024px) {
@@ -399,10 +451,12 @@ body {
     font-size: 1.2rem;
   }
 
-  .main-section h2 span {
-    font-size: 1.2em;
+  .main-section h2 .software-engineer {
+    font-size: 1.25em;
   }
-
+  .my-name {
+    font-size: 1em;
+  }
   .main-section h3 {
     font-size: 0.825em;
     text-align: justify;
