@@ -223,7 +223,7 @@ body {
 
   background: var(--section-light);
   background-size: 400% 400%;
-  animation: gradientFlow 25s ease infinite;
+  animation: gradientFlow 16s ease infinite;
 
   color: #ffffff;
   padding: 100px 10%;
