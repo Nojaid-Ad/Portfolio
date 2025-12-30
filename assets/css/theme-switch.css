@@ -1,180 +1,103 @@
-.theme-switch {
-  --toggle-size: 14px;
-  --container-width: 5.2em;
-  --container-height: 2.2em;
-  --container-radius: 6.25em;
-  --container-light-bg: #3d7eae;
-  --container-night-bg: #1d1f2c;
-  --circle-container-diameter: 3.1em;
-  --sun-moon-diameter: 1.9em;
-  --sun-bg: #ecca2f;
-  --moon-bg: #c4c9d1;
-  --spot-color: #959db1;
-  --circle-container-offset: calc(
-    (var(--circle-container-diameter) - var(--container-height)) / 2 * -1
-  );
-  --stars-color: #fff;
-  --clouds-color: #f3fdff;
-  --back-clouds-color: #aacadf;
-  --transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
-  --circle-transition: 0.3s cubic-bezier(0, -0.02, 0.35, 1.17);
+/* From Uiverse.io by Type-Delta */
+/* a clone from joshwcomeau.com 
+ * but this version runs on pure CSS
+ */
 
-  margin-left: 32px;
+.themeToggle {
+  color: var(--primary);
+  width: 2.2em;
+  margin-left: 64px;
+  transition: color 0.25s ease;
 }
 
-.theme-switch,
-.theme-switch *,
-.theme-switch *::before,
-.theme-switch *::after {
-  box-sizing: border-box;
-
-  padding: 0;
-  font-size: var(--toggle-size);
-}
-
-.theme-switch__container {
-  width: var(--container-width);
-  height: var(--container-height);
-  background-color: var(--container-light-bg);
-  border-radius: var(--container-radius);
-  overflow: hidden;
+.st-sunMoonThemeToggleBtn {
+  position: relative;
   cursor: pointer;
-  box-shadow: 0em -0.062em 0.062em rgba(0, 0, 0, 0.25),
-    0em 0.062em 0.125em rgba(255, 255, 255, 0.94);
-  transition: var(--transition);
-  position: relative;
 }
 
-.theme-switch__container::before {
-  content: '';
+.st-sunMoonThemeToggleBtn .themeToggleInput {
+  opacity: 0;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.st-sunMoonThemeToggleBtn svg {
   position: absolute;
-  inset: 0;
-  box-shadow: 0em 0.05em 0.187em rgba(0, 0, 0, 0.25) inset;
-  border-radius: var(--container-radius);
-}
-
-.theme-switch__checkbox {
-  display: none;
-}
-
-.theme-switch__circle-container {
-  width: var(--circle-container-diameter);
-  height: var(--circle-container-diameter);
-  background-color: rgba(255, 255, 255, 0.1);
-  position: absolute;
-  left: var(--circle-container-offset);
-  top: var(--circle-container-offset);
-  border-radius: var(--container-radius);
-  box-shadow: inset 0 0 0 3.375em rgba(255, 255, 255, 0.1),
-    0 0 0 0.625em rgba(255, 255, 255, 0.1);
-  display: flex;
-  transition: var(--circle-transition);
-  pointer-events: none;
-}
-
-.theme-switch__sun-moon-container {
-  pointer-events: auto;
-  position: relative;
-  z-index: 2;
-  width: var(--sun-moon-diameter);
-  height: var(--sun-moon-diameter);
-  margin: auto;
-  border-radius: var(--container-radius);
-  background-color: var(--sun-bg);
-  box-shadow: 0.062em 0.062em 0.062em rgba(254, 255, 239, 0.61) inset,
-    0em -0.062em 0.062em #a1872a inset;
-  filter: drop-shadow(0.062em 0.125em 0.125em rgba(0, 0, 0, 0.25));
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.theme-switch__moon {
-  transform: translateX(100%);
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--moon-bg);
-  border-radius: inherit;
-  box-shadow: 0.062em 0.062em 0.062em rgba(254, 255, 239, 0.61) inset,
-    0em -0.062em 0.062em #969696 inset;
-  transition: var(--transition);
-  position: relative;
+  transition: transform 0.4s ease;
+  transform: rotate(40deg);
 }
 
-.theme-switch__spot {
-  position: absolute;
-  top: 0.7em;
-  left: 0.3em;
-  width: 0.6em;
-  height: 0.6em;
-  border-radius: var(--container-radius);
-  background-color: var(--spot-color);
+.st-sunMoonThemeToggleBtn svg .sunMoon {
+  transform-origin: center center;
+  transition: inherit;
+  transform: scale(1);
 }
 
-.theme-switch__spot:nth-of-type(2) {
-  width: 0.3em;
-  height: 0.3em;
-  top: 0.9em;
-  left: 1.2em;
+.st-sunMoonThemeToggleBtn svg .sunRay {
+  transform-origin: center center;
+  transform: scale(0);
 }
 
-.theme-switch__spot:nth-last-of-type(3) {
-  width: 0.2em;
-  height: 0.2em;
-  top: 0.3em;
-  left: 0.8em;
+.st-sunMoonThemeToggleBtn svg mask > circle {
+  transition: transform 0.64s cubic-bezier(0.41, 0.64, 0.32, 1.575);
+  transform: translate(0px, 0px);
 }
 
-.theme-switch__clouds {
-  width: 1.1em;
-  height: 1.1em;
-  background-color: var(--clouds-color);
-  border-radius: var(--container-radius);
-  position: absolute;
-  bottom: -0.6em;
-  left: 0.3em;
-  box-shadow: 1em 0.3em var(--clouds-color), 2em 0 var(--clouds-color);
-  transition: 0.5s cubic-bezier(0, -0.02, 0.4, 1.25);
+.st-sunMoonThemeToggleBtn svg .sunRay2 {
+  animation-delay: 0.05s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay3 {
+  animation-delay: 0.1s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay4 {
+  animation-delay: 0.17s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay5 {
+  animation-delay: 0.25s !important;
+}
+.st-sunMoonThemeToggleBtn svg .sunRay5 {
+  animation-delay: 0.29s !important;
 }
 
-.theme-switch__stars-container {
-  position: absolute;
-  color: var(--stars-color);
-  top: -100%;
-  left: 0.3em;
-  width: 2.5em;
-  transition: var(--transition);
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg {
+  transform: rotate(90deg);
+}
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg mask > circle {
+  transform: translate(16px, -3px);
+}
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunMoon {
+  transform: scale(0.55);
+}
+.st-sunMoonThemeToggleBtn .themeToggleInput:checked + svg .sunRay {
+  animation: showRay1832 0.4s ease 0s 1 forwards;
 }
 
-.theme-switch__checkbox:checked + .theme-switch__container {
-  background-color: var(--container-night-bg);
+@keyframes showRay1832 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.theme-switch__checkbox:checked
-  + .theme-switch__container
-  .theme-switch__circle-container {
-  left: calc(
-    100% - var(--circle-container-offset) - var(--circle-container-diameter)
-  );
+.dark-mode .themeToggle {
+  color: #fff;
 }
 
-.theme-switch__checkbox:checked + .theme-switch__container .theme-switch__moon {
-  transform: translate(0);
-}
-
-.theme-switch__checkbox:checked
-  + .theme-switch__container
-  .theme-switch__clouds {
-  bottom: -4em;
-}
-
-.theme-switch__checkbox:checked
-  + .theme-switch__container
-  .theme-switch__stars-container {
-  top: 50%;
-  transform: translateY(-50%);
-}
 @media (max-width: 768px) {
-  .theme-switch {
-    --toggle-size: 10px;
+  .themeToggle {
+    width: 1.75em;
+    margin-left: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .themeToggle {
+    width: 1.5em;
+    margin-left: 16px;
   }
 }

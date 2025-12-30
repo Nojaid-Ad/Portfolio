@@ -87,37 +87,65 @@
           <a onclick="navClick()" href="#contact">Contact</a>
         </nav>
 
-        <label class="theme-switch">
+        <label
+          for="themeToggle"
+          class="themeToggle st-sunMoonThemeToggleBtn"
+          type="checkbox"
+          id="themeSwitch"
+        >
           <input
             type="checkbox"
-            class="theme-switch__checkbox"
-            id="themeSwitch"
+            id="themeToggle"
+            class="themeToggleInput"
             onclick="toggleTheme()"
           />
-
-          <div class="theme-switch__container">
-            <div class="theme-switch__clouds"></div>
-
-            <div class="theme-switch__stars-container">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 144 55"
-                fill="none"
-              >
-                <path fill="currentColor"></path>
-              </svg>
-            </div>
-
-            <div class="theme-switch__circle-container">
-              <div class="theme-switch__sun-moon-container">
-                <div class="theme-switch__moon">
-                  <div class="theme-switch__spot"></div>
-                  <div class="theme-switch__spot"></div>
-                  <div class="theme-switch__spot"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            stroke="none"
+          >
+            <mask id="moon-mask">
+              <rect x="0" y="0" width="20" height="20" fill="white"></rect>
+              <circle cx="11" cy="3" r="8" fill="black"></circle>
+            </mask>
+            <circle
+              class="sunMoon"
+              cx="10"
+              cy="10"
+              r="8"
+              mask="url(#moon-mask)"
+            ></circle>
+            <g>
+              <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
+              <circle
+                class="sunRay sunRay2"
+                cx="14"
+                cy="16.928"
+                r="1.5"
+              ></circle>
+              <circle
+                class="sunRay sunRay3"
+                cx="6"
+                cy="16.928"
+                r="1.5"
+              ></circle>
+              <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
+              <circle
+                class="sunRay sunRay5"
+                cx="6"
+                cy="3.1718"
+                r="1.5"
+              ></circle>
+              <circle
+                class="sunRay sunRay6"
+                cx="14"
+                cy="3.1718"
+                r="1.5"
+              ></circle>
+            </g>
+          </svg>
         </label>
       </div>
     </header>
