@@ -4,6 +4,7 @@
  */
 
 .themeToggle {
+  
   color: var(--primary);
   width: 2.2em;
   margin-left: 64px;
@@ -11,6 +12,7 @@
 }
 
 .st-sunMoonThemeToggleBtn {
+  
   position: relative;
   cursor: pointer;
 }
@@ -98,7 +100,7 @@
 @media (max-width: 480px) {
   .themeToggle {
     width: 1.5em;
-    margin-right: 12px;
+    
     margin-left: 8px;
   }
 }
