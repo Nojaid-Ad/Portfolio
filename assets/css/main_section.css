@@ -184,7 +184,9 @@ body {
 }
 
 #bar2 {
-  transition: transform 0.25s ease;
+  
+  transition: transform 0.35s ease, width 0.35s ease,
+    background-color 0.35s ease;
 }
 
 #bar1,
@@ -535,4 +537,7 @@ body {
 
 .dark-mode .section-divider {
   background: var(--section-divider-dark);
+}
+.dark-mode .bars {
+  background-color: #fff;
 }
