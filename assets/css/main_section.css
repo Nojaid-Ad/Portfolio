@@ -274,7 +274,7 @@ body {
   display: inline-block;
   font-family: monospace;
   font-size: 2em;
-  font-weight: 500;
+  font-weight: 600;
 
   width: 22ch;
   white-space: nowrap;
@@ -310,7 +310,7 @@ body {
 .main-section h3 {
   margin-top: 16px;
   font-size: 1.5em;
-  font-weight: 600;
+  font-weight: 500;
   text-align: left;
   margin-bottom: 32px;
 }
