@@ -38,11 +38,23 @@
     animation: wheel 1.6s ease-in-out infinite;
   }
 }
+@media (min-width: 900px) {
+  .scroll-indicator.mouse {
+    display: block;
 
+    width: 32px;
+    height: 52px;
+
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+
+    position: relative;
+    animation: float 2.2s ease-in-out infinite;
+  }}
 /* ===============================
      MOBILE / TOUCH (HAND)
   ================================ */
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .scroll-indicator.hand {
     display: block;
 

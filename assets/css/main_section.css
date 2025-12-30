@@ -357,8 +357,20 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .main-section h3 {
+    font-size: 1.15em;
+    text-align: justify;
+    font-weight: normal;
+  }
   .image-content img {
     width: 420px;
+  }
+  .main-section h2 {
+    font-size: 1em;
+  }
+  .navigation a {
+    font-size: 1.35em;
+    padding: 2px 8px;
   }
 }
 
