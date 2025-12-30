@@ -131,7 +131,6 @@ footer {
   background: var(--section-dark);
   background-size: 400% 400%;
   animation: gradientFlow 25s ease infinite;
- 
 }
 
 .dark-mode .developer strong {
@@ -190,6 +189,6 @@ footer {
   }
 
   .developer {
-    font-size: 0.9em;
+    font-size: 0.65em;
   }
 }
