@@ -7,9 +7,11 @@
   color: var(--primary);
   width: 2em;
   margin-left: 64px;
-  transition: color 0.25s ease;
+  transition: color 0.25s ease, opacity 0.25s ease;
 }
-
+.themeToggle:hover {
+  opacity: 0.5;
+}
 .st-sunMoonThemeToggleBtn {
   position: relative;
   cursor: pointer;
@@ -87,7 +89,6 @@
 .dark-mode .themeToggle {
   color: #fff;
 }
-
 
 @media (max-width: 768px) {
   .themeToggle {
