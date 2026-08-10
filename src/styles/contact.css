@@ -1,0 +1,149 @@
+/* ═══════════════════════════════════════
+   CONTACT SECTION
+   ═══════════════════════════════════════ */
+
+.contact-section {
+  padding: 72px 6% 80px;
+  background: var(--bg-section);
+  transition: background-color var(--transition-base);
+}
+
+.contact-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+/* ───── Inputs ───── */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 18px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--text-primary);
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-hover);
+  box-shadow: 0 0 0 3px rgba(51, 156, 255, 0.15);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+/* ───── Submit button ───── */
+.send-btn {
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  transition: background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.send-btn:hover {
+  background: transparent;
+  color: var(--primary);
+}
+
+.send-btn:active {
+  transform: scale(0.97);
+}
+
+[data-theme='dark'] .send-btn {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+[data-theme='dark'] .send-btn:hover {
+  background: transparent;
+  color: var(--primary-hover);
+}
+
+/* ───── Form feedback ───── */
+.form-message {
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  display: none;
+  text-align: center;
+}
+
+.form-message.success {
+  display: block;
+  background: rgba(0, 200, 83, 0.1);
+  color: #00c853;
+  border: 1px solid rgba(0, 200, 83, 0.25);
+}
+
+.form-message.error {
+  display: block;
+  background: rgba(255, 59, 59, 0.1);
+  color: #ff3b3b;
+  border: 1px solid rgba(255, 59, 59, 0.25);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 56px 5% 64px;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 48px 4% 56px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 11px 14px;
+    font-size: 0.92rem;
+  }
+  .send-btn {
+    width: 100%;
+    padding: 13px;
+    font-size: 0.95rem;
+  }
+}

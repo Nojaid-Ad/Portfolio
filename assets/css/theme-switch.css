@@ -9,8 +9,11 @@
   margin-left: 64px;
   transition: color 0.25s ease, opacity 0.25s ease;
 }
-.themeToggle:hover {
-  opacity: 0.5;
+
+@media (max-width: 1024px) {
+  .themeToggle:hover {
+    opacity: 0.5;
+  }
 }
 .st-sunMoonThemeToggleBtn {
   position: relative;

@@ -1,0 +1,246 @@
+/* ═══════════════════════════════════════
+   BASE — Reset, Variables, Typography
+   ═══════════════════════════════════════ */
+
+/* ───── CSS Variables ───── */
+:root {
+  /* Brand */
+  --primary: #003366;
+  --primary-hover: #339cff;
+  --accent: #66ccff;
+
+  /* Light theme (default) */
+  --bg-body: #ffffff;
+  --bg-section: #ffffff;
+  --bg-card: #f4f7fb;
+  --bg-input: #f4f7fb;
+  --bg-header: linear-gradient(
+    90deg,
+    rgba(235, 235, 235, 0.6),
+    rgba(215, 215, 215, 0.6)
+  );
+  --bg-hero: linear-gradient(120deg, #0f2e52, #143a63, #003366, #1a4b7a);
+  --bg-footer: linear-gradient(120deg, #0f2e52, #143a63, #003366, #1a4b7a);
+
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-on-primary: #ffffff;
+
+  --title-color: #003366;
+
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-header: rgba(0, 0, 0, 0.15);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 12px 28px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 18px 36px rgba(0, 0, 0, 0.09);
+
+  --divider-gradient: linear-gradient(135deg, #368ee5, #1f334a);
+
+  /* Skill accent colours */
+  --s0: #3596ce;
+  --s1: #3924f8;
+  --s2: #00c853;
+  --s3: #ff6f00;
+  --s4: #94a3b8;
+  --s5: #b8c263;
+
+  /* Typography */
+  --font-en: 'Inter', sans-serif;
+  --font-ar: 'Cairo', sans-serif;
+
+  /* Motion */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.45s ease;
+}
+
+/* ───── Dark Theme ───── */
+[data-theme='dark'] {
+  --bg-body: #0b1120;
+  --bg-section: #0b1120;
+  --bg-card: rgba(15, 23, 42, 0.92);
+  --bg-input: #0f172a;
+  --bg-header: linear-gradient(
+    90deg,
+    rgba(15, 22, 36, 0.55),
+    rgba(30, 41, 59, 0.55),
+    rgba(15, 23, 42, 0.55)
+  );
+  --bg-hero: linear-gradient(135deg, #081629, #0b1d33, #011429, #0d203a);
+  --bg-footer: linear-gradient(135deg, #081629, #0b1d33, #011429, #0d203a);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --title-color: #e2e8f0;
+
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-header: rgba(255, 255, 255, 0.15);
+
+  --shadow-card: 0 12px 28px rgba(0, 0, 0, 0.45);
+  --shadow-card-hover: 0 18px 36px rgba(0, 0, 0, 0.6);
+
+  --divider-gradient: linear-gradient(135deg, #183a70, #6997cd);
+}
+
+/* ───── Reset ───── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ───── Global ───── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  font-family: var(--font-en);
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+  line-height: 1.65;
+  transition: background-color var(--transition-base),
+    color var(--transition-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  animation: bodyFadeIn 0.5s ease-out;
+}
+
+[dir='rtl'] body {
+  font-family: var(--font-ar);
+}
+
+@keyframes bodyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ───── Scrollbar ───── */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-body);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #004a99;
+}
+
+/* ───── Typography helpers ───── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ───── Section titles ───── */
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--title-color);
+  margin-bottom: 8px;
+  transition: color var(--transition-base);
+}
+
+.section-title .title-highlight {
+  color: var(--primary-hover);
+}
+
+.section-divider {
+  width: 160px;
+  height: 4px;
+  margin: 0 auto 44px;
+  border-radius: 999px;
+  background: var(--divider-gradient);
+  transition: background var(--transition-base);
+}
+
+/* ───── Focus ───── */
+:focus-visible {
+  outline: 2px solid var(--primary-hover);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ───── Selection ───── */
+::selection {
+  background: var(--primary-hover);
+  color: #ffffff;
+}
+
+/* ───── Reduced motion ───── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ───── Responsive section title ───── */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-divider {
+    width: 80px;
+    height: 3px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.75rem;
+  }
+  .section-divider {
+    width: 60px;
+  }
+}

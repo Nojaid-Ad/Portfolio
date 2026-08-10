@@ -1,35 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Personal portfolio showcasing projects and skills in web development."
+      content="Nojaid Abdullah Issa — Software Engineer Portfolio. Projects, skills, and contact."
     />
-    <meta name="author" content="Nojaid" />
+    <meta name="author" content="Nojaid Abdullah Issa" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/Nojaid.png" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="icon" type="image/png" href="assets/images/Nojaid.png" />
-    <link rel="stylesheet" href="assets/css/main_section.css" />
-    <link rel="stylesheet" href="assets/css/theme.css" />
-    <link rel="stylesheet" href="assets/css/skills_section.css" />
-    <link rel="stylesheet" href="assets/css/projects-section.css" />
-    <link rel="stylesheet" href="assets/css/education-section.css" />
-    <link rel="stylesheet" href="assets/css/contact-section.css" />
-    <link rel="stylesheet" href="assets/css/theme-switch.css" />
-    <link rel="stylesheet" href="assets/css/cv-button.css" />
-    <link rel="stylesheet" href="assets/css/mouse-scroll.css" />
-    <link rel="stylesheet" href="assets/css/social-icons.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <!-- JS -->
-    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -37,145 +28,155 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward"
-    />
-    <title>Nojaid Ad</title>
-    <!-- Open Graph / Link Preview -->
-    <meta property="og:title" content="Nojaid | Personal Portfolio" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nojaid | Software Engineer Portfolio" />
     <meta
       property="og:description"
-      content="Personal portfolio showcasing projects and skills in web development."
+      content="Personal portfolio showcasing projects and skills in software development."
     />
     <meta
       property="og:image"
       content="https://nojaid-ad.github.io/Portfolio/assets/images/preview.png"
     />
-    <meta property="og:url" content="https://nojaid-ad.github.io/Portfolio/" />
+    <meta
+      property="og:url"
+      content="https://nojaid-ad.github.io/Portfolio/"
+    />
     <meta property="og:type" content="website" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Nojaid | Personal Portfolio" />
+    <meta
+      name="twitter:title"
+      content="Nojaid | Software Engineer Portfolio"
+    />
     <meta
       name="twitter:description"
-      content="Personal portfolio showcasing projects and skills in web development."
+      content="Personal portfolio showcasing projects and skills in software development."
     />
     <meta
       name="twitter:image"
       content="https://nojaid-ad.github.io/Portfolio/assets/images/preview.png"
     />
+
+    <title>Nojaid Ad — Software Engineer</title>
+
+    <!-- Vite entry -->
+    <script type="module" src="/src/main.js"></script>
   </head>
-  <body onload="initTheme()">
-    <header class="main-header">
-      <div class="nav-right">
-        <input type="checkbox" id="checkbox" />
 
-        <label for="checkbox" class="toggle" onclick="openMenu()">
-          <div class="bars" id="bar1"></div>
-          <div class="bars" id="bar2"></div>
-          <div class="bars" id="bar3"></div>
-        </label>
-        <a href="#" class="logo" id="logo"
-          >N<span class="custom-name">0</span>jaid</a
-        >
-      </div>
+  <body>
+    <!-- ════════════════════════════════════
+         HEADER
+         ════════════════════════════════════ -->
+    <header class="main-header" id="mainHeader">
+      <div class="header-inner">
+        <div class="header-left">
+          <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            type="button"
+            aria-label="Toggle navigation menu"
+            data-i18n-aria="a11y.mobileMenu"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
 
-      <div class="nav-container">
-        <nav class="navigation" id="navMenu">
-          <a onclick="navClick()" href="#skills">Skills</a>
-          <a onclick="navClick()" href="#projects">Projects</a>
-          <a onclick="navClick()" href="#education">Education</a>
-          <a onclick="navClick()" href="#contact">Contact</a>
+          <a href="#" class="logo"
+            >N<span class="logo-accent">0</span>jaid</a
+          >
+        </div>
+
+        <nav class="main-nav" id="mainNav" role="navigation">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#education" data-i18n="nav.education">Education</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
         </nav>
 
-        <label
-          for="themeToggle"
-          class="themeToggle st-sunMoonThemeToggleBtn"
-          type="checkbox"
-          id="themeSwitch"
-        >
-          <input
-            type="checkbox"
-            id="themeToggle"
-            class="themeToggleInput"
-            onclick="toggleTheme()"
-          />
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            stroke="none"
+        <div class="header-actions">
+          <button
+            class="lang-switch-btn"
+            id="langSwitchBtn"
+            type="button"
+            aria-label="Switch language"
+            data-i18n-aria="a11y.langSwitch"
           >
-            <mask id="moon-mask">
-              <rect x="0" y="0" width="20" height="20" fill="white"></rect>
-              <circle cx="11" cy="3" r="8" fill="black"></circle>
-            </mask>
-            <circle
-              class="sunMoon"
-              cx="10"
-              cy="10"
-              r="8"
-              mask="url(#moon-mask)"
-            ></circle>
-            <g>
-              <circle class="sunRay sunRay1" cx="18" cy="10" r="1.5"></circle>
+            <span data-i18n="language.switchTo">العربية</span>
+          </button>
+
+          <button
+            class="theme-toggle-btn"
+            id="themeToggleBtn"
+            type="button"
+            aria-label="Toggle dark / light mode"
+            data-i18n-aria="a11y.themeToggle"
+          >
+            <svg
+              class="theme-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="none"
+            >
+              <mask id="moon-mask">
+                <rect x="0" y="0" width="20" height="20" fill="white" />
+                <circle cx="11" cy="3" r="8" fill="black" />
+              </mask>
               <circle
-                class="sunRay sunRay2"
-                cx="14"
-                cy="16.928"
-                r="1.5"
-              ></circle>
-              <circle
-                class="sunRay sunRay3"
-                cx="6"
-                cy="16.928"
-                r="1.5"
-              ></circle>
-              <circle class="sunRay sunRay4" cx="2" cy="10" r="1.5"></circle>
-              <circle
-                class="sunRay sunRay5"
-                cx="6"
-                cy="3.1718"
-                r="1.5"
-              ></circle>
-              <circle
-                class="sunRay sunRay6"
-                cx="14"
-                cy="3.1718"
-                r="1.5"
-              ></circle>
-            </g>
-          </svg>
-        </label>
+                class="sun-moon"
+                cx="10"
+                cy="10"
+                r="8"
+                mask="url(#moon-mask)"
+              />
+              <g class="sun-rays">
+                <circle cx="18" cy="10" r="1.5" />
+                <circle cx="14" cy="16.928" r="1.5" />
+                <circle cx="6" cy="16.928" r="1.5" />
+                <circle cx="2" cy="10" r="1.5" />
+                <circle cx="6" cy="3.1718" r="1.5" />
+                <circle cx="14" cy="3.1718" r="1.5" />
+              </g>
+            </svg>
+          </button>
+        </div>
       </div>
     </header>
-    <section class="main-section">
-      <div class="spacer"></div>
-      <div class="content-row-holder">
-        <div class="text-content">
-          <h2>
-            <span class="my-name">Nojaid Abdullah Issa</span><br /><span
-              class="software-engineer"
-              >Software Engineer</span
-            >
-          </h2>
-          <h3>
-            I am a 22-year-old Software Engineering student at IT Aljmail
-            Focused on building modern and efficient Flutter applications.
-            Passionate about clean code, scalability, and continuous learning.
-          </h3>
 
-          <div class="main-buttons-container">
-            <!-- Filled → Border on hover -->
-            <a style="text-decoration: none" href="#projects">
-              <button class="animated-button btn-fill">
-                <span class="text">My Projects</span>
-                <span class="circle"></span>
+    <main>
+      <!-- ════════════════════════════════════
+           HERO SECTION
+           ════════════════════════════════════ -->
+      <section class="hero-section" id="hero">
+        <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
 
-                <svg class="arr-1" viewBox="0 0 24 24">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>
+              <span class="hero-name" data-i18n="hero.name"
+                >Nojaid Abdullah Issa</span
+              >
+              <span class="hero-title" data-i18n="hero.title"
+                >Software Engineer</span
+              >
+            </h1>
+
+            <p class="hero-description" data-i18n="hero.description">
+              A Software Engineer focused on building modern and efficient
+              applications using Flutter, Laravel, and clean architecture.
+              Passionate about clean code, scalability, and continuous learning.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                <span data-i18n="hero.projectsBtn">My Projects</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M5 12h14m-4-4 4 4-4 4"
                     fill="none"
@@ -183,28 +184,11 @@
                     stroke-width="2"
                   />
                 </svg>
+              </a>
 
-                <svg class="arr-2" viewBox="0 0 24 24">
-                  <path
-                    d="M5 12h14m-4-4 4 4-4 4"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg></button
-            ></a>
-
-            <!-- Border → Filled on hover -->
-            <a
-              style="text-decoration: none"
-              href="assets/cv.pdf"
-              download="assets/cv.pdf"
-            >
-              <button class="animated-button btn-outline">
-                <span class="text">Download CV</span>
-                <span class="circle"></span>
-
-                <svg class="arr-1" viewBox="0 0 24 24">
+              <a href="assets/cv.pdf" download class="btn btn-outline">
+                <span data-i18n="hero.cvBtn">Download CV</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
                     d="M12 3v10m0 0l-4-4m4 4l4-4M4 17h16"
                     fill="none"
@@ -212,432 +196,760 @@
                     stroke-width="2"
                   />
                 </svg>
+              </a>
+            </div>
 
-                <svg class="arr-2" viewBox="0 0 24 24">
-                  <path
-                    d="M12 3v10m0 0l-4-4m4 4l4-4M4 17h16"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </button>
-            </a>
+            <div class="hero-social">
+              <a
+                href="https://www.linkedin.com/in/nojaid-ad-a10601388"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                data-i18n-aria="a11y.linkedin"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a
+                href="https://t.me/Nojaid"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Telegram"
+                data-i18n-aria="a11y.telegram"
+              >
+                <i class="fa-brands fa-telegram"></i>
+              </a>
+              <a
+                href="https://github.com/Nojaid-Ad"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                data-i18n-aria="a11y.github"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="mailto:nojaidnojaid@gmail.com"
+                aria-label="Email"
+                data-i18n-aria="a11y.email"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
           </div>
-          <br />
-          <div class="social-icons">
-            <a
-              href="https://www.linkedin.com/in/nojaid-ad-a10601388"
-              target="_blank"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
 
-            <a href="https://t.me/Nojaid" target="_blank"
-              ><i class="fa-brands fa-telegram"></i
-            ></a>
-            <a href="https://github.com/Nojaid-Ad" target="_blank"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a href="mailto:nojaidnojaid@gmail.com" target="_blank"
-              ><i class="fa-solid fa-envelope"></i
-            ></a>
+          <div class="hero-image">
+            <img
+              src="assets/images/NojaidAd.png"
+              alt="Nojaid Abdullah Issa"
+              width="440"
+              height="440"
+              loading="eager"
+            />
           </div>
         </div>
 
-        <div class="image-content">
-          <img src="assets/images/NojaidAd.png" alt="Nojaid" />
+        <div
+          class="scroll-indicator"
+          id="scrollIndicator"
+          aria-label="Scroll down"
+          data-i18n-aria="a11y.scrollDown"
+        >
+          <span class="scroll-dot"></span>
         </div>
-      </div>
-      <!-- DESKTOP -->
-      <div class="scroll-indicator mouse">
-        <span class="wheel"></span>
-      </div>
+      </section>
 
-      <!-- MOBILE -->
-      <div class="scroll-indicator hand">
-        <span class="finger"></span>
-      </div>
-    </section>
-
-    <section class="skills-section" id="skills">
-      <h2 class="section-title">My <span>Skills</span></h2>
-      <div class="section-divider"></div>
-
-      <div class="skills-grid" data-aos="fade-up">
-        <!-- Flutter -->
-        <article class="skill-card s0">
-          <div class="skill-front">
-            <div class="skill-header">
-              <i class="fa-brands fa-flutter skill-icon"></i>
-              <div>
-                <h3>Flutter</h3>
-                <span class="percent">85%</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-fill" style="--value: 85%"></div>
-            </div>
-          </div>
-          <div class="skill-back">
-            <p>
-              Building scalable mobile apps using Flutter, GetX, REST APIs,
-              Firebase, and clean architecture.
-            </p>
-          </div>
-        </article>
-
-        <!-- Full Stack -->
-        <article class="skill-card s1">
-          <div class="skill-front">
-            <div class="skill-header">
-              <i class="fa-solid fa-layer-group skill-icon"></i>
-              <div>
-                <h3>Full Stack</h3>
-                <span class="percent">80%</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-fill" style="--value: 80%"></div>
-            </div>
-          </div>
-          <div class="skill-back">
-            <p>
-              Developing backend systems with Laravel, MySQL, authentication,
-              APIs, and modern frontend integration.
-            </p>
-          </div>
-        </article>
-
-        <!-- UI / UX -->
-        <article class="skill-card s2">
-          <div class="skill-front">
-            <div class="skill-header">
-              <i class="fa-solid fa-pen-ruler skill-icon"></i>
-              <div>
-                <h3>UI / UX Design</h3>
-                <span class="percent">75%</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-fill" style="--value: 75%"></div>
-            </div>
-          </div>
-          <div class="skill-back">
-            <p>
-              Designing clean, usable interfaces with strong hierarchy, spacing,
-              accessibility, and motion principles.
-            </p>
-          </div>
-        </article>
-
-        <!-- Java -->
-        <article class="skill-card s3">
-          <div class="skill-front">
-            <div class="skill-header">
-              <i class="fa-brands fa-java skill-icon"></i>
-              <div>
-                <h3>Java Swing</h3>
-                <span class="percent">70%</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-fill" style="--value: 70%"></div>
-            </div>
-          </div>
-          <div class="skill-back">
-            <p>
-              Building desktop applications with Java Swing, JDBC, and
-              database-driven architectures.
-            </p>
-          </div>
-        </article>
-
-        <!-- Unity / C# -->
-        <article class="skill-card s4">
-          <div class="skill-front">
-            <div class="skill-header">
-              <i class="fa-brands fa-unity skill-icon"></i>
-              <div>
-                <h3>C# & Unity</h3>
-                <span class="percent">65%</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-fill" style="--value: 65%"></div>
-            </div>
-          </div>
-          <div class="skill-back">
-            <p>
-              Creating 2D and 3D games with structured gameplay logic, physics,
-              and performance awareness.
-            </p>
-          </div>
-        </article>
-
-        <!-- HTML / CSS -->
-        <article class="skill-card s5">
-          <div class="skill-front">
-            <div class="skill-header">
-              <i class="fa-solid fa-code skill-icon"></i>
-              <div>
-                <h3>HTML & CSS</h3>
-                <span class="percent">90%</span>
-              </div>
-            </div>
-            <div class="progress">
-              <div class="progress-fill" style="--value: 90%"></div>
-            </div>
-          </div>
-          <div class="skill-back">
-            <p>
-              Crafting responsive layouts, animations, and modern UI components
-              with clean, maintainable CSS.
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-      <div class="projects-container swiper" data-aos="fade-up">
-        <h2 class="section-title">Projects</h2>
+      <!-- ════════════════════════════════════
+           ABOUT SECTION
+           ════════════════════════════════════ -->
+      <section class="about-section" id="about">
+        <h2 class="section-title">
+          <span data-i18n="about.title">About</span>
+          <span class="title-highlight" data-i18n="about.titleHighlight"
+            >Me</span
+          >
+        </h2>
         <div class="section-divider"></div>
-        <div class="card-wrapper">
-          <ul class="card-list swiper-wrapper">
-            <!-- 1 - Library System -->
-            <li class="card-item swiper-slide">
-              <a
-                href="https://github.com/Nojaid-Ad/Library-Managements-System"
-                target="_blank"
-                class="card-link"
-              >
-                <img
-                  src="assets/images/projects/library.jpg"
-                  class="card-img"
-                />
-                <p class="badge">Library System</p>
-                <h2 class="card-title">Java Swing + MySql</h2>
-                <button class="card-button material-symbols-outlined">
-                  arrow_forward
-                </button>
-              </a>
-            </li>
 
-            <!-- 2 - Geo Locator -->
-            <li class="card-item swiper-slide">
-              <a
-                href="https://github.com/Nojaid-Ad/Location-Distance-Calculater"
-                target="_blank"
-                class="card-link"
-              >
-                <img src="assets/images/projects/2.png" class="card-img" />
-                <p class="badge">Geo Locator</p>
-                <h2 class="card-title">Java Swing</h2>
-                <button class="card-button material-symbols-outlined">
-                  arrow_forward
-                </button>
-              </a>
-            </li>
-
-            <!-- 3 - Caloriator -->
-            <li class="card-item swiper-slide">
-              <a
-                href="https://github.com/Nojaid-Ad/Calorie"
-                class="card-link"
-                target="_blank"
-              >
-                <img
-                  src="assets/images/projects/caloriator.jpg"
-                  class="card-img"
-                />
-                <p class="badge">Caloriator</p>
-                <h2 class="card-title">Flutter + SqFlite + GetX</h2>
-                <button class="card-button material-symbols-outlined">
-                  arrow_forward
-                </button>
-              </a>
-            </li>
-
-            <!-- 4 - TaskLy -->
-            <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
-                <img src="assets/images/projects/taskly.jpg" class="card-img" />
-                <p class="badge">TaskLy</p>
-                <h2 class="card-title">Flutter + SqFlite + GetX</h2>
-                <button class="card-button material-symbols-outlined">
-                  arrow_forward
-                </button>
-              </a>
-            </li>
-
-            <!-- 5 - Robo Rampage -->
-            <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
-                <img
-                  src="assets/images/projects/roboram.jpg"
-                  class="card-img"
-                />
-                <p class="badge">Robo Rampage</p>
-                <h2 class="card-title">Unity using C#</h2>
-                <button class="card-button material-symbols-outlined">
-                  arrow_forward
-                </button>
-              </a>
-            </li>
-
-            <!-- 6 - Day Management -->
-            <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
-                <img src="assets/images/projects/login.jpg" class="card-img" />
-                <p class="badge">Day Management</p>
-                <h2 class="card-title">Flutter + GetX + Php + MySql</h2>
-                <button class="card-button material-symbols-outlined">
-                  arrow_forward
-                </button>
-              </a>
-            </li>
-          </ul>
-
-          <div class="swiper-pagination"></div>
-          <div class="swiper-slider-btn swiper-button-prev"></div>
-          <div class="swiper-slider-btn swiper-button-next"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="education-section" id="education">
-      <h2 class="section-title">Education</h2>
-      <div class="section-divider"></div>
-      <div class="content-container" data-aos="fade-up">
-        <div class="left-content">
-          <div class="icon-college">
-            <i class="fa-solid fa-user-graduate"></i>
-          </div>
-        </div>
-
-        <div class="right-content">
-          <h3 class="edu-college">
-            College of Information Technology — Aljmail, University of Sabratha
-          </h3>
-
-          <p class="edu-degree">Department: Software Engineering</p>
-
-          <p class="edu-status">
-            <strong>Status:</strong> 7th semester student —
-            <strong>GPA:</strong> 81%
+        <div class="about-content" data-aos="fade-up">
+          <p class="about-description" data-i18n="about.description">
+            I am a Software Engineer who graduated from the Faculty of
+            Information Technology – Al-Jumail, University of Sabratha, with a
+            Bachelor's degree in Software Engineering. I specialize in building
+            scalable mobile applications using Flutter and full-stack web
+            development with Laravel and PHP. My focus is on clean architecture,
+            efficient code, and delivering polished user experiences.
           </p>
 
-          <p class="edu-details">
-            currently studying Software Engineering at the College of
-            Information Technology, University of Sabratha (College on Aljmail
-            City). My academic focus is on designing, developing, and optimizing
-            software systems and mobile applications using modern technologies
-            such as <strong>Flutter</strong>, <strong>PHP</strong>,
-            <strong>MySQL</strong>, and <strong>GetX</strong>. <br />
+          <div class="about-stats">
+            <div class="stat-item">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              <div>
+                <span class="stat-label" data-i18n="about.stat1Label"
+                  >Education</span
+                >
+                <span class="stat-value" data-i18n="about.stat1Value"
+                  >B.Sc. Software Engineering</span
+                >
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              <div>
+                <span class="stat-label" data-i18n="about.stat2Label"
+                  >Focus</span
+                >
+                <span class="stat-value" data-i18n="about.stat2Value"
+                  >Mobile & Web Development</span
+                >
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <div>
+                <span class="stat-label" data-i18n="about.stat3Label"
+                  >Core Tech</span
+                >
+                <span class="stat-value" data-i18n="about.stat3Value"
+                  >Flutter · Laravel · MySQL</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════
+           SKILLS SECTION
+           ════════════════════════════════════ -->
+      <section class="skills-section" id="skills">
+        <h2 class="section-title">
+          <span data-i18n="skills.title">My</span>
+          <span class="title-highlight" data-i18n="skills.titleHighlight"
+            >Skills</span
+          >
+        </h2>
+        <div class="section-divider"></div>
+
+        <div class="skills-grid" data-aos="fade-up">
+          <!-- Flutter -->
+          <article class="skill-card s0">
+            <div class="skill-front">
+              <div class="skill-header">
+                <i class="fa-brands fa-flutter skill-icon" aria-hidden="true"></i>
+                <div>
+                  <h3 data-i18n="skills.flutter.name">Flutter</h3>
+                  <span class="skill-percent" data-i18n="skills.flutter.percent"
+                    >85%</span
+                  >
+                </div>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-fill" style="--value: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-back">
+              <p data-i18n="skills.flutter.description">
+                Building scalable mobile apps using Flutter, GetX, REST APIs,
+                Firebase, and clean architecture.
+              </p>
+            </div>
+          </article>
+
+          <!-- Full Stack -->
+          <article class="skill-card s1">
+            <div class="skill-front">
+              <div class="skill-header">
+                <i
+                  class="fa-solid fa-layer-group skill-icon"
+                  aria-hidden="true"
+                ></i>
+                <div>
+                  <h3 data-i18n="skills.fullstack.name">Full Stack</h3>
+                  <span
+                    class="skill-percent"
+                    data-i18n="skills.fullstack.percent"
+                    >80%</span
+                  >
+                </div>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-fill" style="--value: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-back">
+              <p data-i18n="skills.fullstack.description">
+                Developing backend systems with Laravel, MySQL, authentication,
+                APIs, and modern frontend integration.
+              </p>
+            </div>
+          </article>
+
+          <!-- UI / UX -->
+          <article class="skill-card s2">
+            <div class="skill-front">
+              <div class="skill-header">
+                <i
+                  class="fa-solid fa-pen-ruler skill-icon"
+                  aria-hidden="true"
+                ></i>
+                <div>
+                  <h3 data-i18n="skills.uiux.name">UI / UX Design</h3>
+                  <span class="skill-percent" data-i18n="skills.uiux.percent"
+                    >75%</span
+                  >
+                </div>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-fill" style="--value: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-back">
+              <p data-i18n="skills.uiux.description">
+                Designing clean, usable interfaces with strong hierarchy,
+                spacing, accessibility, and motion principles.
+              </p>
+            </div>
+          </article>
+
+          <!-- Java Swing -->
+          <article class="skill-card s3">
+            <div class="skill-front">
+              <div class="skill-header">
+                <i class="fa-brands fa-java skill-icon" aria-hidden="true"></i>
+                <div>
+                  <h3 data-i18n="skills.java.name">Java Swing</h3>
+                  <span class="skill-percent" data-i18n="skills.java.percent"
+                    >70%</span
+                  >
+                </div>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-fill" style="--value: 70%"></div>
+              </div>
+            </div>
+            <div class="skill-back">
+              <p data-i18n="skills.java.description">
+                Building desktop applications with Java Swing, JDBC, and
+                database-driven architectures.
+              </p>
+            </div>
+          </article>
+
+          <!-- C# & Unity -->
+          <article class="skill-card s4">
+            <div class="skill-front">
+              <div class="skill-header">
+                <i class="fa-brands fa-unity skill-icon" aria-hidden="true"></i>
+                <div>
+                  <h3 data-i18n="skills.unity.name">C# &amp; Unity</h3>
+                  <span class="skill-percent" data-i18n="skills.unity.percent"
+                    >65%</span
+                  >
+                </div>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-fill" style="--value: 65%"></div>
+              </div>
+            </div>
+            <div class="skill-back">
+              <p data-i18n="skills.unity.description">
+                Creating 2D and 3D games with structured gameplay logic,
+                physics, and performance awareness.
+              </p>
+            </div>
+          </article>
+
+          <!-- HTML & CSS -->
+          <article class="skill-card s5">
+            <div class="skill-front">
+              <div class="skill-header">
+                <i class="fa-solid fa-code skill-icon" aria-hidden="true"></i>
+                <div>
+                  <h3 data-i18n="skills.htmlcss.name">HTML &amp; CSS</h3>
+                  <span
+                    class="skill-percent"
+                    data-i18n="skills.htmlcss.percent"
+                    >90%</span
+                  >
+                </div>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-progress-fill" style="--value: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-back">
+              <p data-i18n="skills.htmlcss.description">
+                Crafting responsive layouts, animations, and modern UI
+                components with clean, maintainable CSS.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════
+           PROJECTS SECTION
+           ════════════════════════════════════ -->
+      <section class="projects-section" id="projects">
+        <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+        <div class="section-divider"></div>
+
+        <div class="projects-container" data-aos="fade-up">
+          <div class="projects-wrapper swiper">
+            <ul class="swiper-wrapper">
+              <!-- 1 — Library System -->
+              <li class="project-card swiper-slide">
+                <a
+                  href="https://github.com/Nojaid-Ad/Library-Managements-System"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="View Library System project"
+                  data-i18n-aria="a11y.viewProject"
+                >
+                  <img
+                    src="assets/images/projects/library.jpg"
+                    class="project-img"
+                    alt="Library System"
+                    loading="lazy"
+                  />
+                  <p
+                    class="project-badge"
+                    data-i18n="projects.library.badge"
+                  >
+                    Library System
+                  </p>
+                  <h3
+                    class="project-tech"
+                    data-i18n="projects.library.tech"
+                  >
+                    Java Swing + MySQL
+                  </h3>
+                  <span class="project-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 2 — Geo Locator -->
+              <li class="project-card swiper-slide">
+                <a
+                  href="https://github.com/Nojaid-Ad/Location-Distance-Calculater"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="View Geo Locator project"
+                  data-i18n-aria="a11y.viewProject"
+                >
+                  <img
+                    src="assets/images/projects/2.png"
+                    class="project-img"
+                    alt="Geo Locator"
+                    loading="lazy"
+                  />
+                  <p
+                    class="project-badge"
+                    data-i18n="projects.geoLocator.badge"
+                  >
+                    Geo Locator
+                  </p>
+                  <h3
+                    class="project-tech"
+                    data-i18n="projects.geoLocator.tech"
+                  >
+                    Java Swing
+                  </h3>
+                  <span class="project-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 3 — Caloriator -->
+              <li class="project-card swiper-slide">
+                <a
+                  href="https://github.com/Nojaid-Ad/Calorie"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                  aria-label="View Caloriator project"
+                  data-i18n-aria="a11y.viewProject"
+                >
+                  <img
+                    src="assets/images/projects/caloriator.jpg"
+                    class="project-img"
+                    alt="Caloriator"
+                    loading="lazy"
+                  />
+                  <p
+                    class="project-badge"
+                    data-i18n="projects.caloriator.badge"
+                  >
+                    Caloriator
+                  </p>
+                  <h3
+                    class="project-tech"
+                    data-i18n="projects.caloriator.tech"
+                  >
+                    Flutter + SqFlite + GetX
+                  </h3>
+                  <span class="project-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 4 — TaskLy -->
+              <li class="project-card swiper-slide">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="View TaskLy project"
+                  data-i18n-aria="a11y.viewProject"
+                >
+                  <img
+                    src="assets/images/projects/taskly.jpg"
+                    class="project-img"
+                    alt="TaskLy"
+                    loading="lazy"
+                  />
+                  <p
+                    class="project-badge"
+                    data-i18n="projects.taskly.badge"
+                  >
+                    TaskLy
+                  </p>
+                  <h3
+                    class="project-tech"
+                    data-i18n="projects.taskly.tech"
+                  >
+                    Flutter + SqFlite + GetX
+                  </h3>
+                  <span class="project-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 5 — Robo Rampage -->
+              <li class="project-card swiper-slide">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="View Robo Rampage project"
+                  data-i18n-aria="a11y.viewProject"
+                >
+                  <img
+                    src="assets/images/projects/roboram.jpg"
+                    class="project-img"
+                    alt="Robo Rampage"
+                    loading="lazy"
+                  />
+                  <p
+                    class="project-badge"
+                    data-i18n="projects.roboRampage.badge"
+                  >
+                    Robo Rampage
+                  </p>
+                  <h3
+                    class="project-tech"
+                    data-i18n="projects.roboRampage.tech"
+                  >
+                    Unity using C#
+                  </h3>
+                  <span class="project-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 6 — Day Management -->
+              <li class="project-card swiper-slide">
+                <a
+                  href="#"
+                  class="project-link"
+                  aria-label="View Day Management project"
+                  data-i18n-aria="a11y.viewProject"
+                >
+                  <img
+                    src="assets/images/projects/login.jpg"
+                    class="project-img"
+                    alt="Day Management"
+                    loading="lazy"
+                  />
+                  <p
+                    class="project-badge"
+                    data-i18n="projects.dayManagement.badge"
+                  >
+                    Day Management
+                  </p>
+                  <h3
+                    class="project-tech"
+                    data-i18n="projects.dayManagement.tech"
+                  >
+                    Flutter + GetX + PHP + MySQL
+                  </h3>
+                  <span class="project-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+            </ul>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════
+           EDUCATION SECTION
+           ════════════════════════════════════ -->
+      <section class="education-section" id="education">
+        <h2 class="section-title" data-i18n="education.title">Education</h2>
+        <div class="section-divider"></div>
+
+        <div class="education-card" data-aos="fade-up">
+          <div class="education-icon">
+            <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+          </div>
+
+          <div class="education-body">
+            <h3 class="edu-college" data-i18n="education.college">
+              Faculty of Information Technology — Al-Jumail, University of
+              Sabratha
+            </h3>
+
+            <p class="edu-degree" data-i18n="education.degree">
+              Bachelor's Degree in Software Engineering
+            </p>
+
+            <p class="edu-status" data-i18n="education.status">
+              Graduated — GPA: 81%
+            </p>
+
+            <p class="edu-details">
+              <span data-i18n="education.details">
+                Graduated with a Bachelor's degree in Software Engineering from
+                the Faculty of Information Technology, University of Sabratha
+                (Al-Jumail campus). Academic focus on designing, developing, and
+                optimizing software systems and mobile applications using modern
+                technologies such as Flutter, PHP, MySQL, and GetX.
+              </span>
+              <br />
+              <a
+                href="https://www.facebook.com/p/%D9%83%D9%84%D9%8A%D8%A9-%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%85%D9%8A%D9%84-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%B5%D8%A8%D8%B1%D8%A7%D8%AA%D8%A9-61566172146606/"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-i18n="education.collegeLinkText"
+                >Faculty of IT — Al-Jumail</a
+              >
+            </p>
+
+            <p class="edu-courses-title" data-i18n="education.keyCoursesTitle">
+              Key Courses:
+            </p>
+
+            <ul class="edu-courses">
+              <li data-i18n="education.course1">
+                Object-Oriented Programming (OOP)
+              </li>
+              <li data-i18n="education.course2">Data Structures</li>
+              <li data-i18n="education.course3">Design Patterns</li>
+              <li data-i18n="education.course4">Advanced Java</li>
+              <li data-i18n="education.course5">Database Systems</li>
+              <li data-i18n="education.course6">
+                Software Design and Architecture
+              </li>
+              <li data-i18n="education.course7">
+                Internet Programming (HTML, CSS, JavaScript, PHP)
+              </li>
+              <li data-i18n="education.course8">
+                Encryption Protocols and Algorithms
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════
+           CONTACT SECTION
+           ════════════════════════════════════ -->
+      <section class="contact-section" id="contact">
+        <h2 class="section-title">
+          <span data-i18n="contact.title">Contact</span>&nbsp;<span
+            class="title-highlight"
+            data-i18n="contact.titleHighlight"
+            >Me</span
+          >
+        </h2>
+        <div class="section-divider"></div>
+
+        <div class="contact-container" data-aos="fade-up">
+          <form class="contact-form" novalidate>
+            <div class="form-row">
+              <input
+                type="text"
+                name="fullname"
+                placeholder="Full Name"
+                data-i18n-placeholder="contact.namePlaceholder"
+                autocomplete="name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                data-i18n-placeholder="contact.emailPlaceholder"
+                autocomplete="email"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                data-i18n-placeholder="contact.phonePlaceholder"
+                autocomplete="tel"
+              />
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                data-i18n-placeholder="contact.subjectPlaceholder"
+                required
+              />
+            </div>
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Your Message..."
+              data-i18n-placeholder="contact.messagePlaceholder"
+              required
+            ></textarea>
+
+            <div class="form-message" role="alert"></div>
+
+            <button class="send-btn" type="submit" data-i18n="contact.sendBtn">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════ -->
+    <footer class="main-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="footer-logo"
+            >N<span class="footer-logo-accent">0</span>jaid</span
+          >
+          <p data-i18n="footer.description">
+            Software Engineer focused on building modern, efficient
+            applications.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+          <ul>
+            <li>
+              <a href="#about" data-i18n="nav.about">About</a>
+            </li>
+            <li>
+              <a href="#skills" data-i18n="nav.skills">Skills</a>
+            </li>
+            <li>
+              <a href="#projects" data-i18n="nav.projects">Projects</a>
+            </li>
+            <li>
+              <a href="#education" data-i18n="nav.education">Education</a>
+            </li>
+            <li>
+              <a href="#contact" data-i18n="nav.contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4 data-i18n="footer.contactInfo">Contact</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:nojaidnojaid@gmail.com">nojaidnojaid@gmail.com</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
             <a
-              href="https://www.facebook.com/p/%D9%83%D9%84%D9%8A%D8%A9-%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%85%D9%8A%D9%84-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%B5%D8%A8%D8%B1%D8%A7%D8%AA%D8%A9-61566172146606/"
+              href="https://t.me/Nojaid"
               target="_blank"
-              >Information Technology Aljmail</a
+              rel="noopener noreferrer"
+              >@Nojaid</a
             >
-          </p>
-
-          <p class="edu-details">
-            <strong>Key Courses:</strong>
-          </p>
-
-          <ul class="edu-subjects">
-            <li>Object-Oriented Programming (OOP)</li>
-            <li>Data Structures</li>
-            <li>Design Patterns</li>
-            <li>Advanced Java</li>
-            <li>Database Systems</li>
-            <li>Software Design and Architecture</li>
-            <li>Internet Programming (HTML, CSS, JavaScript, PHP)</li>
-            <li>Encryption Protocols and Algorithms</li>
-          </ul>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <a
+              href="https://github.com/Nojaid-Ad"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Nojaid-Ad</a
+            >
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="contact-section">
-      <h2 class="section-title">Contact&nbsp;<span>Me</span></h2>
-      <div class="section-divider"></div>
-      <div class="contact-container" data-aos="fade-up">
-        <!--In the future when someone submit he will send a message to my email using php....-->
-        <form class="contact-form">
-          <div class="form-row">
-            <input
-              type="text"
-              name="fullname"
-              placeholder="Full Name"
-              required
-            />
-            <input type="email" name="fullname" placeholder="Email" required />
-          </div>
-          <div class="form-row">
-            <input
-              type="text"
-              name="phone"
-              placeholder="Phone Number"
-              required
-            />
-            <input type="text" name="subject" placeholder="Subject" required />
-          </div>
-          <textarea
-            name="message"
-            rows="7"
-            placeholder="Your Message..."
-            required
-          ></textarea>
-          <button class="send-btn" type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
-
-    <footer id="contact">
-      <div class="footer-content">
-        <p class="developer">
-          <span>Developed by <strong>Nojaid Abdullah Issa</strong></span
-          ><br />
-          <span>© 2025 All Rights Reserved</span>
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          <span data-i18n="footer.developedBy">Developed by</span>
+          <strong data-i18n="footer.name">Nojaid Abdullah Issa</strong>
+          &nbsp;·&nbsp;
+          <span data-i18n="footer.rights">© 2025 All Rights Reserved.</span>
         </p>
 
-        <div class="social-icons">
+        <div class="footer-social">
           <a
             href="https://www.linkedin.com/in/nojaid-ad-a10601388"
             target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            data-i18n-aria="a11y.linkedin"
           >
             <i class="fa-brands fa-linkedin"></i>
           </a>
-
-          <a href="https://t.me/Nojaid" target="_blank"
-            ><i class="fa-brands fa-telegram"></i
-          ></a>
-          <a href="https://github.com/Nojaid-Ad" target="_blank"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="mailto:nojaidnojaid@gmail.com" target="_blank"
-            ><i class="fa-solid fa-envelope"></i
-          ></a>
+          <a
+            href="https://t.me/Nojaid"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+            data-i18n-aria="a11y.telegram"
+          >
+            <i class="fa-brands fa-telegram"></i>
+          </a>
+          <a
+            href="https://github.com/Nojaid-Ad"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            data-i18n-aria="a11y.github"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a
+            href="mailto:nojaidnojaid@gmail.com"
+            aria-label="Email"
+            data-i18n-aria="a11y.email"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         </div>
       </div>
     </footer>
-
-    <script src="assets/js/code.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="assets/js/swiper.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-
-    <!-- JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 500,
-        once: true,
-        offset: 20,
-        easing: "ease-out",
-      });
-    </script>
   </body>
 </html>

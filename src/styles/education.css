@@ -1,0 +1,191 @@
+/* ═══════════════════════════════════════
+   EDUCATION SECTION
+   ═══════════════════════════════════════ */
+
+.education-section {
+  padding: 72px 6% 80px;
+  background: var(--bg-section);
+  transition: background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+/* ───── Glassmorphism card ───── */
+.education-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 44px;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.88),
+    rgba(255, 255, 255, 0.78)
+  );
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform var(--transition-slow),
+    box-shadow var(--transition-slow),
+    border-color var(--transition-base),
+    background var(--transition-base);
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border-color: var(--primary-hover);
+}
+
+[data-theme='dark'] .education-card {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.88),
+    rgba(15, 23, 42, 0.72)
+  );
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ───── Icon ───── */
+.education-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  box-shadow: 0 12px 24px rgba(0, 100, 200, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+/* ───── Content ───── */
+.education-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.edu-college {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--title-color);
+  letter-spacing: -0.2px;
+  line-height: 1.4;
+  transition: color var(--transition-base);
+}
+
+.edu-degree {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color var(--transition-base);
+}
+
+.edu-status {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-hover);
+}
+
+.edu-details {
+  margin-top: 4px;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: color var(--transition-base);
+}
+
+.edu-details a {
+  color: var(--primary-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-base);
+}
+.edu-details a:hover {
+  color: var(--accent);
+}
+
+/* ───── Courses ───── */
+.edu-courses-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--title-color);
+  margin-top: 10px;
+  transition: color var(--transition-base);
+}
+
+.edu-courses {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.edu-courses li {
+  position: relative;
+  padding-inline-start: 22px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--title-color);
+  transition: color var(--transition-base);
+}
+
+.edu-courses li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .education-card {
+    grid-template-columns: 1fr;
+    padding: 32px;
+    gap: 20px;
+  }
+  .edu-courses {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .education-section {
+    padding: 56px 4% 64px;
+  }
+  .education-card {
+    padding: 24px;
+  }
+  .education-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 26px;
+    border-radius: 14px;
+  }
+  .edu-college {
+    font-size: 1.1rem;
+  }
+  .edu-degree,
+  .edu-details {
+    font-size: 0.85rem;
+  }
+  .edu-courses li {
+    font-size: 0.82rem;
+  }
+}

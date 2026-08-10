@@ -1,0 +1,13 @@
+/* ═══════════════════════════════════════
+   COMPONENTS — Shared reusable styles
+   ═══════════════════════════════════════ */
+
+/* ───── Section spacing ───── */
+section {
+  position: relative;
+}
+
+/* ───── Smooth scroll reveal placeholder ───── */
+[data-aos] {
+  will-change: transform, opacity;
+}
