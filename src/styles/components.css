@@ -11,3 +11,58 @@ section {
 [data-aos] {
   will-change: transform, opacity;
 }
+
+/* ───── Back to Top Button ───── */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  inset-inline-end: 24px;
+  z-index: 99;
+  padding: 10px 18px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity var(--transition-base),
+    transform var(--transition-base),
+    background-color var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: transparent;
+  color: var(--primary);
+}
+
+[data-theme='dark'] .back-to-top {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #fff;
+}
+
+[data-theme='dark'] .back-to-top:hover {
+  background: transparent;
+  color: var(--primary-hover);
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 16px;
+    inset-inline-end: 16px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}

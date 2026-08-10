@@ -128,7 +128,7 @@
   padding: 13px 32px;
   font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: background-color var(--transition-base),
     color var(--transition-base),
     border-color var(--transition-base),

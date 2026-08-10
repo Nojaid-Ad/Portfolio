@@ -23,7 +23,7 @@ const en = {
     title: 'About',
     titleHighlight: 'Me',
     description:
-      "I am a Software Engineer who graduated from the Faculty of Information Technology – Al-Jumail, University of Sabratha, with a Bachelor's degree in Software Engineering. I specialize in building scalable mobile applications using Flutter and full-stack web development with Laravel and PHP. My focus is on clean architecture, efficient code, and delivering polished user experiences.",
+      "I am a Software Engineer holding a Bachelor's degree in Software Engineering from the Faculty of Information Technology – Al-Jumail, University of Sabratha. I focus on developing mobile applications using Flutter and web systems using Laravel, PHP, and MySQL. I am passionate about building scalable software, writing clean and maintainable code, and applying software engineering principles to deliver practical solutions and high-quality user experiences.",
     stat1Label: 'Education',
     stat1Value: "B.Sc. Software Engineering",
     stat2Label: 'Focus',
@@ -131,9 +131,13 @@ const en = {
       'Software Engineer focused on building modern, efficient applications.',
     quickLinks: 'Quick Links',
     contactInfo: 'Contact',
-    rights: '© 2025 All Rights Reserved.',
     developedBy: 'Developed by',
     name: 'Nojaid Abdullah Issa',
+    rights: '© 2025 All Rights Reserved.',
+  },
+
+  common: {
+    backToTop: 'Back to Top ↑',
   },
 
   /* ───── Language switcher ───── */

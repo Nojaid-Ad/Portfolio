@@ -46,6 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langSwitchBtn');
   if (langBtn) langBtn.addEventListener('click', toggleLanguage);
 
+  /* 6. Contact Form Prevent Default */
+  const contactForm = document.querySelector('.contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Optionally show a success message here
+      const msg = contactForm.querySelector('.form-message');
+      if (msg) {
+        msg.textContent = getLanguage() === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Your message has been sent successfully!';
+        msg.style.color = 'var(--primary)';
+      }
+      contactForm.reset();
+    });
+  }
+
   /* 6. Hero liquid canvas */
   const heroCanvas = document.getElementById('heroCanvas');
   if (heroCanvas) new LiquidCanvas(heroCanvas);

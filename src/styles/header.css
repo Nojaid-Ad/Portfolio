@@ -14,7 +14,13 @@
   border-bottom: 1px solid var(--border-header);
   transition: background var(--transition-base),
     border-color var(--transition-base),
-    box-shadow var(--transition-base);
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+/* Smart header hide state */
+.main-header.header-hidden {
+  transform: translateY(-100%);
 }
 
 .header-inner {
@@ -68,46 +74,25 @@
   font-weight: 500;
   font-size: 1rem;
   padding: 8px 18px;
-  color: var(--primary);
+  color: var(--text-primary);
   border-radius: 8px;
   transition: color var(--transition-base),
-    background-color var(--transition-fast);
+    background-color var(--transition-base);
 }
 
-.main-nav a:hover {
+.main-nav a:hover,
+.main-nav a.active {
   color: var(--primary-hover);
-  background-color: rgba(51, 156, 255, 0.06);
-}
-
-.main-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  inset-inline-start: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--primary-hover);
-  transform: translateX(-50%);
-  transition: width var(--transition-base);
-  border-radius: 2px;
-}
-[dir='rtl'] .main-nav a::after {
-  transform: translateX(50%);
-}
-
-.main-nav a:hover::after {
-  width: 60%;
+  background-color: rgba(51, 156, 255, 0.08);
 }
 
 [data-theme='dark'] .main-nav a {
-  color: #ddd;
+  color: var(--text-primary);
 }
-[data-theme='dark'] .main-nav a:hover {
+[data-theme='dark'] .main-nav a:hover,
+[data-theme='dark'] .main-nav a.active {
   color: var(--accent);
-  background-color: rgba(102, 204, 255, 0.06);
-}
-[data-theme='dark'] .main-nav a::after {
-  background: var(--accent);
+  background-color: rgba(102, 204, 255, 0.08);
 }
 
 /* ───── Header actions ───── */
@@ -119,30 +104,26 @@
 
 /* Language switch */
 .lang-switch-btn {
-  padding: 6px 14px;
+  padding: 6px 12px;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   border-radius: 8px;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
+  color: var(--text-primary);
   background: transparent;
   transition: background-color var(--transition-base),
-    color var(--transition-base),
-    border-color var(--transition-base);
-  white-space: nowrap;
+    color var(--transition-base);
 }
 .lang-switch-btn:hover {
-  background: var(--primary);
-  color: #fff;
+  background: rgba(51, 156, 255, 0.08);
+  color: var(--primary-hover);
 }
 
 [data-theme='dark'] .lang-switch-btn {
-  border-color: var(--primary-hover);
-  color: var(--primary-hover);
+  color: var(--text-primary);
 }
 [data-theme='dark'] .lang-switch-btn:hover {
-  background: var(--primary-hover);
-  color: #0b1120;
+  background: rgba(102, 204, 255, 0.08);
+  color: var(--accent);
 }
 
 /* Theme toggle */
@@ -152,20 +133,22 @@
   justify-content: center;
   width: 38px;
   height: 38px;
-  border-radius: 10px;
-  color: var(--primary);
+  border-radius: 8px;
+  color: var(--text-primary);
   transition: color var(--transition-base),
-    background-color var(--transition-fast);
+    background-color var(--transition-base);
 }
 .theme-toggle-btn:hover {
   background-color: rgba(51, 156, 255, 0.08);
+  color: var(--primary-hover);
 }
 
 [data-theme='dark'] .theme-toggle-btn {
-  color: #fff;
+  color: var(--text-primary);
 }
 [data-theme='dark'] .theme-toggle-btn:hover {
   background-color: rgba(255, 255, 255, 0.08);
+  color: var(--accent);
 }
 
 .theme-icon {
@@ -182,31 +165,33 @@
 .theme-icon .sun-rays circle {
   transform-origin: center;
   transition: transform 0.4s ease;
-  transform: scale(1);
 }
 .theme-icon mask > circle {
   transition: transform 0.5s cubic-bezier(0.41, 0.64, 0.32, 1.575);
 }
 
-/* Dark state: moon */
-[data-theme='dark'] .theme-icon {
+/* Light mode (Base): Show Moon icon */
+:root:not([data-theme='dark']) .theme-icon {
   transform: rotate(50deg);
 }
-[data-theme='dark'] .theme-icon .sun-moon {
+:root:not([data-theme='dark']) .theme-icon .sun-moon {
   transform: scale(0.55);
 }
-[data-theme='dark'] .theme-icon .sun-rays circle {
+:root:not([data-theme='dark']) .theme-icon .sun-rays circle {
   transform: scale(0);
 }
-[data-theme='dark'] .theme-icon mask > circle {
+:root:not([data-theme='dark']) .theme-icon mask > circle {
   transform: translate(16px, -3px);
 }
 
-/* Light state: sun */
-:root:not([data-theme='dark']) .theme-icon {
+/* Dark mode: Show Sun icon */
+[data-theme='dark'] .theme-icon {
   transform: rotate(40deg);
 }
-:root:not([data-theme='dark']) .theme-icon .sun-rays circle {
+[data-theme='dark'] .theme-icon .sun-moon {
+  transform: scale(1);
+}
+[data-theme='dark'] .theme-icon .sun-rays circle {
   animation: showSunRay 0.4s ease forwards;
 }
 

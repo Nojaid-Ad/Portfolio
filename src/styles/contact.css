@@ -34,7 +34,7 @@
   color: var(--text-primary);
   background: var(--bg-input);
   border: 1.5px solid var(--border-color);
-  border-radius: 10px;
+  border-radius: 8px;
   outline: none;
   transition: border-color var(--transition-base),
     box-shadow var(--transition-base),
@@ -70,7 +70,7 @@
   color: #fff;
   background: var(--primary);
   border: 2px solid var(--primary);
-  border-radius: 10px;
+  border-radius: 8px;
   transition: background-color var(--transition-base),
     color var(--transition-base),
     border-color var(--transition-base),
