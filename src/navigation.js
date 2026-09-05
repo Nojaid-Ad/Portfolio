@@ -1,5 +1,5 @@
 /**
- * Navigation — mobile menu toggle, smooth-scroll, active highlighting.
+ * Navigation — mobile menu toggle, smooth-scroll, active highlighting, scroll spy.
  */
 
 let menuOpen = false;
@@ -47,9 +47,11 @@ export function initNavigation() {
     }
   });
 
-  /* ── Smart Header & Back to Top ── */
+  /* ── Smart Header, Back to Top & Scroll Spy ── */
   const header = document.getElementById('mainHeader');
   const backToTop = document.getElementById('backToTopBtn');
+  const navLinks = nav.querySelectorAll('a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
   let lastScrollY = window.scrollY;
   let ticking = false;
 
@@ -66,18 +68,40 @@ export function initNavigation() {
     }
 
     /* Smart Header */
-    if (header && currentScrollY > 60) {
-      if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 5) {
-        // Scrolling down -> hide header
-        header.classList.add('header-hidden');
-      } else if (currentScrollY < lastScrollY && lastScrollY - currentScrollY > 5) {
-        // Scrolling up -> show header
+    if (header) {
+      /* Add scrolled class for shadow */
+      if (currentScrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      if (currentScrollY > 60) {
+        if (currentScrollY > lastScrollY && currentScrollY - lastScrollY > 5) {
+          header.classList.add('header-hidden');
+        } else if (currentScrollY < lastScrollY && lastScrollY - currentScrollY > 5) {
+          header.classList.remove('header-hidden');
+        }
+      } else {
         header.classList.remove('header-hidden');
       }
-    } else if (header && currentScrollY <= 60) {
-      // At the top -> show header
-      header.classList.remove('header-hidden');
     }
+
+    /* ── Scroll Spy — highlight active nav link ── */
+    let currentSection = '';
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 120;
+      if (currentScrollY >= sectionTop) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
 
     if (Math.abs(currentScrollY - lastScrollY) > 5) {
       lastScrollY = currentScrollY;
@@ -100,4 +124,7 @@ export function initNavigation() {
       });
     });
   }
+
+  /* Run once on load */
+  onScroll();
 }

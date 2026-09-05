@@ -11,17 +11,15 @@ import './styles/footer.css';
 import './styles/components.css';
 
 /* ── Vendor CSS ── */
-import 'aos/dist/aos.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 /* ── Modules ── */
-import AOS from 'aos';
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import { initTheme, toggleTheme } from './theme.js';
-import { initLanguage, toggleLanguage, applyLanguage, getLanguage } from './i18n/index.js';
+import { initLanguage, toggleLanguage, getLanguage } from './i18n/index.js';
 import { LiquidCanvas } from './hero-canvas.js';
 import { initNavigation } from './navigation.js';
 
@@ -46,21 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const langBtn = document.getElementById('langSwitchBtn');
   if (langBtn) langBtn.addEventListener('click', toggleLanguage);
 
-  /* 6. Contact Form Prevent Default */
-  const contactForm = document.querySelector('.contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Optionally show a success message here
-      const msg = contactForm.querySelector('.form-message');
-      if (msg) {
-        msg.textContent = getLanguage() === 'ar' ? 'تم إرسال رسالتك بنجاح!' : 'Your message has been sent successfully!';
-        msg.style.color = 'var(--primary)';
-      }
-      contactForm.reset();
-    });
-  }
-
   /* 6. Hero liquid canvas */
   const heroCanvas = document.getElementById('heroCanvas');
   if (heroCanvas) new LiquidCanvas(heroCanvas);
@@ -68,18 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 7. Swiper for projects */
   initSwiper();
 
-  /* 8. AOS scroll animations */
-  AOS.init({
-    duration: 500,
-    once: true,
-    offset: 30,
-    easing: 'ease-out',
-  });
+  /* 8. Scroll reveal animations (replaces AOS) */
+  initScrollReveal();
 
-  /* 9. Contact form handling */
+  /* 9. Skill progress bar animation on scroll */
+  initSkillProgress();
+
+  /* 10. Contact form handling */
   initContactForm();
 
-  /* 10. Re-init swiper direction on lang change */
+  /* 11. Re-init swiper direction on lang change */
   window.addEventListener('languageChanged', () => {
     initSwiper();
   });
@@ -87,6 +68,64 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ── Apply theme before DOM load to prevent flash ── */
 initTheme();
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL (replaces AOS)
+   Custom IntersectionObserver — works on GitHub Pages
+   ═══════════════════════════════════════ */
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.reveal, .reveal-stagger, .reveal-scale');
+
+  if (!revealElements.length) return;
+
+  /* Check for reduced motion preference */
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealElements.forEach(el => el.classList.add('active'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px',
+    }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+}
+
+/* ═══════════════════════════════════════
+   SKILL PROGRESS BARS
+   Animate fill width when scrolled into view
+   ═══════════════════════════════════════ */
+function initSkillProgress() {
+  const fills = document.querySelectorAll('.skill-progress-fill');
+  if (!fills.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+    }
+  );
+
+  fills.forEach((fill) => observer.observe(fill));
+}
 
 /* ═══════════════════════════════════════
    SWIPER
@@ -105,7 +144,7 @@ function initSwiper() {
   swiperInstance = new Swiper(el, {
     modules: [Navigation, Pagination],
     loop: false,
-    spaceBetween: 24,
+    spaceBetween: 20,
     grabCursor: true,
     pagination: {
       el: '.swiper-pagination',

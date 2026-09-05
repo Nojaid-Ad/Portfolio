@@ -10,7 +10,7 @@
     <meta name="author" content="Nojaid Abdullah Issa" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/Portfolio/bundled/Nojaid-gM_gqblC-gM_gqblC.png" />
+    <link rel="icon" type="image/png" href="assets/images/Nojaid.png" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,8 +23,8 @@
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
@@ -61,10 +61,6 @@
     />
 
     <title>Nojaid Ad — Software Engineer</title>
-
-    <!-- Vite entry -->
-    <script type="module" crossorigin src="/Portfolio/bundled/index-708yByur.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio/bundled/index-Bq_Cwiuh.css">
   </head>
 
   <body>
@@ -107,7 +103,8 @@
             aria-label="Switch language"
             data-i18n-aria="a11y.langSwitch"
           >
-            <span class="lang-text">[ AR / EN ]</span>
+            <i class="fa-solid fa-globe lang-icon"></i>
+            <span class="lang-code" data-i18n="language.code">EN</span>
           </button>
 
           <button
@@ -117,34 +114,8 @@
             aria-label="Toggle dark / light mode"
             data-i18n-aria="a11y.themeToggle"
           >
-            <svg
-              class="theme-icon"
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="none"
-            >
-              <mask id="moon-mask">
-                <rect x="0" y="0" width="20" height="20" fill="white" />
-                <circle cx="11" cy="3" r="8" fill="black" />
-              </mask>
-              <circle
-                class="sun-moon"
-                cx="10"
-                cy="10"
-                r="8"
-                mask="url(#moon-mask)"
-              />
-              <g class="sun-rays">
-                <circle cx="18" cy="10" r="1.5" />
-                <circle cx="14" cy="16.928" r="1.5" />
-                <circle cx="6" cy="16.928" r="1.5" />
-                <circle cx="2" cy="10" r="1.5" />
-                <circle cx="6" cy="3.1718" r="1.5" />
-                <circle cx="14" cy="3.1718" r="1.5" />
-              </g>
-            </svg>
+            <i class="fa-regular fa-moon theme-icon-moon"></i>
+            <i class="fa-solid fa-sun theme-icon-sun"></i>
           </button>
         </div>
       </div>
@@ -240,7 +211,7 @@
 
           <div class="hero-image">
             <img
-              src="/Portfolio/bundled/NojaidAd-CEEVKJaZ-CEEVKJaZ.png"
+              src="assets/images/NojaidAd.png"
               alt="Nojaid Abdullah Issa"
               width="440"
               height="440"
@@ -263,27 +234,30 @@
            ABOUT SECTION
            ════════════════════════════════════ -->
       <section class="about-section" id="about">
-        <h2 class="section-title">
+        <h2 class="section-title reveal">
           <span data-i18n="about.title">About</span>
           <span class="title-highlight" data-i18n="about.titleHighlight"
             >Me</span
           >
         </h2>
-        <div class="section-divider"></div>
+        <div class="section-divider reveal"></div>
 
-        <div class="about-content" data-aos="fade-up">
-          <p class="about-description" data-i18n="about.description">
-            I am a Software Engineer who graduated from the Faculty of
-            Information Technology – Al-Jumail, University of Sabratha, with a
-            Bachelor's degree in Software Engineering. I specialize in building
-            scalable mobile applications using Flutter and full-stack web
-            development with Laravel and PHP. My focus is on clean architecture,
-            efficient code, and delivering polished user experiences.
+        <div class="about-content">
+          <p class="about-description reveal" data-i18n="about.description">
+            I am a Software Engineer holding a Bachelor's degree in Software
+            Engineering from the Faculty of Information Technology – Al-Jumail,
+            University of Sabratha. I focus on developing mobile applications
+            using Flutter and web systems using Laravel, PHP, and MySQL. I am
+            passionate about building scalable software, writing clean and
+            maintainable code, and applying software engineering principles to
+            deliver practical solutions and high-quality user experiences.
           </p>
 
-          <div class="about-stats">
+          <div class="about-stats reveal-stagger">
             <div class="stat-item">
-              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              <div class="stat-icon">
+                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              </div>
               <div>
                 <span class="stat-label" data-i18n="about.stat1Label"
                   >Education</span
@@ -295,7 +269,9 @@
             </div>
 
             <div class="stat-item">
-              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              <div class="stat-icon">
+                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              </div>
               <div>
                 <span class="stat-label" data-i18n="about.stat2Label"
                   >Focus</span
@@ -307,7 +283,9 @@
             </div>
 
             <div class="stat-item">
-              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <div class="stat-icon">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+              </div>
               <div>
                 <span class="stat-label" data-i18n="about.stat3Label"
                   >Core Tech</span
@@ -325,167 +303,155 @@
            SKILLS SECTION
            ════════════════════════════════════ -->
       <section class="skills-section" id="skills">
-        <h2 class="section-title">
+        <h2 class="section-title reveal">
           <span data-i18n="skills.title">My</span>
           <span class="title-highlight" data-i18n="skills.titleHighlight"
             >Skills</span
           >
         </h2>
-        <div class="section-divider"></div>
+        <div class="section-divider reveal"></div>
 
-        <div class="skills-grid" data-aos="fade-up">
+        <div class="skills-grid reveal-stagger">
           <!-- Flutter -->
           <article class="skill-card s0">
-            <div class="skill-front">
-              <div class="skill-header">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
                 <i class="fa-brands fa-flutter skill-icon" aria-hidden="true"></i>
-                <div>
-                  <h3 data-i18n="skills.flutter.name">Flutter</h3>
-                  <span class="skill-percent" data-i18n="skills.flutter.percent"
-                    >85%</span
-                  >
-                </div>
               </div>
-              <div class="skill-progress">
-                <div class="skill-progress-fill" style="--value: 85%"></div>
+              <div>
+                <h3 data-i18n="skills.flutter.name">Flutter</h3>
+                <span class="skill-percent" data-i18n="skills.flutter.percent"
+                  >85%</span
+                >
               </div>
             </div>
-            <div class="skill-back">
-              <p data-i18n="skills.flutter.description">
-                Building scalable mobile apps using Flutter, GetX, REST APIs,
-                Firebase, and clean architecture.
-              </p>
+            <div class="skill-progress">
+              <div class="skill-progress-fill" style="--value: 85%"></div>
             </div>
+            <p class="skill-description" data-i18n="skills.flutter.description">
+              Building scalable mobile apps using Flutter, GetX, REST APIs,
+              Firebase, and clean architecture.
+            </p>
           </article>
 
           <!-- Full Stack -->
           <article class="skill-card s1">
-            <div class="skill-front">
-              <div class="skill-header">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
                 <i
                   class="fa-solid fa-layer-group skill-icon"
                   aria-hidden="true"
                 ></i>
-                <div>
-                  <h3 data-i18n="skills.fullstack.name">Full Stack</h3>
-                  <span
-                    class="skill-percent"
-                    data-i18n="skills.fullstack.percent"
-                    >80%</span
-                  >
-                </div>
               </div>
-              <div class="skill-progress">
-                <div class="skill-progress-fill" style="--value: 80%"></div>
+              <div>
+                <h3 data-i18n="skills.fullstack.name">Full Stack</h3>
+                <span
+                  class="skill-percent"
+                  data-i18n="skills.fullstack.percent"
+                  >80%</span
+                >
               </div>
             </div>
-            <div class="skill-back">
-              <p data-i18n="skills.fullstack.description">
-                Developing backend systems with Laravel, MySQL, authentication,
-                APIs, and modern frontend integration.
-              </p>
+            <div class="skill-progress">
+              <div class="skill-progress-fill" style="--value: 80%"></div>
             </div>
+            <p class="skill-description" data-i18n="skills.fullstack.description">
+              Developing backend systems with Laravel, MySQL, authentication,
+              APIs, and modern frontend integration.
+            </p>
           </article>
 
           <!-- UI / UX -->
           <article class="skill-card s2">
-            <div class="skill-front">
-              <div class="skill-header">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
                 <i
                   class="fa-solid fa-pen-ruler skill-icon"
                   aria-hidden="true"
                 ></i>
-                <div>
-                  <h3 data-i18n="skills.uiux.name">UI / UX Design</h3>
-                  <span class="skill-percent" data-i18n="skills.uiux.percent"
-                    >75%</span
-                  >
-                </div>
               </div>
-              <div class="skill-progress">
-                <div class="skill-progress-fill" style="--value: 75%"></div>
+              <div>
+                <h3 data-i18n="skills.uiux.name">UI / UX Design</h3>
+                <span class="skill-percent" data-i18n="skills.uiux.percent"
+                  >75%</span
+                >
               </div>
             </div>
-            <div class="skill-back">
-              <p data-i18n="skills.uiux.description">
-                Designing clean, usable interfaces with strong hierarchy,
-                spacing, accessibility, and motion principles.
-              </p>
+            <div class="skill-progress">
+              <div class="skill-progress-fill" style="--value: 75%"></div>
             </div>
+            <p class="skill-description" data-i18n="skills.uiux.description">
+              Designing clean, usable interfaces with strong hierarchy,
+              spacing, accessibility, and motion principles.
+            </p>
           </article>
 
           <!-- Java Swing -->
           <article class="skill-card s3">
-            <div class="skill-front">
-              <div class="skill-header">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
                 <i class="fa-brands fa-java skill-icon" aria-hidden="true"></i>
-                <div>
-                  <h3 data-i18n="skills.java.name">Java Swing</h3>
-                  <span class="skill-percent" data-i18n="skills.java.percent"
-                    >70%</span
-                  >
-                </div>
               </div>
-              <div class="skill-progress">
-                <div class="skill-progress-fill" style="--value: 70%"></div>
+              <div>
+                <h3 data-i18n="skills.java.name">Java Swing</h3>
+                <span class="skill-percent" data-i18n="skills.java.percent"
+                  >70%</span
+                >
               </div>
             </div>
-            <div class="skill-back">
-              <p data-i18n="skills.java.description">
-                Building desktop applications with Java Swing, JDBC, and
-                database-driven architectures.
-              </p>
+            <div class="skill-progress">
+              <div class="skill-progress-fill" style="--value: 70%"></div>
             </div>
+            <p class="skill-description" data-i18n="skills.java.description">
+              Building desktop applications with Java Swing, JDBC, and
+              database-driven architectures.
+            </p>
           </article>
 
           <!-- C# & Unity -->
           <article class="skill-card s4">
-            <div class="skill-front">
-              <div class="skill-header">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
                 <i class="fa-brands fa-unity skill-icon" aria-hidden="true"></i>
-                <div>
-                  <h3 data-i18n="skills.unity.name">C# &amp; Unity</h3>
-                  <span class="skill-percent" data-i18n="skills.unity.percent"
-                    >65%</span
-                  >
-                </div>
               </div>
-              <div class="skill-progress">
-                <div class="skill-progress-fill" style="--value: 65%"></div>
+              <div>
+                <h3 data-i18n="skills.unity.name">C# &amp; Unity</h3>
+                <span class="skill-percent" data-i18n="skills.unity.percent"
+                  >65%</span
+                >
               </div>
             </div>
-            <div class="skill-back">
-              <p data-i18n="skills.unity.description">
-                Creating 2D and 3D games with structured gameplay logic,
-                physics, and performance awareness.
-              </p>
+            <div class="skill-progress">
+              <div class="skill-progress-fill" style="--value: 65%"></div>
             </div>
+            <p class="skill-description" data-i18n="skills.unity.description">
+              Creating 2D and 3D games with structured gameplay logic,
+              physics, and performance awareness.
+            </p>
           </article>
 
           <!-- HTML & CSS -->
           <article class="skill-card s5">
-            <div class="skill-front">
-              <div class="skill-header">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
                 <i class="fa-solid fa-code skill-icon" aria-hidden="true"></i>
-                <div>
-                  <h3 data-i18n="skills.htmlcss.name">HTML &amp; CSS</h3>
-                  <span
-                    class="skill-percent"
-                    data-i18n="skills.htmlcss.percent"
-                    >90%</span
-                  >
-                </div>
               </div>
-              <div class="skill-progress">
-                <div class="skill-progress-fill" style="--value: 90%"></div>
+              <div>
+                <h3 data-i18n="skills.htmlcss.name">HTML &amp; CSS</h3>
+                <span
+                  class="skill-percent"
+                  data-i18n="skills.htmlcss.percent"
+                  >90%</span
+                >
               </div>
             </div>
-            <div class="skill-back">
-              <p data-i18n="skills.htmlcss.description">
-                Crafting responsive layouts, animations, and modern UI
-                components with clean, maintainable CSS.
-              </p>
+            <div class="skill-progress">
+              <div class="skill-progress-fill" style="--value: 90%"></div>
             </div>
+            <p class="skill-description" data-i18n="skills.htmlcss.description">
+              Crafting responsive layouts, animations, and modern UI
+              components with clean, maintainable CSS.
+            </p>
           </article>
         </div>
       </section>
@@ -494,10 +460,10 @@
            PROJECTS SECTION
            ════════════════════════════════════ -->
       <section class="projects-section" id="projects">
-        <h2 class="section-title" data-i18n="projects.title">Projects</h2>
-        <div class="section-divider"></div>
+        <h2 class="section-title reveal" data-i18n="projects.title">Projects</h2>
+        <div class="section-divider reveal"></div>
 
-        <div class="projects-container" data-aos="fade-up">
+        <div class="projects-container reveal">
           <div class="projects-wrapper swiper">
             <ul class="swiper-wrapper">
               <!-- 1 — Library System -->
@@ -511,7 +477,7 @@
                   data-i18n-aria="a11y.viewProject"
                 >
                   <img
-                    src="/Portfolio/bundled/library-DWLe1X6l-DWLe1X6l.jpg"
+                    src="assets/images/projects/library.jpg"
                     class="project-img"
                     alt="Library System"
                     loading="lazy"
@@ -545,7 +511,7 @@
                   data-i18n-aria="a11y.viewProject"
                 >
                   <img
-                    src="/Portfolio/bundled/2-D8QgpFy8-D8QgpFy8.png"
+                    src="assets/images/projects/2.png"
                     class="project-img"
                     alt="Geo Locator"
                     loading="lazy"
@@ -579,7 +545,7 @@
                   data-i18n-aria="a11y.viewProject"
                 >
                   <img
-                    src="/Portfolio/bundled/caloriator-DfSX7t1U-DfSX7t1U.jpg"
+                    src="assets/images/projects/caloriator.jpg"
                     class="project-img"
                     alt="Caloriator"
                     loading="lazy"
@@ -611,7 +577,7 @@
                   data-i18n-aria="a11y.viewProject"
                 >
                   <img
-                    src="/Portfolio/bundled/taskly-C2S7GDMY-C2S7GDMY.jpg"
+                    src="assets/images/projects/taskly.jpg"
                     class="project-img"
                     alt="TaskLy"
                     loading="lazy"
@@ -643,7 +609,7 @@
                   data-i18n-aria="a11y.viewProject"
                 >
                   <img
-                    src="/Portfolio/bundled/roboram-DQI-pVUS-DQI-pVUS.jpg"
+                    src="assets/images/projects/roboram.jpg"
                     class="project-img"
                     alt="Robo Rampage"
                     loading="lazy"
@@ -675,7 +641,7 @@
                   data-i18n-aria="a11y.viewProject"
                 >
                   <img
-                    src="/Portfolio/bundled/login-mkpTVzsg-mkpTVzsg.jpg"
+                    src="assets/images/projects/login.jpg"
                     class="project-img"
                     alt="Day Management"
                     loading="lazy"
@@ -710,10 +676,10 @@
            EDUCATION SECTION
            ════════════════════════════════════ -->
       <section class="education-section" id="education">
-        <h2 class="section-title" data-i18n="education.title">Education</h2>
-        <div class="section-divider"></div>
+        <h2 class="section-title reveal" data-i18n="education.title">Education</h2>
+        <div class="section-divider reveal"></div>
 
-        <div class="education-card" data-aos="fade-up">
+        <div class="education-card reveal">
           <div class="education-icon">
             <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
           </div>
@@ -780,16 +746,16 @@
            CONTACT SECTION
            ════════════════════════════════════ -->
       <section class="contact-section" id="contact">
-        <h2 class="section-title">
+        <h2 class="section-title reveal">
           <span data-i18n="contact.title">Contact</span>&nbsp;<span
             class="title-highlight"
             data-i18n="contact.titleHighlight"
             >Me</span
           >
         </h2>
-        <div class="section-divider"></div>
+        <div class="section-divider reveal"></div>
 
-        <div class="contact-container" data-aos="fade-up">
+        <div class="contact-container reveal">
           <form class="contact-form" novalidate>
             <div class="form-row">
               <input
@@ -844,7 +810,7 @@
     </main>
 
     <button id="backToTopBtn" class="back-to-top" aria-label="Back to Top" data-i18n-aria="a11y.backToTop">
-      <span data-i18n="common.backToTop">Back to Top ↑</span>
+      <i class="fa-solid fa-chevron-up"></i>
     </button>
 
     <!-- ════════════════════════════════════
@@ -919,5 +885,8 @@
         </p>
       </div>
     </footer>
+
+    <!-- Vite entry -->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>

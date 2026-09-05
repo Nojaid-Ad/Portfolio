@@ -13,7 +13,7 @@ const en = {
     name: 'Nojaid Abdullah Issa',
     title: 'Software Engineer',
     description:
-      'A Software Engineer focused on building modern and efficient applications using Flutter, Laravel, and clean architecture. Passionate about clean code, scalability, and continuous learning.',
+      'A Software Engineer specializing in building modern, scalable applications using Flutter, Laravel, and clean architecture. Focused on delivering high-quality code, intuitive user experiences, and efficient system design.',
     projectsBtn: 'My Projects',
     cvBtn: 'Download CV',
   },
@@ -23,7 +23,7 @@ const en = {
     title: 'About',
     titleHighlight: 'Me',
     description:
-      "I am a Software Engineer holding a Bachelor's degree in Software Engineering from the Faculty of Information Technology – Al-Jumail, University of Sabratha. I focus on developing mobile applications using Flutter and web systems using Laravel, PHP, and MySQL. I am passionate about building scalable software, writing clean and maintainable code, and applying software engineering principles to deliver practical solutions and high-quality user experiences.",
+      "I'm a Software Engineer with a Bachelor's degree in Software Engineering from the Faculty of Information Technology – Al-Jumail, University of Sabratha. I specialize in mobile app development with Flutter (using GetX, REST APIs, Firebase, and SqFlite) and full-stack web development with Laravel, PHP, and MySQL. My approach centers on clean architecture, maintainable code, and scalable solutions. I'm passionate about turning ideas into polished, production-ready applications with great user experiences.",
     stat1Label: 'Education',
     stat1Value: "B.Sc. Software Engineering",
     stat2Label: 'Focus',
@@ -118,11 +118,6 @@ const en = {
     sendBtn: 'Send Message',
     successMsg: 'Message sent successfully!',
     errorMsg: 'Please fill in all fields correctly.',
-    nameLabel: 'Full Name',
-    emailLabel: 'Email',
-    phoneLabel: 'Phone Number',
-    subjectLabel: 'Subject',
-    messageLabel: 'Your Message',
   },
 
   /* ───── Footer ───── */
@@ -136,12 +131,9 @@ const en = {
     rights: '© 2025 All Rights Reserved.',
   },
 
-  common: {
-    backToTop: 'Back to Top ↑',
-  },
-
   /* ───── Language switcher ───── */
   language: {
+    code: 'EN',
     switchTo: 'العربية',
   },
 
@@ -156,6 +148,7 @@ const en = {
     telegram: 'Telegram',
     github: 'GitHub profile',
     email: 'Send email',
+    backToTop: 'Back to top',
   },
 };
 
