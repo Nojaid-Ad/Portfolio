@@ -2,63 +2,60 @@
    COMPONENTS — Shared reusable styles
    ═══════════════════════════════════════ */
 
-/* ───── Section spacing ───── */
-section {
-  position: relative;
-}
-
-/* ───── Back to Top Button — Circle with arrow only ───── */
+/* ───── Back to Top Button — Circular with arrow only ───── */
 .back-to-top {
   position: fixed;
-  bottom: 24px;
-  inset-inline-end: 24px;
-  z-index: 99;
+  bottom: 28px;
+  inset-inline-end: 28px;
+  z-index: 999;
   width: 46px;
   height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  color: #fff;
-  font-size: 1.1rem;
-  border-radius: 14px;
+  background: linear-gradient(135deg, #003366, #0284c7);
+  color: #ffffff;
+  font-size: 1.15rem;
+  border-radius: 50%;
   border: none;
-  box-shadow: 0 4px 16px rgba(0, 51, 102, 0.3);
+  box-shadow: 0 4px 18px rgba(2, 132, 199, 0.35);
   opacity: 0;
   pointer-events: none;
-  transform: translateY(20px);
+  transform: translateY(16px) scale(0.9);
   transition: opacity var(--transition-base),
-    transform var(--transition-base),
-    box-shadow var(--transition-base);
+              transform var(--transition-base),
+              box-shadow var(--transition-base);
 }
 
 .back-to-top.visible {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .back-to-top:hover {
-  box-shadow: 0 8px 28px rgba(0, 51, 102, 0.45);
-  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(2, 132, 199, 0.5);
+  transform: translateY(-3px) scale(1.05);
+  color: #ffffff;
 }
 
 [data-theme='dark'] .back-to-top {
-  background: linear-gradient(135deg, var(--primary-hover), var(--accent));
-  box-shadow: 0 4px 16px rgba(51, 156, 255, 0.3);
+  background: linear-gradient(135deg, #0284c7, #38bdf8);
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
+  color: #040912;
 }
 
 [data-theme='dark'] .back-to-top:hover {
-  box-shadow: 0 8px 28px rgba(51, 156, 255, 0.45);
+  box-shadow: 0 8px 28px rgba(56, 189, 248, 0.5);
+  color: #040912;
 }
 
 @media (max-width: 768px) {
   .back-to-top {
-    bottom: 16px;
-    inset-inline-end: 16px;
+    bottom: 20px;
+    inset-inline-end: 20px;
     width: 42px;
     height: 42px;
     font-size: 1rem;
-    border-radius: 12px;
   }
 }

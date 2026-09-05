@@ -1,23 +1,8 @@
-/* ── Styles ── */
-import './styles/base.css';
-import './styles/header.css';
-import './styles/hero.css';
-import './styles/about.css';
-import './styles/skills.css';
-import './styles/projects.css';
-import './styles/education.css';
-import './styles/contact.css';
-import './styles/footer.css';
-import './styles/components.css';
+/* ═══════════════════════════════════════
+   PORTFOLIO MAIN JAVASCRIPT
+   Clean vanilla ES module with zero runtime build dependencies
+   ═══════════════════════════════════════ */
 
-/* ── Vendor CSS ── */
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-/* ── Modules ── */
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
 import { initTheme, toggleTheme } from './theme.js';
 import { initLanguage, toggleLanguage, getLanguage } from './i18n/index.js';
 import { LiquidCanvas } from './hero-canvas.js';
@@ -27,7 +12,7 @@ import { initNavigation } from './navigation.js';
    INITIALISATION
    ═══════════════════════════════════════ */
 document.addEventListener('DOMContentLoaded', () => {
-  /* 1. Theme (runs first to avoid flash) */
+  /* 1. Theme (runs early to avoid flash) */
   initTheme();
 
   /* 2. Language / i18n */
@@ -38,20 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* 4. Theme toggle button */
   const themeBtn = document.getElementById('themeToggleBtn');
-  if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      toggleTheme();
+    });
+  }
 
   /* 5. Language switch button */
   const langBtn = document.getElementById('langSwitchBtn');
-  if (langBtn) langBtn.addEventListener('click', toggleLanguage);
+  if (langBtn) {
+    langBtn.addEventListener('click', () => {
+      toggleLanguage();
+      updateLanguageButton();
+    });
+  }
+  updateLanguageButton();
 
   /* 6. Hero liquid canvas */
   const heroCanvas = document.getElementById('heroCanvas');
-  if (heroCanvas) new LiquidCanvas(heroCanvas);
+  if (heroCanvas) {
+    try {
+      new LiquidCanvas(heroCanvas);
+    } catch (e) {
+      console.warn('Canvas init bypassed:', e);
+    }
+  }
 
   /* 7. Swiper for projects */
   initSwiper();
 
-  /* 8. Scroll reveal animations (replaces AOS) */
+  /* 8. Scroll reveal animations (Custom IntersectionObserver replacing AOS) */
   initScrollReveal();
 
   /* 9. Skill progress bar animation on scroll */
@@ -60,27 +61,73 @@ document.addEventListener('DOMContentLoaded', () => {
   /* 10. Contact form handling */
   initContactForm();
 
-  /* 11. Re-init swiper direction on lang change */
+  /* 11. Typewriter effect for Hero */
+  initTypewriter();
+
+  /* 12. Re-init on language change */
   window.addEventListener('languageChanged', () => {
+    updateLanguageButton();
     initSwiper();
+    initTypewriter();
   });
 });
 
-/* ── Apply theme before DOM load to prevent flash ── */
+/* Run theme immediately on script execution */
 initTheme();
 
 /* ═══════════════════════════════════════
-   SCROLL REVEAL (replaces AOS)
-   Custom IntersectionObserver — works on GitHub Pages
+   LANGUAGE BUTTON UPDATE
+   Shows AR when in English, EN when in Arabic
+   ═══════════════════════════════════════ */
+function updateLanguageButton() {
+  const codeEl = document.querySelector('.lang-switch-btn .lang-code');
+  if (!codeEl) return;
+  const current = getLanguage();
+  /* If currently in EN, button offers AR; if in AR, button offers EN */
+  codeEl.textContent = current === 'ar' ? 'EN' : 'AR';
+}
+
+/* ═══════════════════════════════════════
+   TYPEWRITER EFFECT
+   ═══════════════════════════════════════ */
+let typewriterTimeout = null;
+
+function initTypewriter() {
+  const nameEl = document.querySelector('.hero-name');
+  if (!nameEl) return;
+
+  const currentLang = getLanguage();
+  const textToType = currentLang === 'ar' ? 'نجيد عبدالله عيسى' : 'Nojaid Abdullah Issa';
+
+  if (typewriterTimeout) clearTimeout(typewriterTimeout);
+
+  nameEl.textContent = '';
+  let i = 0;
+
+  function type() {
+    if (i < textToType.length) {
+      nameEl.textContent += textToType.charAt(i);
+      i++;
+      typewriterTimeout = setTimeout(type, 80);
+    }
+  }
+
+  type();
+}
+
+/* ═══════════════════════════════════════
+   SCROLL REVEAL (Reliable IntersectionObserver)
+   Works 100% on GitHub Pages, Live Server & Vite
    ═══════════════════════════════════════ */
 function initScrollReveal() {
-  const revealElements = document.querySelectorAll('.reveal, .reveal-stagger, .reveal-scale');
+  const revealElements = document.querySelectorAll(
+    '.reveal, .reveal-stagger, .reveal-scale'
+  );
 
   if (!revealElements.length) return;
 
-  /* Check for reduced motion preference */
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    revealElements.forEach(el => el.classList.add('active'));
+    revealElements.forEach((el) => el.classList.add('active'));
     return;
   }
 
@@ -94,8 +141,8 @@ function initScrollReveal() {
       });
     },
     {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08,
+      rootMargin: '0px 0px -30px 0px',
     }
   );
 
@@ -104,7 +151,7 @@ function initScrollReveal() {
 
 /* ═══════════════════════════════════════
    SKILL PROGRESS BARS
-   Animate fill width when scrolled into view
+   Smooth width animation upon scrolling into view
    ═══════════════════════════════════════ */
 function initSkillProgress() {
   const fills = document.querySelectorAll('.skill-progress-fill');
@@ -120,7 +167,7 @@ function initSkillProgress() {
       });
     },
     {
-      threshold: 0.3,
+      threshold: 0.25,
     }
   );
 
@@ -128,7 +175,8 @@ function initSkillProgress() {
 }
 
 /* ═══════════════════════════════════════
-   SWIPER
+   SWIPER SLIDER
+   Supports both window.Swiper (CDN) & bundle
    ═══════════════════════════════════════ */
 let swiperInstance = null;
 
@@ -136,15 +184,19 @@ function initSwiper() {
   const el = document.querySelector('.projects-wrapper');
   if (!el) return;
 
-  /* Destroy previous instance if re-initialising */
-  if (swiperInstance) {
+  const SwiperClass = typeof window !== 'undefined' && window.Swiper ? window.Swiper : null;
+  if (!SwiperClass) {
+    console.warn('Swiper library not loaded yet');
+    return;
+  }
+
+  if (swiperInstance && typeof swiperInstance.destroy === 'function') {
     swiperInstance.destroy(true, true);
   }
 
-  swiperInstance = new Swiper(el, {
-    modules: [Navigation, Pagination],
+  swiperInstance = new SwiperClass(el, {
     loop: false,
-    spaceBetween: 20,
+    spaceBetween: 24,
     grabCursor: true,
     pagination: {
       el: '.swiper-pagination',
@@ -156,7 +208,7 @@ function initSwiper() {
     },
     breakpoints: {
       0:    { slidesPerView: 1 },
-      640:  { slidesPerView: 1.3 },
+      640:  { slidesPerView: 1.25 },
       768:  { slidesPerView: 2 },
       1024: { slidesPerView: 3 },
     },
@@ -164,7 +216,7 @@ function initSwiper() {
 }
 
 /* ═══════════════════════════════════════
-   CONTACT FORM
+   CONTACT FORM HANDLING
    ═══════════════════════════════════════ */
 function initContactForm() {
   const form = document.querySelector('.contact-form');
@@ -176,7 +228,6 @@ function initContactForm() {
     const msgEl = form.querySelector('.form-message');
     if (!msgEl) return;
 
-    /* Basic validation */
     const inputs = form.querySelectorAll('input, textarea');
     let valid = true;
 
@@ -195,25 +246,24 @@ function initContactForm() {
       const lang = getLanguage();
       msgEl.textContent =
         lang === 'ar'
-          ? 'يرجى ملء جميع الحقول بشكل صحيح.'
-          : 'Please fill in all fields correctly.';
+          ? 'يرجى ملء جميع الحقول المطلوبة بشكل صحيح.'
+          : 'Please fill in all required fields correctly.';
       msgEl.classList.add('error');
       msgEl.style.display = 'block';
       return;
     }
 
-    /* Success (no backend yet) */
     const lang = getLanguage();
     msgEl.textContent =
       lang === 'ar'
-        ? 'تم إرسال الرسالة بنجاح!'
-        : 'Message sent successfully!';
+        ? 'تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.'
+        : 'Thank you! Your message has been sent successfully.';
     msgEl.classList.add('success');
     msgEl.style.display = 'block';
     form.reset();
 
     setTimeout(() => {
       msgEl.style.display = 'none';
-    }, 4000);
+    }, 4500);
   });
 }
