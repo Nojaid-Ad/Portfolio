@@ -3,68 +3,46 @@
    ═══════════════════════════════════════ */
 
 .education-section {
-  padding: 72px 6% 80px;
+  padding: 80px 24px;
   background: var(--bg-section);
-  transition: background-color var(--transition-base),
-    color var(--transition-base);
 }
 
-/* ───── Glassmorphism card ───── */
+/* ───── Card ───── */
 .education-card {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 28px;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 44px;
-  border-radius: 8px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.88),
-    rgba(255, 255, 255, 0.78)
-  );
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-  transition: transform var(--transition-slow),
-    box-shadow var(--transition-slow),
-    border-color var(--transition-base),
-    background var(--transition-base);
+  padding: 36px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-spring),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
 }
 
 .education-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  border-color: var(--primary-hover);
-}
-
-[data-theme='dark'] .education-card {
-  background: linear-gradient(
-    180deg,
-    rgba(15, 23, 42, 0.88),
-    rgba(15, 23, 42, 0.72)
-  );
-  border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(51, 156, 255, 0.2);
 }
 
 /* ───── Icon ───── */
 .education-icon {
-  width: 76px;
-  height: 76px;
-  border-radius: 8px;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 28px;
   color: #fff;
   background: linear-gradient(135deg, var(--primary), var(--primary-hover));
-  box-shadow: 0 12px 24px rgba(0, 100, 200, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 100, 200, 0.25);
   flex-shrink: 0;
 }
 
@@ -72,37 +50,41 @@
 .education-body {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .edu-college {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: var(--title-color);
-  letter-spacing: -0.2px;
+  letter-spacing: -0.3px;
   line-height: 1.4;
-  transition: color var(--transition-base);
 }
 
 .edu-degree {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-secondary);
-  transition: color var(--transition-base);
 }
 
 .edu-status {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--primary-hover);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-hover), var(--accent));
+  padding: 5px 16px;
+  border-radius: 20px;
+  width: fit-content;
 }
 
 .edu-details {
   margin-top: 4px;
   line-height: 1.8;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--text-secondary);
-  transition: color var(--transition-base);
 }
 
 .edu-details a {
@@ -117,38 +99,45 @@
 
 /* ───── Courses ───── */
 .edu-courses-title {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--title-color);
-  margin-top: 10px;
-  transition: color var(--transition-base);
+  margin-top: 12px;
 }
 
 .edu-courses {
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 10px;
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .edu-courses li {
-  position: relative;
-  padding-inline-start: 22px;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  color: var(--title-color);
-  transition: color var(--transition-base);
+  color: var(--text-secondary);
+  background: rgba(51, 156, 255, 0.06);
+  border: 1px solid rgba(51, 156, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all var(--transition-base);
 }
 
-.edu-courses li::before {
-  content: '';
-  position: absolute;
-  inset-inline-start: 0;
-  top: 0.55em;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+.edu-courses li:hover {
+  background: rgba(51, 156, 255, 0.12);
+  border-color: rgba(51, 156, 255, 0.2);
+  color: var(--primary-hover);
+}
+
+[data-theme='dark'] .edu-courses li {
+  background: rgba(51, 156, 255, 0.08);
+  border-color: rgba(51, 156, 255, 0.12);
+}
+
+[data-theme='dark'] .edu-courses li:hover {
+  background: rgba(51, 156, 255, 0.15);
+  border-color: rgba(51, 156, 255, 0.25);
+  color: var(--accent);
 }
 
 /* ═══════════════════════════════════════
@@ -157,26 +146,24 @@
 @media (max-width: 900px) {
   .education-card {
     grid-template-columns: 1fr;
-    padding: 32px;
+    padding: 28px;
     gap: 20px;
-  }
-  .edu-courses {
-    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 600px) {
   .education-section {
-    padding: 56px 4% 64px;
+    padding: 64px 16px;
   }
   .education-card {
     padding: 24px;
+    border-radius: 16px;
   }
   .education-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 26px;
-    border-radius: 8px;
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+    border-radius: 14px;
   }
   .edu-college {
     font-size: 1.1rem;
@@ -186,6 +173,7 @@
     font-size: 0.85rem;
   }
   .edu-courses li {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
+    padding: 5px 12px;
   }
 }

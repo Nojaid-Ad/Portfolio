@@ -3,18 +3,17 @@
    ═══════════════════════════════════════ */
 
 .projects-section {
-  padding: 72px 6%;
-  background: var(--bg-section);
-  transition: background-color var(--transition-base);
+  padding: 80px 24px;
+  background: var(--bg-section-alt);
 }
 
 .projects-container {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .projects-wrapper {
-  padding: 16px 40px 48px;
+  padding: 8px 40px 48px;
   overflow: hidden;
 }
 
@@ -25,23 +24,23 @@
 
 .project-link {
   display: block;
-  padding: 14px;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 16px;
   background: var(--bg-card);
-  border: 1.5px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
   transition: border-color var(--transition-base),
     box-shadow var(--transition-base),
-    transform var(--transition-base),
-    background-color var(--transition-base);
+    transform var(--transition-spring);
   text-decoration: none;
   color: inherit;
+  overflow: hidden;
 }
 
 .project-link:hover {
-  border-color: var(--primary-hover);
-  box-shadow: var(--shadow-card);
-  transform: translateY(-4px);
+  border-color: rgba(51, 156, 255, 0.3);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-6px);
 }
 
 .project-link:active {
@@ -52,32 +51,41 @@
 .project-img {
   width: 100%;
   aspect-ratio: 16 / 10;
-  border-radius: 8px;
+  border-radius: 12px;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-link:hover .project-img {
+  transform: scale(1.03);
 }
 
 /* Badge */
 .project-badge {
   display: inline-block;
-  font-weight: 500;
-  font-size: 0.85rem;
-  color: #fff;
-  padding: 6px 16px;
-  margin: 14px 0 12px;
-  background: linear-gradient(135deg, #003366cc, #0e3868bb);
-  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.3px;
+  color: var(--primary-hover);
+  padding: 5px 14px;
+  margin: 14px 0 10px;
+  background: rgba(51, 156, 255, 0.08);
+  border-radius: 20px;
+  border: 1px solid rgba(51, 156, 255, 0.15);
 }
 
 [data-theme='dark'] .project-badge {
-  background: linear-gradient(135deg, #339cff88, #195ca8cc);
+  background: rgba(51, 156, 255, 0.12);
+  border-color: rgba(51, 156, 255, 0.2);
+  color: var(--accent);
 }
 
 /* Tech title */
 .project-tech {
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--title-color);
-  transition: color var(--transition-base);
+  padding: 0 4px;
 }
 
 /* Arrow button */
@@ -87,29 +95,22 @@
   justify-content: center;
   width: 34px;
   height: 34px;
-  margin-top: 16px;
-  border-radius: 50%;
-  border: 1.5px solid var(--primary);
-  color: var(--primary);
-  font-size: 1.1rem;
+  margin-top: 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.9rem;
   transform: rotate(-45deg);
-  transition: background-color var(--transition-base),
-    color var(--transition-base),
-    transform var(--transition-base),
-    border-color var(--transition-base);
+  transition: all var(--transition-base);
 }
 
 [dir='rtl'] .project-arrow {
   transform: rotate(-135deg);
 }
 
-[data-theme='dark'] .project-arrow {
-  border-color: var(--primary-hover);
-  color: var(--primary-hover);
-}
-
 .project-link:hover .project-arrow {
-  background: var(--primary);
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
   color: #fff;
   transform: rotate(0deg);
 }
@@ -120,25 +121,25 @@
 
 /* ───── Swiper overrides ───── */
 .projects-wrapper .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #89c3f8;
-  opacity: 0.45;
+  width: 8px;
+  height: 8px;
+  background: var(--text-muted);
+  opacity: 0.3;
   transition: opacity var(--transition-base),
     background-color var(--transition-base),
     width var(--transition-base);
+  border-radius: 8px;
 }
 
 .projects-wrapper .swiper-pagination-bullet-active {
   opacity: 1;
-  width: 22px;
-  border-radius: 8px;
+  width: 24px;
   background: var(--primary-hover);
 }
 
 .projects-wrapper .swiper-button-prev,
 .projects-wrapper .swiper-button-next {
-  transform: scale(0.7);
+  transform: scale(0.65);
   color: var(--primary-hover);
   margin-top: -32px;
   transition: transform var(--transition-base), opacity var(--transition-base);
@@ -146,7 +147,7 @@
 
 .projects-wrapper .swiper-button-prev:hover,
 .projects-wrapper .swiper-button-next:hover {
-  transform: scale(0.8);
+  transform: scale(0.75);
 }
 
 /* ═══════════════════════════════════════
@@ -154,16 +155,20 @@
    ═══════════════════════════════════════ */
 @media (max-width: 768px) {
   .projects-section {
-    padding: 56px 4%;
+    padding: 64px 16px;
   }
   .projects-wrapper {
     padding: 8px 0 32px;
   }
   .project-link {
     padding: 10px;
+    border-radius: 14px;
+  }
+  .project-img {
+    border-radius: 10px;
   }
   .project-tech {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
   }
   .projects-wrapper .swiper-button-prev,
   .projects-wrapper .swiper-button-next {
@@ -173,10 +178,13 @@
 
 @media (max-width: 480px) {
   .projects-section {
-    padding: 48px 3%;
+    padding: 56px 16px;
   }
   .project-badge {
-    font-size: 0.78rem;
-    padding: 5px 12px;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+  }
+  .project-link {
+    border-radius: 12px;
   }
 }
