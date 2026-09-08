@@ -61,7 +61,12 @@
     />
 
     <title>Nojaid Ad — Software Engineer</title>
-  </head>
+  
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
 
   <body>
     <!-- ════════════════════════════════════
@@ -96,16 +101,27 @@
         </nav>
 
         <div class="header-actions">
-          <button
-            class="lang-switch-btn"
-            id="langSwitchBtn"
-            type="button"
-            aria-label="Switch language"
-            data-i18n-aria="a11y.langSwitch"
-          >
-            <i class="fa-solid fa-globe lang-icon"></i>
-            <span class="lang-code" data-i18n="language.code">EN</span>
-          </button>
+          <div class="lang-dropdown">
+            <button
+              class="lang-switch-btn"
+              id="langSwitchBtn"
+              type="button"
+              aria-label="Switch language"
+              data-i18n-aria="a11y.langSwitch"
+            >
+              <i class="fa-solid fa-globe lang-icon"></i>
+              <span class="lang-code" data-i18n="language.code">EN</span>
+              <i class="fa-solid fa-chevron-down lang-chevron"></i>
+            </button>
+            <div class="lang-menu" id="langMenu">
+              <button type="button" class="lang-option" data-lang="en">
+                <span class="lang-flag">🇬🇧</span> English
+              </button>
+              <button type="button" class="lang-option" data-lang="ar">
+                <span class="lang-flag">🇸🇦</span> العربية
+              </button>
+            </div>
+          </div>
 
           <button
             class="theme-toggle-btn"
@@ -312,147 +328,85 @@
         <div class="section-divider reveal"></div>
 
         <div class="skills-grid reveal-stagger">
+          
           <!-- Flutter -->
           <article class="skill-card s0">
-            <div class="skill-header">
-              <div class="skill-icon-wrap">
-                <i class="fa-brands fa-flutter skill-icon" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 data-i18n="skills.flutter.name">Flutter</h3>
-                <span class="skill-percent" data-i18n="skills.flutter.percent"
-                  >85%</span
-                >
-              </div>
+            <div class="skill-icon-wrap">
+              <i class="fa-brands fa-flutter skill-icon" aria-hidden="true"></i>
             </div>
-            <div class="skill-progress">
-              <div class="skill-progress-fill" style="--value: 85%"></div>
+            <div class="skill-info">
+              <h3 data-i18n="skills.flutter.name">Flutter</h3>
+              <p class="skill-description" data-i18n="skills.flutter.description">
+                Building scalable mobile apps using Flutter, GetX, REST APIs, Firebase, and clean architecture.
+              </p>
             </div>
-            <p class="skill-description" data-i18n="skills.flutter.description">
-              Building scalable mobile apps using Flutter, GetX, REST APIs,
-              Firebase, and clean architecture.
-            </p>
           </article>
 
-          <!-- Full Stack -->
+          <!-- Laravel -->
           <article class="skill-card s1">
-            <div class="skill-header">
-              <div class="skill-icon-wrap">
-                <i
-                  class="fa-solid fa-layer-group skill-icon"
-                  aria-hidden="true"
-                ></i>
-              </div>
-              <div>
-                <h3 data-i18n="skills.fullstack.name">Full Stack</h3>
-                <span
-                  class="skill-percent"
-                  data-i18n="skills.fullstack.percent"
-                  >80%</span
-                >
-              </div>
+            <div class="skill-icon-wrap">
+              <i class="fa-brands fa-laravel skill-icon" aria-hidden="true"></i>
             </div>
-            <div class="skill-progress">
-              <div class="skill-progress-fill" style="--value: 80%"></div>
+            <div class="skill-info">
+              <h3 data-i18n="skills.laravel.name">Laravel</h3>
+              <p class="skill-description" data-i18n="skills.laravel.description">
+                Developing robust backend systems, APIs, and web apps with Laravel, PHP, and Eloquent ORM.
+              </p>
             </div>
-            <p class="skill-description" data-i18n="skills.fullstack.description">
-              Developing backend systems with Laravel, MySQL, authentication,
-              APIs, and modern frontend integration.
-            </p>
           </article>
-
-          <!-- UI / UX -->
+          
+          <!-- Full Stack -->
           <article class="skill-card s2">
-            <div class="skill-header">
-              <div class="skill-icon-wrap">
-                <i
-                  class="fa-solid fa-pen-ruler skill-icon"
-                  aria-hidden="true"
-                ></i>
-              </div>
-              <div>
-                <h3 data-i18n="skills.uiux.name">UI / UX Design</h3>
-                <span class="skill-percent" data-i18n="skills.uiux.percent"
-                  >75%</span
-                >
-              </div>
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-database skill-icon" aria-hidden="true"></i>
             </div>
-            <div class="skill-progress">
-              <div class="skill-progress-fill" style="--value: 75%"></div>
+            <div class="skill-info">
+              <h3 data-i18n="skills.fullstack.name">Full Stack & MySQL</h3>
+              <p class="skill-description" data-i18n="skills.fullstack.description">
+                Designing database architectures and integrating modern frontends with backend APIs.
+              </p>
             </div>
-            <p class="skill-description" data-i18n="skills.uiux.description">
-              Designing clean, usable interfaces with strong hierarchy,
-              spacing, accessibility, and motion principles.
-            </p>
           </article>
 
           <!-- Java Swing -->
           <article class="skill-card s3">
-            <div class="skill-header">
-              <div class="skill-icon-wrap">
-                <i class="fa-brands fa-java skill-icon" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 data-i18n="skills.java.name">Java Swing</h3>
-                <span class="skill-percent" data-i18n="skills.java.percent"
-                  >70%</span
-                >
-              </div>
+            <div class="skill-icon-wrap">
+              <i class="fa-brands fa-java skill-icon" aria-hidden="true"></i>
             </div>
-            <div class="skill-progress">
-              <div class="skill-progress-fill" style="--value: 70%"></div>
+            <div class="skill-info">
+              <h3 data-i18n="skills.java.name">Java Swing</h3>
+              <p class="skill-description" data-i18n="skills.java.description">
+                Building desktop applications with Java Swing, JDBC, and database-driven architectures.
+              </p>
             </div>
-            <p class="skill-description" data-i18n="skills.java.description">
-              Building desktop applications with Java Swing, JDBC, and
-              database-driven architectures.
-            </p>
           </article>
 
-          <!-- C# & Unity -->
+          <!-- UI / UX -->
           <article class="skill-card s4">
-            <div class="skill-header">
-              <div class="skill-icon-wrap">
-                <i class="fa-brands fa-unity skill-icon" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 data-i18n="skills.unity.name">C# &amp; Unity</h3>
-                <span class="skill-percent" data-i18n="skills.unity.percent"
-                  >65%</span
-                >
-              </div>
+            <div class="skill-icon-wrap">
+              <i class="fa-solid fa-pen-ruler skill-icon" aria-hidden="true"></i>
             </div>
-            <div class="skill-progress">
-              <div class="skill-progress-fill" style="--value: 65%"></div>
+            <div class="skill-info">
+              <h3 data-i18n="skills.uiux.name">UI / UX Design</h3>
+              <p class="skill-description" data-i18n="skills.uiux.description">
+                Designing clean, usable interfaces with strong hierarchy, spacing, accessibility, and motion principles.
+              </p>
             </div>
-            <p class="skill-description" data-i18n="skills.unity.description">
-              Creating 2D and 3D games with structured gameplay logic,
-              physics, and performance awareness.
-            </p>
           </article>
 
           <!-- HTML & CSS -->
           <article class="skill-card s5">
-            <div class="skill-header">
-              <div class="skill-icon-wrap">
-                <i class="fa-solid fa-code skill-icon" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3 data-i18n="skills.htmlcss.name">HTML &amp; CSS</h3>
-                <span
-                  class="skill-percent"
-                  data-i18n="skills.htmlcss.percent"
-                  >90%</span
-                >
-              </div>
+            <div class="skill-icon-wrap">
+              <i class="fa-brands fa-html5 skill-icon" aria-hidden="true"></i>
             </div>
-            <div class="skill-progress">
-              <div class="skill-progress-fill" style="--value: 90%"></div>
+            <div class="skill-info">
+              <h3 data-i18n="skills.htmlcss.name">HTML & CSS</h3>
+              <p class="skill-description" data-i18n="skills.htmlcss.description">
+                Crafting responsive layouts, animations, and modern UI components with clean, maintainable CSS.
+              </p>
             </div>
-            <p class="skill-description" data-i18n="skills.htmlcss.description">
-              Crafting responsive layouts, animations, and modern UI
-              components with clean, maintainable CSS.
-            </p>
           </article>
+          
         </div>
       </section>
 
@@ -886,7 +840,11 @@
       </div>
     </footer>
 
-    <!-- Vite entry -->
-    <script type="module" src="/src/main.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/app.js"></script>
+
   </body>
 </html>
