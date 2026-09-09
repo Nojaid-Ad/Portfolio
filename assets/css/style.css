@@ -169,13 +169,13 @@ ul, ol {
 
 /* ───── Section Layout ───── */
 section {
-  padding: 72px 24px;
+  padding: 72px 0;
   position: relative;
 }
 
 @media (max-width: 768px) {
   section {
-    padding: 52px 16px;
+    padding: 52px 0;
   }
 }
 
@@ -981,7 +981,7 @@ html[dir='rtl'] .btn:hover svg {
 }
 
 .hero-image img {
-  max-width: 418px;
+  max-width: 460px;
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -1069,7 +1069,7 @@ html[dir='rtl'] .btn:hover svg {
   }
 
   .hero-image img {
-    max-width: 308px;
+    max-width: 340px;
   }
 }
 
@@ -1091,7 +1091,7 @@ html[dir='rtl'] .btn:hover svg {
   }
 
   .hero-image img {
-    max-width: 242px;
+    max-width: 266px;
   }
 }
 
@@ -1102,13 +1102,14 @@ html[dir='rtl'] .btn:hover svg {
    ═══════════════════════════════════════ */
 
 .about-section {
-  padding: 80px 24px;
+  padding: 80px 0;
   background: var(--bg-section-alt);
 }
 
 .about-content {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .about-description {
@@ -1188,7 +1189,7 @@ html[dir='rtl'] .btn:hover svg {
    ═══════════════════════════════════════ */
 @media (max-width: 768px) {
   .about-section {
-    padding: 64px 16px;
+    padding: 64px 0;
   }
 
   .about-description {
@@ -1204,7 +1205,7 @@ html[dir='rtl'] .btn:hover svg {
 
 @media (max-width: 480px) {
   .about-section {
-    padding: 56px 16px;
+    padding: 56px 0;
   }
 
   .about-description {
@@ -1235,7 +1236,7 @@ html[dir='rtl'] .btn:hover svg {
 .skills-section {
   background-color: var(--bg-section);
   position: relative;
-  padding: 80px 24px;
+  padding: 80px 0;
 }
 
 .skills-grid {
@@ -1244,6 +1245,7 @@ html[dir='rtl'] .btn:hover svg {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* ───── Skill Card ───── */
@@ -1341,7 +1343,7 @@ html[dir='rtl'] .btn:hover svg {
 
 @media (max-width: 768px) {
   .skills-section {
-    padding: 64px 16px;
+    padding: 64px 0;
   }
 }
 
@@ -1352,13 +1354,14 @@ html[dir='rtl'] .btn:hover svg {
    ═══════════════════════════════════════ */
 
 .projects-section {
-  padding: 80px 24px;
+  padding: 80px 0;
   background: var(--bg-section-alt);
 }
 
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .projects-wrapper {
@@ -1505,7 +1508,7 @@ html[dir='rtl'] .btn:hover svg {
    ═══════════════════════════════════════ */
 @media (max-width: 768px) {
   .projects-section {
-    padding: 64px 16px;
+    padding: 64px 0;
   }
   .projects-wrapper {
     padding: 8px 0 32px;
@@ -1528,7 +1531,7 @@ html[dir='rtl'] .btn:hover svg {
 
 @media (max-width: 480px) {
   .projects-section {
-    padding: 56px 16px;
+    padding: 56px 0;
   }
   .project-badge {
     font-size: 0.75rem;
@@ -1546,7 +1549,7 @@ html[dir='rtl'] .btn:hover svg {
    ═══════════════════════════════════════ */
 
 .education-section {
-  padding: 80px 24px;
+  padding: 80px 0;
   background: var(--bg-section);
 }
 
@@ -1697,7 +1700,7 @@ html[dir='rtl'] .btn:hover svg {
 
 @media (max-width: 600px) {
   .education-section {
-    padding: 64px 16px;
+    padding: 64px 0;
   }
   .education-card {
     padding: 24px;
@@ -1729,13 +1732,14 @@ html[dir='rtl'] .btn:hover svg {
    ═══════════════════════════════════════ */
 
 .contact-section {
-  padding: 80px 24px;
+  padding: 80px 0;
   background: var(--bg-section-alt);
 }
 
 .contact-container {
   max-width: 680px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 .contact-form {
@@ -1848,7 +1852,7 @@ html[dir='rtl'] .btn:hover svg {
    ═══════════════════════════════════════ */
 @media (max-width: 768px) {
   .contact-section {
-    padding: 64px 16px;
+    padding: 64px 0;
   }
   .form-row {
     flex-direction: column;
@@ -1857,7 +1861,7 @@ html[dir='rtl'] .btn:hover svg {
 
 @media (max-width: 480px) {
   .contact-section {
-    padding: 56px 16px;
+    padding: 56px 0;
   }
   .contact-form input,
   .contact-form textarea {
