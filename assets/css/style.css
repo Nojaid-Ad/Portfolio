@@ -410,7 +410,7 @@ section {
 }
 
 .logo:hover {
-  transform: scale(1.03);
+  color: var(--primary-hover);
 }
 
 .logo-accent {
@@ -445,8 +445,7 @@ section {
 
 /* Light mode hover & active — IMPROVED: bg highlight + color change */
 .main-nav a:hover {
-  color: #003366;
-  background-color: rgba(0, 51, 102, 0.06);
+  color: var(--primary-hover);
 }
 
 .main-nav a.active {
