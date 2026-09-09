@@ -1195,12 +1195,15 @@
         formMsg.textContent = '';
       }
 
+      const portfolioUrl = 'https://nojaid-ad.github.io/Portfolio/';
       const payload = {
         name: nameInput ? nameInput.value.trim() : '',
         email: emailInput ? emailInput.value.trim() : '',
         phone: phoneInput ? phoneInput.value.trim() : '',
         subject: subjectInput ? subjectInput.value.trim() : '',
         message: messageInput ? messageInput.value.trim() : '',
+        portfolio_url: portfolioUrl,
+        _url: portfolioUrl,
         _subject: `New Portfolio Message: ${subjectInput ? subjectInput.value.trim() : 'Contact'} (${nameInput ? nameInput.value.trim() : ''})`,
         _template: 'table',
         _captcha: 'false',
