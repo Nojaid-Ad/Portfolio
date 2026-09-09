@@ -89,7 +89,8 @@ const en = {
     caloriator: { badge: 'Caloriator', tech: 'Flutter + SqFlite + GetX' },
     taskly: { badge: 'TaskLy', tech: 'Flutter + SqFlite + GetX' },
     roboRampage: { badge: 'Robo Rampage', tech: 'Unity using C#' },
-    dayManagement: { badge: 'Day Management', tech: 'Flutter + GetX + PHP + MySQL' },
+    smartMeter: { badge: 'Libyan Smart Meter Platform', tech: 'Flutter + Laravel + ESP32 + MySQL' },
+    dayManagement: { badge: 'Libyan Smart Meter Platform', tech: 'Flutter + Laravel + ESP32 + MySQL' },
   },
 
   /* ───── Education ───── */
@@ -251,7 +252,8 @@ const ar = {
     caloriator: { badge: 'حاسبة السعرات', tech: 'Flutter + SqFlite + GetX' },
     taskly: { badge: 'TaskLy', tech: 'Flutter + SqFlite + GetX' },
     roboRampage: { badge: 'Robo Rampage', tech: 'Unity باستخدام C#' },
-    dayManagement: { badge: 'إدارة اليوم', tech: 'Flutter + GetX + PHP + MySQL' },
+    smartMeter: { badge: 'منصة العداد الذكي الليبي', tech: 'Flutter + Laravel + ESP32 + MySQL' },
+    dayManagement: { badge: 'منصة العداد الذكي الليبي', tech: 'Flutter + Laravel + ESP32 + MySQL' },
   },
 
   /* ───── التعليم ───── */
@@ -975,10 +977,9 @@ function initSwiper() {
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      0:    { slidesPerView: 1 },
-      640:  { slidesPerView: 1.25 },
-      768:  { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
+      0:    { slidesPerView: 1, spaceBetween: 16 },
+      768:  { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 24 },
     },
   });
 }

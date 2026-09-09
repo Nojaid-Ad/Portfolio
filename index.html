@@ -1,649 +1,459 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nojaid Abdullah Issa — Software Engineer Portfolio. Projects, skills, and contact."
-    />
-    <meta name="author" content="Nojaid Abdullah Issa" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/Nojaid.png" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Nojaid Abdullah Issa — Software Engineer Portfolio. Projects, skills, and contact." />
+  <meta name="author" content="Nojaid Abdullah Issa" />
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/Nojaid.png" />
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Nojaid | Software Engineer Portfolio" />
-    <meta
-      property="og:description"
-      content="Personal portfolio showcasing projects and skills in software development."
-    />
-    <meta
-      property="og:image"
-      content="https://nojaid-ad.github.io/Portfolio/assets/images/preview.png"
-    />
-    <meta
-      property="og:url"
-      content="https://nojaid-ad.github.io/Portfolio/"
-    />
-    <meta property="og:type" content="website" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Nojaid | Software Engineer Portfolio"
-    />
-    <meta
-      name="twitter:description"
-      content="Personal portfolio showcasing projects and skills in software development."
-    />
-    <meta
-      name="twitter:image"
-      content="https://nojaid-ad.github.io/Portfolio/assets/images/preview.png"
-    />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Nojaid | Software Engineer Portfolio" />
+  <meta property="og:description"
+    content="Personal portfolio showcasing projects and skills in software development." />
+  <meta property="og:image" content="https://nojaid-ad.github.io/Portfolio/assets/images/preview.png" />
+  <meta property="og:url" content="https://nojaid-ad.github.io/Portfolio/" />
+  <meta property="og:type" content="website" />
 
-    <title>Nojaid Ad — Software Engineer</title>
-  
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nojaid | Software Engineer Portfolio" />
+  <meta name="twitter:description"
+    content="Personal portfolio showcasing projects and skills in software development." />
+  <meta name="twitter:image" content="https://nojaid-ad.github.io/Portfolio/assets/images/preview.png" />
+
+  <title>Nojaid Ad — Software Engineer</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 
-  <body>
-    <!-- ════════════════════════════════════
+<body>
+  <!-- ════════════════════════════════════
          HEADER
          ════════════════════════════════════ -->
-    <header class="main-header" id="mainHeader">
-      <div class="header-inner">
-        <div class="header-left">
-          <button
-            class="mobile-menu-btn"
-            id="mobileMenuBtn"
-            type="button"
-            aria-label="Toggle navigation menu"
-            data-i18n-aria="a11y.mobileMenu"
-          >
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
+  <header class="main-header" id="mainHeader">
+    <div class="header-inner">
+      <div class="header-left">
+        <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Toggle navigation menu"
+          data-i18n-aria="a11y.mobileMenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
 
-          <a href="#" class="logo"
-            >N<span class="logo-accent">0</span>jaid</a
-          >
-        </div>
-
-        <nav class="main-nav" id="mainNav" role="navigation">
-          <a href="#about" data-i18n="nav.about">About</a>
-          <a href="#skills" data-i18n="nav.skills">Skills</a>
-          <a href="#projects" data-i18n="nav.projects">Projects</a>
-          <a href="#education" data-i18n="nav.education">Education</a>
-          <a href="#contact" data-i18n="nav.contact">Contact</a>
-        </nav>
-
-        <div class="header-actions">
-          <div class="lang-dropdown">
-            <button
-              class="lang-switch-btn"
-              id="langSwitchBtn"
-              type="button"
-              aria-label="Switch language"
-              data-i18n-aria="a11y.langSwitch"
-            >
-              <i class="fa-solid fa-globe lang-icon"></i>
-              <span class="lang-code" data-i18n="language.code">EN</span>
-              <i class="fa-solid fa-chevron-down lang-chevron"></i>
-            </button>
-            <div class="lang-menu" id="langMenu">
-              <button type="button" class="lang-option" data-lang="en">
-                English
-              </button>
-              <button type="button" class="lang-option" data-lang="ar">
-                العربية
-              </button>
-            </div>
-          </div>
-
-          <button
-            class="theme-toggle-btn"
-            id="themeToggleBtn"
-            type="button"
-            aria-label="Toggle dark / light mode"
-            data-i18n-aria="a11y.themeToggle"
-          >
-            <i class="fa-regular fa-moon theme-icon-moon"></i>
-            <i class="fa-solid fa-sun theme-icon-sun"></i>
-          </button>
-        </div>
+        <a href="#hero" class="logo">N<span class="logo-accent">0</span>jaid</a>
       </div>
-    </header>
 
-    <main>
-      <!-- ════════════════════════════════════
+      <nav class="main-nav" id="mainNav" role="navigation">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-dropdown">
+          <button class="lang-switch-btn" id="langSwitchBtn" type="button" aria-label="Switch language"
+            data-i18n-aria="a11y.langSwitch">
+            <i class="fa-solid fa-globe lang-icon"></i>
+            <span class="lang-code" data-i18n="language.code">EN</span>
+            <i class="fa-solid fa-chevron-down lang-chevron"></i>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <button type="button" class="lang-option" data-lang="en">
+              English
+            </button>
+            <button type="button" class="lang-option" data-lang="ar">
+              العربية
+            </button>
+          </div>
+        </div>
+
+        <button class="theme-toggle-btn" id="themeToggleBtn" type="button" aria-label="Toggle dark / light mode"
+          data-i18n-aria="a11y.themeToggle">
+          <i class="fa-regular fa-moon theme-icon-moon"></i>
+          <i class="fa-solid fa-sun theme-icon-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ════════════════════════════════════
            HERO SECTION
            ════════════════════════════════════ -->
-      <section class="hero-section" id="hero">
-        <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+    <section class="hero-section" id="hero">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
 
-        <div class="hero-content">
-          <div class="hero-text">
-            <h1>
-              <span class="hero-name" data-i18n="hero.name"
-                >Nojaid Abdullah Issa</span
-              >
-              <span class="hero-title" data-i18n="hero.title"
-                >Software Engineer</span
-              >
-            </h1>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>
+            <span class="hero-name" data-i18n="hero.name">Nojaid Abdullah Issa</span>
+            <span class="hero-title" data-i18n="hero.title">Software Engineer</span>
+          </h1>
 
-            <p class="hero-description" data-i18n="hero.description">
-              A Software Engineer focused on building modern and efficient
-              applications using Flutter, Laravel, and clean architecture.
-              Passionate about clean code, scalability, and continuous learning.
-            </p>
-
-            <div class="hero-buttons">
-              <a href="#projects" class="btn btn-primary">
-                <span data-i18n="hero.projectsBtn">My Projects</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M5 12h14m-4-4 4 4-4 4"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </a>
-
-              <a href="assets/cv.pdf" download class="btn btn-outline">
-                <span data-i18n="hero.cvBtn">Download CV</span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M12 3v10m0 0l-4-4m4 4l4-4M4 17h16"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <div class="hero-social">
-              <a
-                href="https://www.linkedin.com/in/nojaid-ad-a10601388"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                data-i18n-aria="a11y.linkedin"
-              >
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-              <a
-                href="https://t.me/Nojaid"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Telegram"
-                data-i18n-aria="a11y.telegram"
-              >
-                <i class="fa-brands fa-telegram"></i>
-              </a>
-              <a
-                href="https://github.com/Nojaid-Ad"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                data-i18n-aria="a11y.github"
-              >
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a
-                href="mailto:nojaidnojaid@gmail.com"
-                aria-label="Email"
-                data-i18n-aria="a11y.email"
-              >
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-image">
-            <img
-              src="assets/images/NojaidAd.png"
-              alt="Nojaid Abdullah Issa"
-              width="484"
-              height="484"
-              loading="eager"
-            />
-          </div>
-        </div>
-
-        <a
-          href="#about"
-          class="scroll-indicator"
-          id="scrollIndicator"
-          aria-label="Scroll down"
-          data-i18n-aria="a11y.scrollDown"
-        >
-          <span class="scroll-dot"></span>
-        </a>
-      </section>
-
-      <!-- ════════════════════════════════════
-           ABOUT SECTION
-           ════════════════════════════════════ -->
-      <section class="about-section" id="about">
-        <div class="section-title-wrap">
-          <h2 class="section-title reveal">
-            <span data-i18n="about.title">About</span>
-            <span class="title-highlight" data-i18n="about.titleHighlight"
-              >Me</span
-            >
-          </h2>
-          <div class="section-divider reveal"></div>
-        </div>
-
-        <div class="about-content">
-          <p class="about-description reveal" data-i18n="about.description">
-            I am a Software Engineer holding a Bachelor's degree in Software
-            Engineering from the Faculty of Information Technology – Al-Jumail,
-            University of Sabratha. I focus on developing mobile applications
-            using Flutter and web systems using Laravel, PHP, and MySQL. I am
-            passionate about building scalable software, writing clean and
-            maintainable code, and applying software engineering principles to
-            deliver practical solutions and high-quality user experiences.
+          <p class="hero-description" data-i18n="hero.description">
+            A Software Engineer focused on building modern and efficient
+            applications using Flutter, Laravel, and clean architecture.
+            Passionate about clean code, scalability, and continuous learning.
           </p>
 
-          <div class="about-stats reveal-stagger">
-            <div class="stat-item">
-              <div class="stat-icon">
-                <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
-              </div>
-              <div>
-                <span class="stat-label" data-i18n="about.stat1Label"
-                  >Education</span
-                >
-                <span class="stat-value" data-i18n="about.stat1Value"
-                  >B.Sc. Software Engineering</span
-                >
-              </div>
-            </div>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="hero.projectsBtn">My Projects</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14m-4-4 4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
 
-            <div class="stat-item">
-              <div class="stat-icon">
-                <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
-              </div>
-              <div>
-                <span class="stat-label" data-i18n="about.stat2Label"
-                  >Focus</span
-                >
-                <span class="stat-value" data-i18n="about.stat2Value"
-                  >Mobile & Web Development</span
-                >
-              </div>
-            </div>
+            <a href="assets/cv.pdf" download class="btn btn-outline">
+              <span data-i18n="hero.cvBtn">Download CV</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v10m0 0l-4-4m4 4l4-4M4 17h16" fill="none" stroke="currentColor" stroke-width="2" />
+              </svg>
+            </a>
+          </div>
 
-            <div class="stat-item">
-              <div class="stat-icon">
-                <i class="fa-solid fa-code" aria-hidden="true"></i>
-              </div>
-              <div>
-                <span class="stat-label" data-i18n="about.stat3Label"
-                  >Core Tech</span
-                >
-                <span class="stat-value" data-i18n="about.stat3Value"
-                  >Flutter · Laravel · MySQL</span
-                >
-              </div>
+          <div class="hero-social">
+            <a href="https://www.linkedin.com/in/nojaid-ad-a10601388" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn" data-i18n-aria="a11y.linkedin">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://t.me/Nojaid" target="_blank" rel="noopener noreferrer" aria-label="Telegram"
+              data-i18n-aria="a11y.telegram">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://github.com/Nojaid-Ad" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+              data-i18n-aria="a11y.github">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:nojaidnojaid@gmail.com" aria-label="Email" data-i18n-aria="a11y.email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <img src="assets/images/NojaidAd.png" alt="Nojaid Abdullah Issa" width="484" height="484" loading="eager" />
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-indicator" id="scrollIndicator" aria-label="Scroll down"
+        data-i18n-aria="a11y.scrollDown">
+        <span class="scroll-dot"></span>
+      </a>
+    </section>
+
+    <!-- ════════════════════════════════════
+           ABOUT SECTION
+           ════════════════════════════════════ -->
+    <section class="about-section" id="about">
+      <div class="section-title-wrap">
+        <h2 class="section-title reveal">
+          <span data-i18n="about.title">About</span>
+          <span class="title-highlight" data-i18n="about.titleHighlight">Me</span>
+        </h2>
+        <div class="section-divider reveal"></div>
+      </div>
+
+      <div class="about-content">
+        <p class="about-description reveal" data-i18n="about.description">
+          I am a Software Engineer holding a Bachelor's degree in Software
+          Engineering from the Faculty of Information Technology – Al-Jumail,
+          University of Sabratha. I focus on developing mobile applications
+          using Flutter and web systems using Laravel, PHP, and MySQL. I am
+          passionate about building scalable software, writing clean and
+          maintainable code, and applying software engineering principles to
+          deliver practical solutions and high-quality user experiences.
+        </p>
+
+        <div class="about-stats reveal-stagger">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="stat-label" data-i18n="about.stat1Label">Education</span>
+              <span class="stat-value" data-i18n="about.stat1Value">B.Sc. Software Engineering</span>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="stat-label" data-i18n="about.stat2Label">Focus</span>
+              <span class="stat-value" data-i18n="about.stat2Value">Mobile & Web Development</span>
+            </div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+            </div>
+            <div>
+              <span class="stat-label" data-i18n="about.stat3Label">Core Tech</span>
+              <span class="stat-value" data-i18n="about.stat3Value">Flutter · Laravel · MySQL</span>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ════════════════════════════════════
+    <!-- ════════════════════════════════════
            SKILLS SECTION
            ════════════════════════════════════ -->
-      <section class="skills-section" id="skills">
-        <div class="section-title-wrap">
-          <h2 class="section-title reveal">
-            <span data-i18n="skills.title">My</span>
-            <span class="title-highlight" data-i18n="skills.titleHighlight"
-              >Skills</span
-            >
-          </h2>
-          <div class="section-divider reveal"></div>
-        </div>
+    <section class="skills-section" id="skills">
+      <div class="section-title-wrap">
+        <h2 class="section-title reveal">
+          <span data-i18n="skills.title">My</span>
+          <span class="title-highlight" data-i18n="skills.titleHighlight">Skills</span>
+        </h2>
+        <div class="section-divider reveal"></div>
+      </div>
 
-        <div class="skills-grid reveal-stagger">
-          
-          <!-- Flutter -->
-          <article class="skill-card s0">
-            <div class="skill-icon-wrap">
-              <svg class="skill-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zm0 11.066L7.98 17.392l6.334 6.326H21.7l-6.33-6.326 6.33-6.326h-7.386z"/>
-              </svg>
-            </div>
-            <div class="skill-info">
-              <h3 data-i18n="skills.flutter.name">Flutter</h3>
-              <p class="skill-description" data-i18n="skills.flutter.description">
-                Building scalable mobile apps using Flutter, GetX, REST APIs, Firebase, and clean architecture.
-              </p>
-            </div>
-          </article>
+      <div class="skills-grid reveal-stagger">
 
-          <!-- Laravel -->
-          <article class="skill-card s1">
-            <div class="skill-icon-wrap">
-              <i class="fa-brands fa-laravel skill-icon" aria-hidden="true"></i>
-            </div>
-            <div class="skill-info">
-              <h3 data-i18n="skills.laravel.name">Laravel</h3>
-              <p class="skill-description" data-i18n="skills.laravel.description">
-                Developing robust backend systems, APIs, and web apps with Laravel, PHP, and Eloquent ORM.
-              </p>
-            </div>
-          </article>
-          
-          <!-- Full Stack -->
-          <article class="skill-card s2">
-            <div class="skill-icon-wrap">
-              <i class="fa-solid fa-database skill-icon" aria-hidden="true"></i>
-            </div>
-            <div class="skill-info">
-              <h3 data-i18n="skills.fullstack.name">Full Stack & MySQL</h3>
-              <p class="skill-description" data-i18n="skills.fullstack.description">
-                Designing database architectures and integrating modern frontends with backend APIs.
-              </p>
-            </div>
-          </article>
+        <!-- Flutter -->
+        <article class="skill-card s0">
+          <div class="skill-icon-wrap">
+            <svg class="skill-icon" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zm0 11.066L7.98 17.392l6.334 6.326H21.7l-6.33-6.326 6.33-6.326h-7.386z" />
+            </svg>
+          </div>
+          <div class="skill-info">
+            <h3 data-i18n="skills.flutter.name">Flutter</h3>
+            <p class="skill-description" data-i18n="skills.flutter.description">
+              Building scalable mobile apps using Flutter, GetX, REST APIs, Firebase, and clean architecture.
+            </p>
+          </div>
+        </article>
 
-          <!-- Java Swing -->
-          <article class="skill-card s3">
-            <div class="skill-icon-wrap">
-              <i class="fa-brands fa-java skill-icon" aria-hidden="true"></i>
-            </div>
-            <div class="skill-info">
-              <h3 data-i18n="skills.java.name">Java Swing</h3>
-              <p class="skill-description" data-i18n="skills.java.description">
-                Building desktop applications with Java Swing, JDBC, and database-driven architectures.
-              </p>
-            </div>
-          </article>
+        <!-- Laravel -->
+        <article class="skill-card s1">
+          <div class="skill-icon-wrap">
+            <i class="fa-brands fa-laravel skill-icon" aria-hidden="true"></i>
+          </div>
+          <div class="skill-info">
+            <h3 data-i18n="skills.laravel.name">Laravel</h3>
+            <p class="skill-description" data-i18n="skills.laravel.description">
+              Developing robust backend systems, APIs, and web apps with Laravel, PHP, and Eloquent ORM.
+            </p>
+          </div>
+        </article>
 
-          <!-- UI / UX -->
-          <article class="skill-card s4">
-            <div class="skill-icon-wrap">
-              <i class="fa-solid fa-pen-ruler skill-icon" aria-hidden="true"></i>
-            </div>
-            <div class="skill-info">
-              <h3 data-i18n="skills.uiux.name">UI / UX Design</h3>
-              <p class="skill-description" data-i18n="skills.uiux.description">
-                Designing clean, usable interfaces with strong hierarchy, spacing, accessibility, and motion principles.
-              </p>
-            </div>
-          </article>
+        <!-- Full Stack -->
+        <article class="skill-card s2">
+          <div class="skill-icon-wrap">
+            <i class="fa-solid fa-database skill-icon" aria-hidden="true"></i>
+          </div>
+          <div class="skill-info">
+            <h3 data-i18n="skills.fullstack.name">Full Stack & MySQL</h3>
+            <p class="skill-description" data-i18n="skills.fullstack.description">
+              Designing database architectures and integrating modern frontends with backend APIs.
+            </p>
+          </div>
+        </article>
 
-          <!-- HTML & CSS -->
-          <article class="skill-card s5">
-            <div class="skill-icon-wrap">
-              <i class="fa-brands fa-html5 skill-icon" aria-hidden="true"></i>
-            </div>
-            <div class="skill-info">
-              <h3 data-i18n="skills.htmlcss.name">HTML & CSS</h3>
-              <p class="skill-description" data-i18n="skills.htmlcss.description">
-                Crafting responsive layouts, animations, and modern UI components with clean, maintainable CSS.
-              </p>
-            </div>
-          </article>
-          
-        </div>
-      </section>
+        <!-- Java Swing -->
+        <article class="skill-card s3">
+          <div class="skill-icon-wrap">
+            <i class="fa-brands fa-java skill-icon" aria-hidden="true"></i>
+          </div>
+          <div class="skill-info">
+            <h3 data-i18n="skills.java.name">Java Swing</h3>
+            <p class="skill-description" data-i18n="skills.java.description">
+              Building desktop applications with Java Swing, JDBC, and database-driven architectures.
+            </p>
+          </div>
+        </article>
 
-      <!-- ════════════════════════════════════
+        <!-- UI / UX -->
+        <article class="skill-card s4">
+          <div class="skill-icon-wrap">
+            <i class="fa-solid fa-pen-ruler skill-icon" aria-hidden="true"></i>
+          </div>
+          <div class="skill-info">
+            <h3 data-i18n="skills.uiux.name">UI / UX Design</h3>
+            <p class="skill-description" data-i18n="skills.uiux.description">
+              Designing clean, usable interfaces with strong hierarchy, spacing, accessibility, and motion principles.
+            </p>
+          </div>
+        </article>
+
+        <!-- HTML & CSS -->
+        <article class="skill-card s5">
+          <div class="skill-icon-wrap">
+            <i class="fa-brands fa-html5 skill-icon" aria-hidden="true"></i>
+          </div>
+          <div class="skill-info">
+            <h3 data-i18n="skills.htmlcss.name">HTML & CSS</h3>
+            <p class="skill-description" data-i18n="skills.htmlcss.description">
+              Crafting responsive layouts, animations, and modern UI components with clean, maintainable CSS.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
            PROJECTS SECTION
            ════════════════════════════════════ -->
-      <section class="projects-section" id="projects">
-        <div class="section-title-wrap">
-          <h2 class="section-title reveal" data-i18n="projects.title">Projects</h2>
-          <div class="section-divider reveal"></div>
+    <section class="projects-section" id="projects">
+      <div class="section-title-wrap">
+        <h2 class="section-title reveal" data-i18n="projects.title">Projects</h2>
+        <div class="section-divider reveal"></div>
+      </div>
+
+      <div class="projects-container reveal">
+        <div class="projects-wrapper swiper">
+          <ul class="swiper-wrapper">
+            <!-- 1 — Library System -->
+            <li class="project-card swiper-slide">
+              <a href="https://github.com/Nojaid-Ad/Library-Managements-System" target="_blank"
+                rel="noopener noreferrer" class="project-link" aria-label="View Library System project"
+                data-i18n-aria="a11y.viewProject">
+                <img src="assets/images/projects/library.jpg" class="project-img" alt="Library System" loading="lazy" />
+                <p class="project-badge" data-i18n="projects.library.badge">
+                  Library System
+                </p>
+                <h3 class="project-tech" data-i18n="projects.library.tech">
+                  Java Swing + MySQL
+                </h3>
+                <span class="project-arrow" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
+            </li>
+
+            <!-- 2 — Geo Locator -->
+            <li class="project-card swiper-slide">
+              <a href="https://github.com/Nojaid-Ad/Location-Distance-Calculater" target="_blank"
+                rel="noopener noreferrer" class="project-link" aria-label="View Geo Locator project"
+                data-i18n-aria="a11y.viewProject">
+                <img src="assets/images/projects/2.png" class="project-img" alt="Geo Locator" loading="lazy" />
+                <p class="project-badge" data-i18n="projects.geoLocator.badge">
+                  Geo Locator
+                </p>
+                <h3 class="project-tech" data-i18n="projects.geoLocator.tech">
+                  Java Swing
+                </h3>
+                <span class="project-arrow" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
+            </li>
+
+            <!-- 3 — Caloriator -->
+            <li class="project-card swiper-slide">
+              <a href="https://github.com/Nojaid-Ad/Calorie" target="_blank" rel="noopener noreferrer"
+                class="project-link" aria-label="View Caloriator project" data-i18n-aria="a11y.viewProject">
+                <img src="assets/images/projects/caloriator.jpg" class="project-img" alt="Caloriator" loading="lazy" />
+                <p class="project-badge" data-i18n="projects.caloriator.badge">
+                  Caloriator
+                </p>
+                <h3 class="project-tech" data-i18n="projects.caloriator.tech">
+                  Flutter + SqFlite + GetX
+                </h3>
+                <span class="project-arrow" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
+            </li>
+
+            <!-- 4 — TaskLy -->
+            <li class="project-card swiper-slide">
+              <a href="https://github.com/Nojaid-Ad/Taskly" target="_blank" rel="noopener noreferrer"
+                class="project-link" aria-label="View TaskLy project" data-i18n-aria="a11y.viewProject">
+                <img src="assets/images/projects/taskly.jpg" class="project-img" alt="TaskLy" loading="lazy" />
+                <p class="project-badge" data-i18n="projects.taskly.badge">
+                  TaskLy
+                </p>
+                <h3 class="project-tech" data-i18n="projects.taskly.tech">
+                  Flutter + SqFlite + GetX
+                </h3>
+                <span class="project-arrow" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
+            </li>
+
+            <!-- 5 — Robo Rampage -->
+            <li class="project-card swiper-slide">
+              <a href="https://github.com/Nojaid-Ad" target="_blank" rel="noopener noreferrer" class="project-link"
+                aria-label="View Robo Rampage project" data-i18n-aria="a11y.viewProject">
+                <img src="assets/images/projects/roboram.jpg" class="project-img" alt="Robo Rampage" loading="lazy" />
+                <p class="project-badge" data-i18n="projects.roboRampage.badge">
+                  Robo Rampage
+                </p>
+                <h3 class="project-tech" data-i18n="projects.roboRampage.tech">
+                  Unity using C#
+                </h3>
+                <span class="project-arrow" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
+            </li>
+
+            <!-- 6 — Libyan Smart Meter Platform -->
+            <li class="project-card swiper-slide">
+              <a href="https://github.com/Nojaid-Ad/Graduation_Project" target="_blank" rel="noopener noreferrer"
+                class="project-link" aria-label="View Libyan Smart Meter Platform project"
+                data-i18n-aria="a11y.viewProject">
+                <img src="assets/images/projects/login.jpg" class="project-img" alt="Libyan Smart Meter Platform"
+                  loading="lazy" />
+                <p class="project-badge" data-i18n="projects.smartMeter.badge">
+                  Libyan Smart Meter Platform
+                </p>
+                <h3 class="project-tech" data-i18n="projects.smartMeter.tech">
+                  Flutter + Laravel + ESP32 + MySQL
+                </h3>
+                <span class="project-arrow" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
+      </div>
+    </section>
 
-        <div class="projects-container reveal">
-          <div class="projects-wrapper swiper">
-            <ul class="swiper-wrapper">
-              <!-- 1 — Library System -->
-              <li class="project-card swiper-slide">
-                <a
-                  href="https://github.com/Nojaid-Ad/Library-Managements-System"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link"
-                  aria-label="View Library System project"
-                  data-i18n-aria="a11y.viewProject"
-                >
-                  <img
-                    src="assets/images/projects/library.jpg"
-                    class="project-img"
-                    alt="Library System"
-                    loading="lazy"
-                  />
-                  <p
-                    class="project-badge"
-                    data-i18n="projects.library.badge"
-                  >
-                    Library System
-                  </p>
-                  <h3
-                    class="project-tech"
-                    data-i18n="projects.library.tech"
-                  >
-                    Java Swing + MySQL
-                  </h3>
-                  <span class="project-arrow" aria-hidden="true">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </a>
-              </li>
-
-              <!-- 2 — Geo Locator -->
-              <li class="project-card swiper-slide">
-                <a
-                  href="https://github.com/Nojaid-Ad/Location-Distance-Calculater"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link"
-                  aria-label="View Geo Locator project"
-                  data-i18n-aria="a11y.viewProject"
-                >
-                  <img
-                    src="assets/images/projects/2.png"
-                    class="project-img"
-                    alt="Geo Locator"
-                    loading="lazy"
-                  />
-                  <p
-                    class="project-badge"
-                    data-i18n="projects.geoLocator.badge"
-                  >
-                    Geo Locator
-                  </p>
-                  <h3
-                    class="project-tech"
-                    data-i18n="projects.geoLocator.tech"
-                  >
-                    Java Swing
-                  </h3>
-                  <span class="project-arrow" aria-hidden="true">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </a>
-              </li>
-
-              <!-- 3 — Caloriator -->
-              <li class="project-card swiper-slide">
-                <a
-                  href="https://github.com/Nojaid-Ad/Calorie"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="project-link"
-                  aria-label="View Caloriator project"
-                  data-i18n-aria="a11y.viewProject"
-                >
-                  <img
-                    src="assets/images/projects/caloriator.jpg"
-                    class="project-img"
-                    alt="Caloriator"
-                    loading="lazy"
-                  />
-                  <p
-                    class="project-badge"
-                    data-i18n="projects.caloriator.badge"
-                  >
-                    Caloriator
-                  </p>
-                  <h3
-                    class="project-tech"
-                    data-i18n="projects.caloriator.tech"
-                  >
-                    Flutter + SqFlite + GetX
-                  </h3>
-                  <span class="project-arrow" aria-hidden="true">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </a>
-              </li>
-
-              <!-- 4 — TaskLy -->
-              <li class="project-card swiper-slide">
-                <a
-                  href="#"
-                  class="project-link"
-                  aria-label="View TaskLy project"
-                  data-i18n-aria="a11y.viewProject"
-                >
-                  <img
-                    src="assets/images/projects/taskly.jpg"
-                    class="project-img"
-                    alt="TaskLy"
-                    loading="lazy"
-                  />
-                  <p
-                    class="project-badge"
-                    data-i18n="projects.taskly.badge"
-                  >
-                    TaskLy
-                  </p>
-                  <h3
-                    class="project-tech"
-                    data-i18n="projects.taskly.tech"
-                  >
-                    Flutter + SqFlite + GetX
-                  </h3>
-                  <span class="project-arrow" aria-hidden="true">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </a>
-              </li>
-
-              <!-- 5 — Robo Rampage -->
-              <li class="project-card swiper-slide">
-                <a
-                  href="#"
-                  class="project-link"
-                  aria-label="View Robo Rampage project"
-                  data-i18n-aria="a11y.viewProject"
-                >
-                  <img
-                    src="assets/images/projects/roboram.jpg"
-                    class="project-img"
-                    alt="Robo Rampage"
-                    loading="lazy"
-                  />
-                  <p
-                    class="project-badge"
-                    data-i18n="projects.roboRampage.badge"
-                  >
-                    Robo Rampage
-                  </p>
-                  <h3
-                    class="project-tech"
-                    data-i18n="projects.roboRampage.tech"
-                  >
-                    Unity using C#
-                  </h3>
-                  <span class="project-arrow" aria-hidden="true">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </a>
-              </li>
-
-              <!-- 6 — Day Management -->
-              <li class="project-card swiper-slide">
-                <a
-                  href="#"
-                  class="project-link"
-                  aria-label="View Day Management project"
-                  data-i18n-aria="a11y.viewProject"
-                >
-                  <img
-                    src="assets/images/projects/login.jpg"
-                    class="project-img"
-                    alt="Day Management"
-                    loading="lazy"
-                  />
-                  <p
-                    class="project-badge"
-                    data-i18n="projects.dayManagement.badge"
-                  >
-                    Day Management
-                  </p>
-                  <h3
-                    class="project-tech"
-                    data-i18n="projects.dayManagement.tech"
-                  >
-                    Flutter + GetX + PHP + MySQL
-                  </h3>
-                  <span class="project-arrow" aria-hidden="true">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </span>
-                </a>
-              </li>
-            </ul>
-
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ════════════════════════════════════
+    <!-- ════════════════════════════════════
            EDUCATION SECTION
            ════════════════════════════════════ -->
-      <section class="education-section" id="education">
-        <div class="section-title-wrap">
-          <h2 class="section-title reveal" data-i18n="education.title">Education</h2>
-          <div class="section-divider reveal"></div>
-        </div>
-        <div class="education-container">
+    <section class="education-section" id="education">
+      <div class="section-title-wrap">
+        <h2 class="section-title reveal" data-i18n="education.title">Education</h2>
+        <div class="section-divider reveal"></div>
+      </div>
+      <div class="education-container">
 
         <div class="education-card reveal">
           <div class="education-icon">
@@ -673,13 +483,9 @@
                 technologies such as Flutter, PHP, MySQL, and GetX.
               </span>
               <br />
-              <a
-                href="https://www.facebook.com/p/%D9%83%D9%84%D9%8A%D8%A9-%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%85%D9%8A%D9%84-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%B5%D8%A8%D8%B1%D8%A7%D8%AA%D8%A9-61566172146606/"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="education.collegeLinkText"
-                >Faculty of IT — Al-Jumail</a
-              >
+              <a href="https://www.facebook.com/p/%D9%83%D9%84%D9%8A%D8%A9-%D8%AA%D9%82%D9%86%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%AC%D9%85%D9%8A%D9%84-%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%B5%D8%A8%D8%B1%D8%A7%D8%AA%D8%A9-61566172146606/"
+                target="_blank" rel="noopener noreferrer" data-i18n="education.collegeLinkText">Faculty of IT —
+                Al-Jumail</a>
             </p>
 
             <p class="edu-courses-title" data-i18n="education.keyCoursesTitle">
@@ -706,160 +512,119 @@
             </ul>
           </div>
         </div>
-        </div>
-      </section>
-
-      <!-- ════════════════════════════════════
-           CONTACT SECTION
-           ════════════════════════════════════ -->
-      <section class="contact-section" id="contact">
-        <div class="section-title-wrap">
-          <h2 class="section-title reveal">
-            <span data-i18n="contact.title">Contact</span>&nbsp;<span
-              class="title-highlight"
-              data-i18n="contact.titleHighlight"
-              >Me</span
-            >
-          </h2>
-          <div class="section-divider reveal"></div>
-        </div>
-
-        <div class="contact-container reveal">
-          <form class="contact-form" novalidate>
-            <div class="form-row">
-              <input
-                type="text"
-                name="fullname"
-                placeholder="Full Name"
-                data-i18n-placeholder="contact.namePlaceholder"
-                autocomplete="name"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                data-i18n-placeholder="contact.emailPlaceholder"
-                autocomplete="email"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                data-i18n-placeholder="contact.phonePlaceholder"
-                autocomplete="tel"
-              />
-              <input
-                type="text"
-                name="subject"
-                placeholder="Subject"
-                data-i18n-placeholder="contact.subjectPlaceholder"
-                required
-              />
-            </div>
-            <textarea
-              name="message"
-              rows="6"
-              placeholder="Your Message..."
-              data-i18n-placeholder="contact.messagePlaceholder"
-              required
-            ></textarea>
-
-            <div class="form-message" role="alert"></div>
-
-            <button class="send-btn" type="submit" data-i18n="contact.sendBtn">
-              Send Message
-            </button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <button id="backToTopBtn" class="back-to-top" aria-label="Back to Top" data-i18n-aria="a11y.backToTop">
-      <i class="fa-solid fa-chevron-up"></i>
-    </button>
+      </div>
+    </section>
 
     <!-- ════════════════════════════════════
+           CONTACT SECTION
+           ════════════════════════════════════ -->
+    <section class="contact-section" id="contact">
+      <div class="section-title-wrap">
+        <h2 class="section-title reveal">
+          <span data-i18n="contact.title">Contact</span>&nbsp;<span class="title-highlight"
+            data-i18n="contact.titleHighlight">Me</span>
+        </h2>
+        <div class="section-divider reveal"></div>
+      </div>
+
+      <div class="contact-container reveal">
+        <form class="contact-form" novalidate>
+          <div class="form-row">
+            <input type="text" name="fullname" placeholder="Full Name" data-i18n-placeholder="contact.namePlaceholder"
+              autocomplete="name" required />
+            <input type="email" name="email" placeholder="Email" data-i18n-placeholder="contact.emailPlaceholder"
+              autocomplete="email" required />
+          </div>
+          <div class="form-row">
+            <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.phonePlaceholder"
+              autocomplete="tel" required />
+            <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="contact.subjectPlaceholder"
+              required />
+          </div>
+          <textarea name="message" rows="6" placeholder="Your Message..."
+            data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+
+          <div class="form-message" role="alert"></div>
+
+          <button class="send-btn" type="submit" data-i18n="contact.sendBtn">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTopBtn" class="back-to-top" aria-label="Back to Top" data-i18n-aria="a11y.backToTop">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ════════════════════════════════════
          FOOTER
          ════════════════════════════════════ -->
-    <footer class="main-footer">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="footer-logo"
-            >N<span class="footer-logo-accent">0</span>jaid</span
-          >
-          <p data-i18n="footer.description">
-            Software Engineer focused on building modern, efficient
-            applications.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
-          <ul>
-            <li>
-              <a href="#about" data-i18n="nav.about">About</a>
-            </li>
-            <li>
-              <a href="#skills" data-i18n="nav.skills">Skills</a>
-            </li>
-            <li>
-              <a href="#projects" data-i18n="nav.projects">Projects</a>
-            </li>
-            <li>
-              <a href="#education" data-i18n="nav.education">Education</a>
-            </li>
-            <li>
-              <a href="#contact" data-i18n="nav.contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer-contact">
-          <h4 data-i18n="footer.contactInfo">Contact</h4>
-          <div class="footer-contact-item">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:nojaidnojaid@gmail.com">nojaidnojaid@gmail.com</a>
-          </div>
-          <div class="footer-contact-item">
-            <i class="fa-brands fa-telegram" aria-hidden="true"></i>
-            <a
-              href="https://t.me/Nojaid"
-              target="_blank"
-              rel="noopener noreferrer"
-              >@Nojaid</a
-            >
-          </div>
-          <div class="footer-contact-item">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-            <a
-              href="https://github.com/Nojaid-Ad"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Nojaid-Ad</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p class="footer-copyright">
-          <span data-i18n="footer.developedBy">Developed by</span>
-          <strong data-i18n="footer.name">Nojaid Abdullah Issa</strong>
-          &nbsp;·&nbsp;
-          <span data-i18n="footer.rights">© 2025 All Rights Reserved.</span>
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">N<span class="footer-logo-accent">0</span>jaid</span>
+        <p data-i18n="footer.description">
+          Software Engineer focused on building modern, efficient
+          applications.
         </p>
       </div>
-    </footer>
 
-    
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/app.js"></script>
+      <div class="footer-links">
+        <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+        <ul>
+          <li>
+            <a href="#about" data-i18n="nav.about">About</a>
+          </li>
+          <li>
+            <a href="#skills" data-i18n="nav.skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
+          </li>
+          <li>
+            <a href="#education" data-i18n="nav.education">Education</a>
+          </li>
+          <li>
+            <a href="#contact" data-i18n="nav.contact">Contact</a>
+          </li>
+        </ul>
+      </div>
 
-  </body>
+      <div class="footer-contact">
+        <h4 data-i18n="footer.contactInfo">Contact</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:nojaidnojaid@gmail.com">nojaidnojaid@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+          <a href="https://t.me/Nojaid" target="_blank" rel="noopener noreferrer">@Nojaid</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <a href="https://github.com/Nojaid-Ad" target="_blank" rel="noopener noreferrer">Nojaid-Ad</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        <span data-i18n="footer.developedBy">Developed by</span>
+        <strong data-i18n="footer.name">Nojaid Abdullah Issa</strong>
+        &nbsp;·&nbsp;
+        <span data-i18n="footer.rights">© 2025 All Rights Reserved.</span>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/app.js"></script>
+
+</body>
+
 </html>
