@@ -124,8 +124,17 @@ const en = {
     subjectPlaceholder: 'Subject',
     messagePlaceholder: 'Your Message...',
     sendBtn: 'Send Message',
-    successMsg: 'Message sent successfully!',
-    errorMsg: 'Please fill in all fields correctly.',
+    sendingBtn: 'Sending...',
+    successMsg: 'Thank you! Your message has been sent successfully.',
+    errorMsg: 'Failed to send message. Please try again or email directly to nojaidnojaid@gmail.com.',
+    validation: {
+      required: 'This field is required.',
+      nameInvalid: 'Please enter your full name (at least 2 words, e.g. Ahmed Ali).',
+      emailInvalid: 'Please enter a valid email address (e.g. name@example.com).',
+      phoneInvalid: 'Please enter a valid phone number (8 to 15 digits).',
+      subjectTooShort: 'Subject must be at least 4 characters.',
+      messageTooShort: 'Message must be at least 10 characters.',
+    },
   },
 
   /* ───── Footer ───── */
@@ -286,8 +295,17 @@ const ar = {
     subjectPlaceholder: 'الموضوع',
     messagePlaceholder: 'رسالتك...',
     sendBtn: 'إرسال الرسالة',
-    successMsg: 'تم إرسال الرسالة بنجاح!',
-    errorMsg: 'يرجى ملء جميع الحقول بشكل صحيح.',
+    sendingBtn: 'جارٍ الإرسال...',
+    successMsg: 'شكراً لك! تم إرسال رسالتك بنجاح.',
+    errorMsg: 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى أو المراسلة مباشرة عبر nojaidnojaid@gmail.com.',
+    validation: {
+      required: 'هذا الحقل مطلوب.',
+      nameInvalid: 'يرجى إدخال الاسم الكامل (كلمتان على الأقل، مثل: أحمد علي).',
+      emailInvalid: 'يرجى إدخال بريد إلكتروني صالح (مثل: name@example.com).',
+      phoneInvalid: 'يرجى إدخال رقم هاتف صالح (من 8 إلى 15 رقماً).',
+      subjectTooShort: 'الموضوع يجب أن يحتوي على 4 أحرف على الأقل.',
+      messageTooShort: 'الرسالة يجب أن تحتوي على 10 أحرف على الأقل.',
+    },
   },
 
   /* ───── التذييل ───── */
@@ -384,6 +402,12 @@ function applyLanguage(lang) {
     const val = resolve(el.dataset.i18nAria, translations[lang]);
     if (val !== undefined) el.setAttribute('aria-label', val);
   });
+
+  /* Phone input direction handling for RTL/LTR */
+  const phoneInput = document.querySelector('.contact-form input[type="tel"]');
+  if (phoneInput) {
+    phoneInput.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  }
 
   /* Dispatch custom event so other modules can react */
   window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
@@ -985,55 +1009,251 @@ function initSwiper() {
 }
 
 /* ═══════════════════════════════════════
-   CONTACT FORM HANDLING
+   CONTACT FORM HANDLING & VALIDATION
    ═══════════════════════════════════════ */
 function initContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  const nameInput = form.querySelector('input[name="fullname"]');
+  const emailInput = form.querySelector('input[name="email"]');
+  const phoneInput = form.querySelector('input[name="phone"]');
+  const subjectInput = form.querySelector('input[name="subject"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
+  const sendBtn = form.querySelector('.send-btn');
+  const formMsg = form.querySelector('.form-message');
+
+  // Initialise phone input direction matching current language
+  if (phoneInput) {
+    phoneInput.setAttribute('dir', getLanguage() === 'ar' ? 'rtl' : 'ltr');
+  }
+
+  const fields = [
+    {
+      input: nameInput,
+      errorEl: form.querySelector('#fullnameError'),
+      validate: (val) => {
+        const trimmed = val.trim();
+        if (!trimmed) return 'required';
+        const words = trimmed
+          .split(/\s+/)
+          .filter((w) => /[\p{L}\p{M}]/u.test(w) && w.length >= 2);
+        if (words.length < 2) return 'nameInvalid';
+        return null;
+      },
+    },
+    {
+      input: emailInput,
+      errorEl: form.querySelector('#emailError'),
+      validate: (val) => {
+        const trimmed = val.trim();
+        if (!trimmed) return 'required';
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(trimmed)) return 'emailInvalid';
+        return null;
+      },
+    },
+    {
+      input: phoneInput,
+      errorEl: form.querySelector('#phoneError'),
+      validate: (val) => {
+        const trimmed = val.trim();
+        if (!trimmed) return 'required';
+        // Normalize Arabic-Indic digits if entered
+        const normalized = trimmed.replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+        const digits = normalized.replace(/\D/g, '');
+
+        if (digits.length < 8 || digits.length > 15) return 'phoneInvalid';
+        if (/^(\d)\1+$/.test(digits)) return 'phoneInvalid';
+        if ('0123456789012345'.includes(digits) || '9876543210987654'.includes(digits)) {
+          return 'phoneInvalid';
+        }
+
+        const phoneRegex = /^[\+]?[(]?[0-9٠-٩]{1,4}[)]?[-\s\./0-9٠-٩]{6,15}$/;
+        if (!phoneRegex.test(trimmed)) return 'phoneInvalid';
+
+        return null;
+      },
+    },
+    {
+      input: subjectInput,
+      errorEl: form.querySelector('#subjectError'),
+      validate: (val) => {
+        const trimmed = val.trim();
+        if (!trimmed) return 'required';
+        if (trimmed.length < 4) return 'subjectTooShort';
+        return null;
+      },
+    },
+    {
+      input: messageInput,
+      errorEl: form.querySelector('#messageError'),
+      validate: (val) => {
+        const trimmed = val.trim();
+        if (!trimmed) return 'required';
+        if (trimmed.length < 10) return 'messageTooShort';
+        return null;
+      },
+    },
+  ];
+
+  // Map tracking current active error key per input
+  const fieldErrors = new Map();
+
+  function validateField(item, isUserAction = false) {
+    if (!item.input) return true;
+    const errorKey = item.validate(item.input.value);
+
+    if (errorKey) {
+      fieldErrors.set(item.input, errorKey);
+      if (isUserAction) {
+        item.input.classList.add('is-invalid');
+        item.input.classList.remove('is-valid');
+        if (item.errorEl) {
+          item.errorEl.textContent = t(`contact.validation.${errorKey}`);
+          item.errorEl.classList.add('visible');
+        }
+      }
+      return false;
+    } else {
+      fieldErrors.delete(item.input);
+      item.input.classList.remove('is-invalid');
+      if (item.input.value.trim().length > 0) {
+        item.input.classList.add('is-valid');
+      } else {
+        item.input.classList.remove('is-valid');
+      }
+      if (item.errorEl) {
+        item.errorEl.textContent = '';
+        item.errorEl.classList.remove('visible');
+      }
+      return true;
+    }
+  }
+
+  // Live input and blur listeners
+  fields.forEach((item) => {
+    if (!item.input) return;
+
+    item.input.addEventListener('blur', () => {
+      validateField(item, true);
+    });
+
+    item.input.addEventListener('input', () => {
+      if (
+        item.input.classList.contains('is-invalid') ||
+        item.input.classList.contains('is-valid')
+      ) {
+        validateField(item, true);
+      }
+    });
+  });
+
+  // Re-translate active error messages upon language switch
+  window.addEventListener('languageChanged', (e) => {
+    const currentLang = e.detail?.lang || getLanguage();
+    if (phoneInput) {
+      phoneInput.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+    }
+    fields.forEach((item) => {
+      const errorKey = fieldErrors.get(item.input);
+      if (errorKey && item.errorEl && item.input.classList.contains('is-invalid')) {
+        item.errorEl.textContent = t(`contact.validation.${errorKey}`);
+      }
+    });
+  });
+
+  // Form submission with real email sending to nojaidnojaid@gmail.com
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const msgEl = form.querySelector('.form-message');
-    if (!msgEl) return;
+    let formValid = true;
+    let firstInvalid = null;
 
-    const inputs = form.querySelectorAll('input, textarea');
-    let valid = true;
-
-    inputs.forEach((input) => {
-      if (input.hasAttribute('required') && !input.value.trim()) {
-        valid = false;
-      }
-      if (input.type === 'email' && input.value && !input.value.includes('@')) {
-        valid = false;
+    fields.forEach((item) => {
+      const ok = validateField(item, true);
+      if (!ok) {
+        formValid = false;
+        if (!firstInvalid) firstInvalid = item.input;
       }
     });
 
-    msgEl.classList.remove('success', 'error');
-
-    if (!valid) {
-      const lang = getLanguage();
-      msgEl.textContent =
-        lang === 'ar'
-          ? 'يرجى ملء جميع الحقول المطلوبة بشكل صحيح.'
-          : 'Please fill in all required fields correctly.';
-      msgEl.classList.add('error');
-      msgEl.style.display = 'block';
+    if (!formValid) {
+      if (firstInvalid) firstInvalid.focus();
       return;
     }
 
-    const lang = getLanguage();
-    msgEl.textContent =
-      lang === 'ar'
-        ? 'تم إرسال رسالتك بنجاح! سأتواصل معك قريباً.'
-        : 'Thank you! Your message has been sent successfully.';
-    msgEl.classList.add('success');
-    msgEl.style.display = 'block';
-    form.reset();
+    // Set sending UI state
+    if (sendBtn) {
+      sendBtn.disabled = true;
+      sendBtn.innerHTML = `<span class="spinner" aria-hidden="true"></span>${t('contact.sendingBtn')}`;
+    }
 
-    setTimeout(() => {
-      msgEl.style.display = 'none';
-    }, 4500);
+    if (formMsg) {
+      formMsg.className = 'form-message';
+      formMsg.style.display = 'none';
+      formMsg.textContent = '';
+    }
+
+    const payload = {
+      name: nameInput ? nameInput.value.trim() : '',
+      email: emailInput ? emailInput.value.trim() : '',
+      phone: phoneInput ? phoneInput.value.trim() : '',
+      subject: subjectInput ? subjectInput.value.trim() : '',
+      message: messageInput ? messageInput.value.trim() : '',
+      _subject: `New Portfolio Message: ${subjectInput ? subjectInput.value.trim() : 'Contact'} (${nameInput ? nameInput.value.trim() : ''})`,
+      _template: 'table',
+      _captcha: 'false',
+    };
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/nojaidnojaid@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && (data?.success === 'true' || data?.success === true || response.status < 400)) {
+        if (formMsg) {
+          formMsg.textContent = t('contact.successMsg');
+          formMsg.classList.add('success');
+          formMsg.style.display = 'block';
+        }
+        form.reset();
+        fieldErrors.clear();
+        fields.forEach((item) => {
+          if (item.input) {
+            item.input.classList.remove('is-valid', 'is-invalid');
+          }
+          if (item.errorEl) {
+            item.errorEl.textContent = '';
+            item.errorEl.classList.remove('visible');
+          }
+        });
+        if (phoneInput) {
+          phoneInput.setAttribute('dir', getLanguage() === 'ar' ? 'rtl' : 'ltr');
+        }
+      } else {
+        throw new Error(data?.message || 'Form submission failed');
+      }
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      if (formMsg) {
+        formMsg.textContent = t('contact.errorMsg');
+        formMsg.classList.add('error');
+        formMsg.style.display = 'block';
+      }
+    } finally {
+      if (sendBtn) {
+        sendBtn.disabled = false;
+        sendBtn.textContent = t('contact.sendBtn');
+      }
+    }
   });
 }
 

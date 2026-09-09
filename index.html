@@ -528,25 +528,40 @@
       </div>
 
       <div class="contact-container reveal">
-        <form class="contact-form" novalidate>
+        <form class="contact-form" id="contactForm" novalidate>
           <div class="form-row">
-            <input type="text" name="fullname" placeholder="Full Name" data-i18n-placeholder="contact.namePlaceholder"
-              autocomplete="name" required />
-            <input type="email" name="email" placeholder="Email" data-i18n-placeholder="contact.emailPlaceholder"
-              autocomplete="email" required />
+            <div class="form-group">
+              <input type="text" id="fullname" name="fullname" placeholder="Full Name"
+                data-i18n-placeholder="contact.namePlaceholder" autocomplete="name" required />
+              <span class="field-error" id="fullnameError" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Email"
+                data-i18n-placeholder="contact.emailPlaceholder" autocomplete="email" required />
+              <span class="field-error" id="emailError" role="alert" aria-live="polite"></span>
+            </div>
           </div>
           <div class="form-row">
-            <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.phonePlaceholder"
-              autocomplete="tel" required />
-            <input type="text" name="subject" placeholder="Subject" data-i18n-placeholder="contact.subjectPlaceholder"
-              required />
+            <div class="form-group">
+              <input type="tel" id="phone" name="phone" placeholder="Phone Number"
+                data-i18n-placeholder="contact.phonePlaceholder" autocomplete="tel" required />
+              <span class="field-error" id="phoneError" role="alert" aria-live="polite"></span>
+            </div>
+            <div class="form-group">
+              <input type="text" id="subject" name="subject" placeholder="Subject"
+                data-i18n-placeholder="contact.subjectPlaceholder" required />
+              <span class="field-error" id="subjectError" role="alert" aria-live="polite"></span>
+            </div>
           </div>
-          <textarea name="message" rows="6" placeholder="Your Message..."
-            data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="6" placeholder="Your Message..."
+              data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+            <span class="field-error" id="messageError" role="alert" aria-live="polite"></span>
+          </div>
 
           <div class="form-message" role="alert"></div>
 
-          <button class="send-btn" type="submit" data-i18n="contact.sendBtn">
+          <button class="send-btn" id="sendBtn" type="submit" data-i18n="contact.sendBtn">
             Send Message
           </button>
         </form>
