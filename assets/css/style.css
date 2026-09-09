@@ -1252,6 +1252,9 @@ html[dir='rtl'] .btn:hover svg {
   .hero-description {
     margin-left: auto;
     margin-right: auto;
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: center;
   }
 
   .hero-buttons {
@@ -1384,7 +1387,9 @@ html[dir='rtl'] .btn:hover svg {
 
   .about-description {
     font-size: 0.98rem;
-    text-align: start;
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: start;
   }
 
   .about-stats {
@@ -1568,6 +1573,12 @@ html[dir='rtl'] .btn:hover svg {
 @media (max-width: 768px) {
   .skills-section {
     padding: 64px 0;
+  }
+
+  .skill-description {
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: start;
   }
 }
 
@@ -1973,9 +1984,15 @@ html[dir='rtl'] .btn:hover svg {
     font-size: 1.1rem;
   }
 
-  .edu-degree,
+  .edu-degree {
+    font-size: 0.85rem;
+  }
+
   .edu-details {
     font-size: 0.85rem;
+    text-align: justify;
+    text-justify: inter-word;
+    text-align-last: start;
   }
 
   .edu-courses li {
