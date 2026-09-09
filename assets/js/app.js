@@ -882,7 +882,7 @@
   }
 
   /* ═══════════════════════════════════════
-     TYPEWRITER EFFECT
+     TYPEWRITER EFFECT (Continuous Loop)
      ═══════════════════════════════════════ */
   let typewriterTimeout = null;
 
@@ -890,23 +890,46 @@
     const nameEl = document.querySelector('.hero-name');
     if (!nameEl) return;
 
+    if (typewriterTimeout) {
+      clearTimeout(typewriterTimeout);
+      typewriterTimeout = null;
+    }
+
     const currentLang = getLanguage();
     const textToType = currentLang === 'ar' ? 'نجيد عبدالله عيسى' : 'Nojaid Abdullah Issa';
 
-    if (typewriterTimeout) clearTimeout(typewriterTimeout);
-
+    let charIndex = 0;
+    let isDeleting = false;
     nameEl.textContent = '';
-    let i = 0;
 
-    function type() {
-      if (i < textToType.length) {
-        nameEl.textContent += textToType.charAt(i);
-        i++;
-        typewriterTimeout = setTimeout(type, 80);
+    function tick() {
+      // If language changed while ticking, stop this loop
+      if (getLanguage() !== currentLang) return;
+
+      if (!isDeleting) {
+        charIndex++;
+        nameEl.textContent = textToType.substring(0, charIndex);
+
+        if (charIndex === textToType.length) {
+          isDeleting = true;
+          typewriterTimeout = setTimeout(tick, 2500);
+          return;
+        }
+        typewriterTimeout = setTimeout(tick, 85);
+      } else {
+        charIndex--;
+        nameEl.textContent = textToType.substring(0, charIndex);
+
+        if (charIndex === 0) {
+          isDeleting = false;
+          typewriterTimeout = setTimeout(tick, 600);
+          return;
+        }
+        typewriterTimeout = setTimeout(tick, 45);
       }
     }
 
-    type();
+    typewriterTimeout = setTimeout(tick, 200);
   }
 
   /* ═══════════════════════════════════════
@@ -1131,6 +1154,21 @@
       }
     }
 
+    // Manage success/error message timeout
+    let formMsgTimeout = null;
+
+    function clearFormMessage() {
+      if (formMsgTimeout) {
+        clearTimeout(formMsgTimeout);
+        formMsgTimeout = null;
+      }
+      if (formMsg) {
+        formMsg.style.display = 'none';
+        formMsg.className = 'form-message';
+        formMsg.textContent = '';
+      }
+    }
+
     // Live input and blur listeners
     fields.forEach((item) => {
       if (!item.input) return;
@@ -1140,6 +1178,11 @@
       });
 
       item.input.addEventListener('input', () => {
+        // If success message was shown and user begins typing again, remove it
+        if (formMsg && formMsg.classList.contains('success')) {
+          clearFormMessage();
+        }
+
         if (
           item.input.classList.contains('is-invalid') ||
           item.input.classList.contains('is-valid')
@@ -1149,7 +1192,7 @@
       });
     });
 
-    // Re-translate active error messages upon language switch
+    // Re-translate active error messages & form status upon language switch
     window.addEventListener('languageChanged', (e) => {
       const currentLang = e.detail?.lang || getLanguage();
       if (phoneInput) {
@@ -1161,6 +1204,15 @@
           item.errorEl.textContent = t(`contact.validation.${errorKey}`);
         }
       });
+
+      // Update success / error message translation if currently visible
+      if (formMsg && formMsg.style.display !== 'none' && formMsg.textContent) {
+        if (formMsg.classList.contains('success')) {
+          formMsg.textContent = t('contact.successMsg');
+        } else if (formMsg.classList.contains('error')) {
+          formMsg.textContent = t('contact.errorMsg');
+        }
+      }
     });
 
     // Form submission with real email sending to nojaidnojaid@gmail.com
@@ -1183,16 +1235,13 @@
         return;
       }
 
+      // Clear any prior message
+      clearFormMessage();
+
       // Set sending UI state
       if (sendBtn) {
         sendBtn.disabled = true;
         sendBtn.innerHTML = `<span class="spinner" aria-hidden="true"></span>${t('contact.sendingBtn')}`;
-      }
-
-      if (formMsg) {
-        formMsg.className = 'form-message';
-        formMsg.style.display = 'none';
-        formMsg.textContent = '';
       }
 
       const portfolioUrl = 'https://nojaid-ad.github.io/Portfolio/';
@@ -1203,7 +1252,9 @@
         subject: subjectInput ? subjectInput.value.trim() : '',
         message: messageInput ? messageInput.value.trim() : '',
         portfolio_url: portfolioUrl,
+        portfolio_website: portfolioUrl,
         _url: portfolioUrl,
+        _next: portfolioUrl,
         _subject: `New Portfolio Message: ${subjectInput ? subjectInput.value.trim() : 'Contact'} (${nameInput ? nameInput.value.trim() : ''})`,
         _template: 'table',
         _captcha: 'false',
@@ -1216,6 +1267,7 @@
             'Content-Type': 'application/json',
             Accept: 'application/json',
           },
+          referrerPolicy: 'unsafe-url',
           body: JSON.stringify(payload),
         });
 
@@ -1224,8 +1276,13 @@
         if (response.ok && (data?.success === 'true' || data?.success === true || response.status < 400)) {
           if (formMsg) {
             formMsg.textContent = t('contact.successMsg');
-            formMsg.classList.add('success');
+            formMsg.className = 'form-message success';
             formMsg.style.display = 'block';
+
+            // Auto-hide success message after 5 seconds
+            formMsgTimeout = setTimeout(() => {
+              clearFormMessage();
+            }, 5000);
           }
           form.reset();
           fieldErrors.clear();
@@ -1248,7 +1305,7 @@
         console.error('Contact form submission error:', err);
         if (formMsg) {
           formMsg.textContent = t('contact.errorMsg');
-          formMsg.classList.add('error');
+          formMsg.className = 'form-message error';
           formMsg.style.display = 'block';
         }
       } finally {
