@@ -113,11 +113,14 @@
 
 /* ───── Smooth theme transition (applied only during toggle) ───── */
 body.theme-transitioning,
-body.theme-transitioning * {
+body.theme-transitioning *,
+body.theme-transitioning *::before,
+body.theme-transitioning *::after {
   transition: background-color 0.35s ease,
     border-color 0.35s ease,
     color 0.35s ease,
     box-shadow 0.35s ease !important;
+  animation-duration: 0s !important;
 }
 
 /* ───── Reset & Defaults ───── */
@@ -254,6 +257,7 @@ ol {
 section {
   padding: 72px 0;
   position: relative;
+  contain: layout style;
 }
 
 @media (max-width: 768px) {
@@ -326,7 +330,6 @@ section {
   transform: translateY(28px);
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
 }
 
 .reveal-scale {
@@ -436,6 +439,7 @@ section {
     border-color var(--transition-base),
     box-shadow var(--transition-base),
     transform var(--transition-base);
+  contain: layout style;
 }
 
 .main-header.scrolled {
