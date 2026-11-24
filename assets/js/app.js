@@ -1299,7 +1299,7 @@
         sendBtn.innerHTML = `<span class="spinner" aria-hidden="true"></span>${t('contact.sendingBtn')}`;
       }
 
-      const portfolioUrl = 'https://nojaid-ad.github.io/Portfolio/';
+      const portfolioUrl = 'https://nojaid.ly/';
       const payload = {
         name: nameInput ? nameInput.value.trim() : '',
         email: emailInput ? emailInput.value.trim() : '',
